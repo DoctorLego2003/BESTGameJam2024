@@ -7,8 +7,14 @@
 script = ExtResource("1_fk25m")
 
 [node name="Container" type="Container" parent="."]
-visible = false
 offset_left = 80.0
 offset_right = 80.0
 
 [node name="Meteor" parent="Container" instance=ExtResource("1_ik73u")]
+
+[node name="Container2" type="Container" parent="."]
+offset_top = -80.0
+offset_bottom = -80.0
+rotation = -1.5708
+
+[node name="Meteor" parent="Container2" instance=ExtResource("1_ik73u")]
