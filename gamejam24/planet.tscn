@@ -886,7 +886,7 @@ metadata/_edit_lock_ = true
 [node name="MoonAnimation" type="AnimatedSprite2D" parent="Planet"]
 sprite_frames = SubResource("SpriteFrames_qn3kw")
 animation = &"moon_rotation"
-frame_progress = 0.525946
+frame_progress = 0.533252
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Planet/MoonAnimation"]
