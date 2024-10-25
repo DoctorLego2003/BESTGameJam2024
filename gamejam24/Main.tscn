@@ -36,4 +36,6 @@ offset_right = 573.0
 offset_bottom = 400.0
 text = "START"
 
+[node name="WaveManager" type="Node" parent="."]
+
 [connection signal="pressed" from="StartScreen/Button" to="StartScreen" method="_on_button_pressed"]
