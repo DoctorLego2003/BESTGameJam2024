@@ -15,6 +15,7 @@ public partial class WaveManager : Node
 	{
 		// To make it immutable
 		_Tokens = Tokens;
+		
 	}
 
 	public override void _Process(double delta)
