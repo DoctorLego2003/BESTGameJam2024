@@ -1,6 +1,6 @@
 [gd_scene load_steps=128 format=3 uid="uid://c2r3jwpqtj1c"]
 
-[ext_resource type="Texture2D" uid="uid://cfantt2rhd1m5" path="res://assets/art/main_menu/title_screen.png" id="1_100ld"]
+[ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_100ld"]
 [ext_resource type="Script" path="res://planet.gd" id="1_uehpg"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
 
@@ -871,7 +871,7 @@ _data = {
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.75, 324.5)
+position = Vector2(577, 325)
 scale = Vector2(2.5, 2.52734)
 texture = ExtResource("1_100ld")
 
@@ -886,7 +886,7 @@ metadata/_edit_lock_ = true
 [node name="MoonAnimation" type="AnimatedSprite2D" parent="Planet"]
 sprite_frames = SubResource("SpriteFrames_qn3kw")
 animation = &"moon_rotation"
-frame_progress = 0.302067
+frame_progress = 0.525946
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Planet/MoonAnimation"]
