@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy0myxu00505g"]
+[gd_scene load_steps=4 format=3 uid="uid://7a5k3375gp77"]
 
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_nkldn"]
-[ext_resource type="PackedScene" uid="uid://c2r3jwpqtj1c" path="res://planet.tscn" id="2_d3gse"]
+[ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
+[ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="3_rj6o6"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 325)
-scale = Vector2(2.5, 2.52734)
+position = Vector2(576, 324)
+scale = Vector2(2.49892, 2.53125)
 texture = ExtResource("1_nkldn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -15,3 +16,5 @@ position = Vector2(1, 2)
 offset = Vector2(577, 323)
 
 [node name="Node2D" parent="." instance=ExtResource("2_d3gse")]
+
+[node name="Pause" parent="." instance=ExtResource("3_rj6o6")]

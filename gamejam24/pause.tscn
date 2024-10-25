@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dwslqpwoytc8x"]
+[gd_scene load_steps=4 format=3 uid="uid://dwslqpwoytc8x"]
+
+[ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_52ibl"]
+[ext_resource type="Script" path="res://Scripts/pause.gd" id="1_83ks5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_y2dfr"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -7,3 +12,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_83ks5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = SubResource("ImageTexture_y2dfr")
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(2.49892, 2.53125)
+texture = ExtResource("1_52ibl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
