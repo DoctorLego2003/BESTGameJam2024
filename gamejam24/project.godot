@@ -11,12 +11,10 @@ config_version=5
 [application]
 
 config/name="GameJam24"
-<<<<<<< HEAD
 run/main_scene="res://Main.tscn"
-=======
->>>>>>> e4d317c93354b1c401778692b4ed7efd809db97a
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="res://Main.tscn"
 
 [dotnet]
 
