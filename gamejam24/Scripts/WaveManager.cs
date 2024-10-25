@@ -19,7 +19,7 @@ public partial class WaveManager : Node
 
 	public override void _Ready()
 	{
-		GD.Print("Started");
+		GD.Print("WaveManager Started");
 		// To make it immutable
 		_Tokens = Tokens;
 	}
