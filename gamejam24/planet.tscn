@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_jcad6"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
-[ext_resource type="PackedScene" path="res://orbit.tscn" id="3_p54uk"]
+[ext_resource type="PackedScene" uid="uid://byt4hskm2l4i4" path="res://orbit.tscn" id="3_p54uk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agi8i"]
 radius = 65.0692
