@@ -1,21 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://rde0pjn4xmj7"]
 
 [ext_resource type="Script" path="res://Main.cs" id="1_78fbe"]
+[ext_resource type="Script" path="res://start_screen.gd" id="2_dgrs6"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="2_o5g16"]
-
-[sub_resource type="GDScript" id="GDScript_o4kod"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_78fbe")
@@ -25,28 +12,28 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = SubResource("GDScript_o4kod")
+script = ExtResource("2_dgrs6")
 
 [node name="TextureRect" type="TextureRect" parent="StartScreen"]
 layout_mode = 0
-offset_right = 461.0
-offset_bottom = 256.0
+offset_right = 1155.0
+offset_bottom = 651.0
 texture = ExtResource("2_o5g16")
 
 [node name="Label" type="Label" parent="StartScreen"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = -57.0
-offset_right = 76.0
-offset_bottom = -34.0
+offset_left = 520.0
+offset_top = 168.0
+offset_right = 560.0
+offset_bottom = 191.0
 text = "TEST"
 
 [node name="Button" type="Button" parent="StartScreen"]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 51.0
-offset_right = 91.0
-offset_bottom = 82.0
+offset_left = 517.0
+offset_top = 369.0
+offset_right = 573.0
+offset_bottom = 400.0
 text = "START"
 
-[connection signal="pressed" from="StartScreen/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StartScreen/Button" to="StartScreen" method="_on_button_pressed"]
