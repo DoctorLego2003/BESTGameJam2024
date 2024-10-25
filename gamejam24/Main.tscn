@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://rde0pjn4xmj7"]
 
-[ext_resource type="Script" path="res://Main.cs" id="1_78fbe"]
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_lib5w"]
 [ext_resource type="Script" path="res://start_screen.gd" id="2_dgrs6"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="2_o5g16"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_78fbe")
+script = ExtResource("1_lib5w")
 
 [node name="StartScreen" type="Control" parent="."]
 layout_mode = 3
