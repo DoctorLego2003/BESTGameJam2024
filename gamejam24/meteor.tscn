@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5j4vv6or0qxn"]
+
+[ext_resource type="Texture2D" uid="uid://bvprsfrwto0w6" path="res://assets/art/sprites/asteroid_01.png" id="1_2ge4d"]
+
+[node name="Meteor" type="Node2D"]
+
+[node name="MeteorArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeteorArea"]
+
+[node name="Sprite2D" type="Sprite2D" parent="MeteorArea"]
+texture = ExtResource("1_2ge4d")
