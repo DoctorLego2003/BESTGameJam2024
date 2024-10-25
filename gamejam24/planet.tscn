@@ -1,6 +1,6 @@
-[gd_scene load_steps=127 format=3 uid="uid://daapqgmh3lpiv"]
+[gd_scene load_steps=127 format=3 uid="uid://c2r3jwpqtj1c"]
 
-[ext_resource type="Script" path="res://planet.gd" id="1_uehpg"]
+[ext_resource type="Script" path="res://Scripts/planet.gd" id="1_jcad6"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agi8i"]
@@ -871,7 +871,7 @@ _data = {
 
 [node name="Planet" type="Area2D" parent="."]
 position = Vector2(577, 323)
-script = ExtResource("1_uehpg")
+script = ExtResource("1_jcad6")
 
 [node name="MoonCollision" type="CollisionShape2D" parent="Planet"]
 shape = SubResource("CircleShape2D_agi8i")

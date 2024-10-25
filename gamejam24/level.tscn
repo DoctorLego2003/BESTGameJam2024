@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://7a5k3375gp77"]
+[gd_scene load_steps=3 format=3 uid="uid://cy0myxu00505g"]
 
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_nkldn"]
-[ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
+[ext_resource type="PackedScene" uid="uid://c2r3jwpqtj1c" path="res://planet.tscn" id="2_d3gse"]
 
 [node name="Level" type="Node2D"]
 
