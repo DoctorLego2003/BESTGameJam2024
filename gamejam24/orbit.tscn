@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://di31xe5gpdlbe"]
+[gd_scene load_steps=4 format=3 uid="uid://di31xe5gpdlbe"]
 
 [ext_resource type="Script" path="res://Scripts/orbit.gd" id="1_fk25m"]
 [ext_resource type="PackedScene" uid="uid://c5j4vv6or0qxn" path="res://meteor.tscn" id="1_ik73u"]
+[ext_resource type="PackedScene" uid="uid://bvtbyxul4762p" path="res://player.tscn" id="3_peip4"]
 
 [node name="Orbit" type="Node2D"]
 script = ExtResource("1_fk25m")
@@ -15,6 +16,6 @@ offset_right = 80.0
 [node name="Container2" type="Container" parent="."]
 offset_top = -80.0
 offset_bottom = -80.0
-rotation = -1.5708
 
-[node name="Meteor" parent="Container2" instance=ExtResource("1_ik73u")]
+[node name="Player" parent="Container2" instance=ExtResource("3_peip4")]
+scale = Vector2(0.75, 0.75)
