@@ -47,7 +47,7 @@ func _burst():
 	get_parent().add_child(current_projectile)
 	shoot_animation.play(&"shooting1")
 	var smoke = get_parent().get_node("SmokeAnimation")
-	smoke.global_position = current_projectile.global_position
-	smoke.global_rotation = current_projectile.global_rotation
+	smoke.global_position = current_projectile.get_node("Area2D").global_position
+	smoke.global_rotation = current_projectile.get_node("Area2D").global_rotation
 	smoke.play(&"smoke")
 	hasBullet = false

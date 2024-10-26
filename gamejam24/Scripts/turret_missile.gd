@@ -1,11 +1,11 @@
 extends Node2D
 @export var speed = 300
 @export var damage = 1
+@export var turret = null
 var planetPos 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var turret = get_parent().get_node("TurretCannon")
 	self.global_position = turret.global_position
 	self.global_rotation = turret.global_rotation
 	# Start a timer to delete the projectile after 1 second

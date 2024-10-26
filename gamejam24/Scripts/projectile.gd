@@ -8,8 +8,6 @@ func _ready() -> void:
 	var player = get_parent().get_node("PlayerOrbit/Player")
 	self.global_position = player.global_position
 	self.global_rotation = player.global_rotation
-	print(position)
-	print(rotation)
 	# Start a timer to delete the projectile after 1 second
 	var timer = Timer.new()
 	timer.wait_time = 10
