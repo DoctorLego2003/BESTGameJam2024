@@ -28,4 +28,9 @@ public partial class WaveManager : Node
 	{
 
 	}
+
+	private void SpawnNextWave(int Credits, Enemy[] Enemies)
+	{
+
+	}
 }
