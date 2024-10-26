@@ -27,6 +27,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="GameJam24"
 
+[global_group]
+
+Enemy=""
+
 [input]
 
 clockwise-move={
