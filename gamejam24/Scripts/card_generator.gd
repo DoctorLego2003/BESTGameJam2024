@@ -4,12 +4,10 @@ var cards_directory = "res://cards/"
 # This array will store loaded card textures
 var card_images = []
 var card_properties = []
-var x = RandomNumberGenerator.new()
-var y = RandomNumberGenerator.new()
-var z = RandomNumberGenerator.new()
-var rx = x.randi_range(0, 2)
-var ry = y.randi_range(0, 2)
-var rz = z.randi_range(0, 2)
+var rx = 0
+var ry = 0
+var rz = 0
+
 
 func _process(delta: float) -> void:
 	pass
@@ -18,20 +16,24 @@ func _ready() -> void:
 	# Ensure all images in the directory are loaded at startup
 	#load_card_images()
 	_new_wave()
+	#pass
 
 
 func _on_card_1_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(rx).activate()
-	$Card1.visible = false
+	#$Card1.visible = false
+	$Card1.disabled = true
 	
 
 func _on_card_2_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(ry).activate()
-	$Card2.visible = false
+	#$Card2.visible = false
+	$Card2.disabled = true
 
 func _on_card_3_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(rz).activate()
-	$Card3.visible = false
+	#$Card3.visible = false
+	$Card3.disabled = true
 
 
 func _on_continue_pressed() -> void:
@@ -42,11 +44,31 @@ func _on_continue_pressed() -> void:
 	get_tree().paused = false
 
 func _new_wave() -> void:
+	var x = RandomNumberGenerator.new()
+	var y = RandomNumberGenerator.new()
+	var z = RandomNumberGenerator.new()
+	var rx = x.randi_range(0, 2)
+	var ry = y.randi_range(0, 2)
+	var rz = z.randi_range(0, 2)
+	
 	$Card1.visible = true
 	$Card2.visible = true
 	$Card3.visible = true
 	$Continue.visible = true
+	
+	$Card1.disabled = false
+	$Card2.disabled = false
+	$Card3.disabled = false
+	
 	get_tree().paused = true
+	
+	$Card1.icon = load("res://cards/Card" + str(rx) + ".png")
+	$Card2.icon = load("res://cards/Card" + str(ry) + ".png")
+	$Card3.icon = load("res://cards/Card" + str(rz) + ".png")
+	
+	
+	
+	
 
 ## Load all PNG images from the specified directory
 #func load_card_images() -> void:
