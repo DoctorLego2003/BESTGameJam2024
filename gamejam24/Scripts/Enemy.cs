@@ -11,7 +11,7 @@ public abstract partial class Enemy : Node2D
 	[Export]
 	public int Speed {get;set;}
 	[Export]
-	public GodotObject Sprite {get;set;}
+	public GodotObject[] Sprite {get;set;}
 
 	public void Behavior(float Delta)
 	{
