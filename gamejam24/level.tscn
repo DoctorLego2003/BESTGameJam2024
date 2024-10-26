@@ -22,17 +22,18 @@ scale = Vector2(2.49892, 2.53125)
 texture = ExtResource("1_nkldn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(-1, 1)
 offset = Vector2(577, 323)
 
 [node name="Planet" parent="." instance=ExtResource("2_d3gse")]
 
 [node name="PauseButton" type="Button" parent="."]
-offset_left = 32.0
-offset_top = 9.0
-offset_right = 91.0
-offset_bottom = 40.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 69.0
+offset_bottom = 41.0
 shortcut = SubResource("Shortcut_1yk55")
+shortcut_in_tooltip = false
 text = "PAUSE"
 
 [node name="PauseScreen" parent="." instance=ExtResource("4_m40se")]
