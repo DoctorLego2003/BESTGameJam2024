@@ -167,12 +167,12 @@ offset_bottom = 40.0
 
 [node name="Credits" type="Label" parent="PauseScreen/Credits"]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 264.0
-offset_right = 1035.0
-offset_bottom = 412.0
+offset_left = 95.0
+offset_top = 258.0
+offset_right = 1067.0
+offset_bottom = 406.0
 theme = SubResource("Theme_ekqou")
-text = "print(\"Hello, World!\")
+text = "print(\"Hello, Small World!\")
 "
 
 [node name="BackButton2" type="Button" parent="PauseScreen/Credits"]

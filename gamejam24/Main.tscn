@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rde0pjn4xmj7"]
+[gd_scene load_steps=4 format=3 uid="uid://rde0pjn4xmj7"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_lib5w"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="2_o5g16"]
-[ext_resource type="Script" path="res://Scripts/WaveManager.cs" id="4_x4uvx"]
 
 [sub_resource type="GDScript" id="GDScript_eseeq"]
 script/source = "extends Control
@@ -51,8 +50,5 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 25)
 text = "START"
-
-[node name="WaveManager" type="Node" parent="."]
-script = ExtResource("4_x4uvx")
 
 [connection signal="pressed" from="StartScreen/Button" to="StartScreen" method="_on_button_pressed"]
