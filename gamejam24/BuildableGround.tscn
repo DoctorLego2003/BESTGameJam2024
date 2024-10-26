@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://btniuy4a8ovgy"]
+[gd_scene load_steps=3 format=3 uid="uid://btniuy4a8ovgy"]
 
 [ext_resource type="Script" path="res://Scripts/buildable_ground.gd" id="1_lnexb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svmci"]
-radius = 32.0
-height = 114.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3300n"]
+radius = 24.0
+height = 96.0
 
 [node name="BuildableGround" type="Node2D"]
 script = ExtResource("1_lnexb")
@@ -18,11 +16,6 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_svmci")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(7.15256e-07, -4.05312e-06)
-scale = Vector2(42, 60)
-texture = SubResource("PlaceholderTexture2D_3300n")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

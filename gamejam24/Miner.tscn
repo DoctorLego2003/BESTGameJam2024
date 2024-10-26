@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4i35dacqwour"]
 
-[ext_resource type="Script" path="res://miner.gd" id="1_kyisw"]
+[ext_resource type="Script" path="res://Scripts/miner.gd" id="1_kyisw"]
 [ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_la0dx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_li6mv"]

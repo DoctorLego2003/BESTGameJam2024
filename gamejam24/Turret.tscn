@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkufkpn715v5r"]
+[gd_scene load_steps=12 format=3 uid="uid://dkufkpn715v5r"]
 
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="1_0hdrm"]
 [ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="2_ssvn1"]
@@ -63,6 +63,10 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj0ij"]
+radius = 142.0
+height = 390.0
+
 [node name="Turret" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -76,3 +80,7 @@ position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_n1vrc")
 frame = 7
 frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80, 0)
+shape = SubResource("CapsuleShape2D_nj0ij")
