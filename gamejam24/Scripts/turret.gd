@@ -1,6 +1,7 @@
 extends Node2D
-var Enemy = preload("res://Scripts/Enemy.cs")
+@onready var projectile = load("res://turretMissile.tscn")
 var enemies = []
+var hasBullets = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,12 +10,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if len(enemies) > 0:
+	if len(enemies) > 0 and hasBullets:
 		var enemy = enemies[0]
-		print(enemy.global_position)
 		var diffpos = enemy.global_position - global_position
 		$TurretCannon.global_rotation = atan2(diffpos.x, -diffpos.y)
+		turret_shoot(delta)
+		hasBullets = false
+		$Timer.start()
+		
 
+func turret_shoot(delta):
+	for i in range(3):
+		var current_projectile = projectile.instantiate()
+		add_child(current_projectile)
+		await get_tree().create_timer(0.1).timeout
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -25,3 +34,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() in enemies:
 		enemies.erase(area.get_parent())
+
+
+func _on_timer_timeout() -> void:
+	hasBullets = true
