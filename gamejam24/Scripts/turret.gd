@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 func turret_shoot(delta):
 	for i in range(3):
 		var current_projectile = projectile.instantiate()
-		add_child(current_projectile)
+		current_projectile.turret = $TurretCannon
+		get_parent().get_parent().get_parent().add_child(current_projectile)
 		await get_tree().create_timer(0.1).timeout
 
 
