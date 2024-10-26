@@ -40,3 +40,13 @@ func _on_settings_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	get_node("PauseScreen/Settings").visible = false
 	get_node("PauseScreen/PauseSettings").visible = true
+
+
+func _on_credits_pressed() -> void:
+	get_node("PauseScreen/PauseSettings").visible = false
+	get_node("PauseScreen/Credits").visible = true
+
+
+func _on_back_button_2_pressed() -> void:
+	get_node("PauseScreen/Credits").visible = false
+	get_node("PauseScreen/PauseSettings").visible = true

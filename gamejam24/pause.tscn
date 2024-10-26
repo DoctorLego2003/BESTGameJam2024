@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwslqpwoytc8x"]
+[gd_scene load_steps=12 format=3 uid="uid://dwslqpwoytc8x"]
 
 [ext_resource type="Script" path="res://Scripts/unpause.gd" id="1_6tjei"]
 
-[sub_resource type="Theme" id="Theme_rvcsi"]
-default_font_size = 20
-
 [sub_resource type="Theme" id="Theme_xxm63"]
 default_font_size = 17
+
+[sub_resource type="Theme" id="Theme_rvcsi"]
+default_font_size = 20
 
 [sub_resource type="Theme" id="Theme_b7igq"]
 default_font_size = 55
@@ -30,6 +30,9 @@ default_font_size = 75
 default_font_size = 75
 
 [sub_resource type="Theme" id="Theme_cv7wh"]
+default_font_size = 75
+
+[sub_resource type="Theme" id="Theme_ekqou"]
 default_font_size = 75
 
 [node name="Pause" type="Control"]
@@ -70,6 +73,17 @@ offset_top = 226.0
 offset_right = 701.0
 offset_bottom = 306.0
 
+[node name="Sound" type="CheckButton" parent="PauseScreen/Settings"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 323.0
+offset_right = 532.0
+offset_bottom = 355.0
+scale = Vector2(2.5, 2.5)
+theme = SubResource("Theme_xxm63")
+button_pressed = true
+text = "SOUND"
+
 [node name="Music" type="CheckButton" parent="PauseScreen/Settings"]
 layout_mode = 0
 offset_left = 420.0
@@ -80,17 +94,6 @@ scale = Vector2(2.5, 2.5)
 theme = SubResource("Theme_rvcsi")
 button_pressed = true
 text = "MUSIC"
-
-[node name="Sound" type="CheckButton" parent="PauseScreen/Settings"]
-layout_mode = 0
-offset_left = 419.0
-offset_top = 323.0
-offset_right = 532.0
-offset_bottom = 354.0
-scale = Vector2(2.5, 2.5)
-theme = SubResource("Theme_xxm63")
-button_pressed = true
-text = "SOUND"
 
 [node name="BackButton" type="Button" parent="PauseScreen/Settings"]
 layout_mode = 0
@@ -152,7 +155,30 @@ pivot_offset = Vector2(225, 0)
 theme = SubResource("Theme_cv7wh")
 text = "CREDITS"
 
+[node name="Credits" type="MenuBar" parent="PauseScreen"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credits" type="Label" parent="PauseScreen/Credits"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 264.0
+offset_right = 1035.0
+offset_bottom = 412.0
+theme = SubResource("Theme_ekqou")
+text = "print(\"Hello, World!\")
+"
+
+[node name="BackButton2" type="Button" parent="PauseScreen/Credits"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="PauseScreen/Settings/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PauseScreen/PauseSettings/UnPause" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PauseScreen/PauseSettings/QuitGame" to="." method="_on_quit_game_pressed"]
 [connection signal="pressed" from="PauseScreen/PauseSettings/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseScreen/PauseSettings/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="PauseScreen/Credits/BackButton2" to="." method="_on_back_button_2_pressed"]
