@@ -6,9 +6,9 @@ extends Node2D
 func _ready() -> void:
 	for i in range(spots):
 		var new_child = Container.new()
-		new_child.position.x = distance*cos(2*3.141592*i/spots)
-		new_child.position.y = distance*sin(2*3.141592*i/spots)
-		new_child.rotation = 2*3.141592*i/spots
+		new_child.position.x = distance*cos(2*3.14159265*i/spots)
+		new_child.position.y = distance*sin(2*3.14159265*i/spots)
+		new_child.rotation = 2*3.14159265*i/spots
 		new_child.add_child(load("res://meteor.tscn").instantiate())
 		add_child(new_child)
 
