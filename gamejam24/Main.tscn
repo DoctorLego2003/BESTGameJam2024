@@ -1,9 +1,26 @@
 [gd_scene load_steps=5 format=3 uid="uid://rde0pjn4xmj7"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_lib5w"]
-[ext_resource type="Script" path="res://start_screen.gd" id="2_dgrs6"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="2_o5g16"]
 [ext_resource type="Script" path="res://Scripts/WaveManager.cs" id="4_x4uvx"]
+
+[sub_resource type="GDScript" id="GDScript_eseeq"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Button.connect(\"pressed\", Callable(self, \"_on_button_pressed\"))
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	
+	get_tree().change_scene_to_file(\"res://level.tscn\")
+"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lib5w")
@@ -13,7 +30,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_dgrs6")
+script = SubResource("GDScript_eseeq")
 
 [node name="TextureRect" type="TextureRect" parent="StartScreen"]
 layout_mode = 0
