@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://crim5foxkpoi2"]
+[gd_scene load_steps=6 format=3 uid="uid://crim5foxkpoi2"]
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
-[ext_resource type="Script" path="res://Scripts/continue.gd" id="2_kiegf"]
 [ext_resource type="Script" path="res://Scripts/Card1.gd" id="2_wlnmp"]
 [ext_resource type="Script" path="res://Scripts/Card2.gd" id="3_8txfe"]
 [ext_resource type="Script" path="res://Scripts/Card3.gd" id="4_u28i1"]
@@ -12,6 +11,7 @@ default_font_size = 75
 [node name="Cards" type="Node2D"]
 
 [node name="CardGenerator" type="Control" parent="."]
+process_mode = 2
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
@@ -22,6 +22,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Card1" type="Button" parent="CardGenerator"]
 process_mode = 2
+visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775
@@ -37,6 +38,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Card2" type="Button" parent="CardGenerator"]
 process_mode = 2
+visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775
@@ -52,6 +54,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Card3" type="Button" parent="CardGenerator"]
 process_mode = 2
+visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775
@@ -68,13 +71,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Continue" type="Button" parent="CardGenerator"]
 process_mode = 2
 visible = false
+layout_mode = 0
 offset_left = 366.0
 offset_top = 524.0
 offset_right = 828.0
 offset_bottom = 641.0
 theme = SubResource("Theme_3i4ct")
 text = "CONTINUE"
-script = ExtResource("2_kiegf")
 
 [node name="ActivationFunctions" type="Control" parent="."]
 visible = false
@@ -119,4 +122,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="CardGenerator/Card1" to="CardGenerator" method="_on_card_1_pressed"]
 [connection signal="pressed" from="CardGenerator/Card2" to="CardGenerator" method="_on_card_2_pressed"]
 [connection signal="pressed" from="CardGenerator/Card3" to="CardGenerator" method="_on_card_3_pressed"]
-[connection signal="pressed" from="CardGenerator/Continue" to="CardGenerator/Continue" method="_on_pressed"]
+[connection signal="pressed" from="CardGenerator/Continue" to="CardGenerator" method="_on_continue_pressed"]

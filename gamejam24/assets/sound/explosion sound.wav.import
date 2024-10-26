@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< HEAD
-uid="uid://xagpi1krh5uq"
-=======
-uid="uid://c4m3f006tbcu7"
->>>>>>> daa38ad41501f39f80c656c7d6b4872c47a97e0e
+uid="uid://dulfemglb02o8"
 path="res://.godot/imported/explosion sound.wav-b0ba354eee09f7129c6de74fc7ca59dd.sample"
 
 [deps]

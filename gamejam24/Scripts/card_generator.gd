@@ -12,17 +12,12 @@ var ry = y.randi_range(0, 2)
 var rz = z.randi_range(0, 2)
 
 func _process(delta: float) -> void:
-	if not $Card1.visible and not $Card2.visible and not $Card3.visible:
-		get_tree().paused = false
-		get_node("Continue").visible = false
+	pass
 
 func _ready() -> void:
 	# Ensure all images in the directory are loaded at startup
 	#load_card_images()
-	get_tree().paused = true
-	get_node("Continue").visible = true
-	
-	
+	_new_wave()
 
 
 func _on_card_1_pressed() -> void:
@@ -37,8 +32,21 @@ func _on_card_2_pressed() -> void:
 func _on_card_3_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(rz).activate()
 	$Card3.visible = false
-	
 
+
+func _on_continue_pressed() -> void:
+	$Card1.visible = false
+	$Card2.visible = false
+	$Card3.visible = false
+	$Continue.visible = false
+	get_tree().paused = false
+
+func _new_wave() -> void:
+	$Card1.visible = true
+	$Card2.visible = true
+	$Card3.visible = true
+	$Continue.visible = true
+	get_tree().paused = true
 
 ## Load all PNG images from the specified directory
 #func load_card_images() -> void:
