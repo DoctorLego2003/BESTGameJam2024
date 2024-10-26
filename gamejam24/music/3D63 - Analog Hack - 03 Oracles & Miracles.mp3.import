@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qjitu6lx35ae"
+path="res://.godot/imported/3D63 - Analog Hack - 03 Oracles & Miracles.mp3-ba229d1e49d0ecf8ba9e782b0691c797.mp3str"
+
+[deps]
+
+source_file="res://music/3D63 - Analog Hack - 03 Oracles & Miracles.mp3"
+dest_files=["res://.godot/imported/3D63 - Analog Hack - 03 Oracles & Miracles.mp3-ba229d1e49d0ecf8ba9e782b0691c797.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

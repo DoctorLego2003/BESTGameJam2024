@@ -12,6 +12,8 @@ public abstract partial class Enemy : Node2D
 	public int Speed {get;set;}
 	[Export]
 	public GodotObject[] Sprite {get;set;}
+	[Export]
+	public int MinimalWave {get;set;}
 
 	public void Behavior(float Delta)
 	{

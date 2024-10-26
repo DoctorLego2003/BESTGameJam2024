@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cl2s5ip7sylk7"
+path="res://.godot/imported/Smody - The Last Run.mp3-854a32e3fbf4443d3d88efb0f932a9fe.mp3str"
+
+[deps]
+
+source_file="res://music/Smody - The Last Run.mp3"
+dest_files=["res://.godot/imported/Smody - The Last Run.mp3-854a32e3fbf4443d3d88efb0f932a9fe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
