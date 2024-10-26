@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://crim5foxkpoi2"]
+[gd_scene load_steps=2 format=3 uid="uid://hkcofjo301ij"]
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
 
@@ -14,18 +14,21 @@ offset_bottom = 40.0
 script = ExtResource("1_uh4am")
 
 [node name="Card1" type="Button" parent="CardGenerator"]
+layout_mode = 0
 offset_left = 111.0
 offset_top = 77.0
 offset_right = 365.0
 offset_bottom = 495.0
 
 [node name="Card2" type="Button" parent="CardGenerator"]
+layout_mode = 0
 offset_left = 405.0
 offset_top = 64.0
 offset_right = 659.0
 offset_bottom = 482.0
 
 [node name="Card3" type="Button" parent="CardGenerator"]
+layout_mode = 0
 offset_left = 691.0
 offset_top = 60.0
 offset_right = 945.0
