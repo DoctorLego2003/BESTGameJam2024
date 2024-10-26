@@ -33,6 +33,10 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_node("PauseScreen/Settings/Music").visible = true
-	get_node("PauseScreen/Settings/Sound").visible = true
+	get_node("PauseScreen/Settings").visible = true
 	get_node("PauseScreen/PauseSettings").visible = false
+
+
+func _on_back_button_pressed() -> void:
+	get_node("PauseScreen/Settings").visible = false
+	get_node("PauseScreen/PauseSettings").visible = true
