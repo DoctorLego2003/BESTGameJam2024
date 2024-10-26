@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwslqpwoytc8x"]
+[gd_scene load_steps=13 format=3 uid="uid://dwslqpwoytc8x"]
 
 [ext_resource type="Script" path="res://Scripts/unpause.gd" id="1_6tjei"]
 
@@ -34,6 +34,9 @@ default_font_size = 75
 
 [sub_resource type="Theme" id="Theme_ekqou"]
 default_font_size = 75
+
+[sub_resource type="Theme" id="Theme_ueuga"]
+default_font_size = 55
 
 [node name="Pause" type="Control"]
 process_mode = 2
@@ -173,8 +176,12 @@ text = "print(\"Hello, World!\")
 
 [node name="BackButton2" type="Button" parent="PauseScreen/Credits"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 435.0
+offset_top = 162.0
+offset_right = 718.0
+offset_bottom = 246.0
+theme = SubResource("Theme_ueuga")
+text = "BACK"
 
 [connection signal="pressed" from="PauseScreen/Settings/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PauseScreen/PauseSettings/UnPause" to="." method="_on_button_pressed"]
