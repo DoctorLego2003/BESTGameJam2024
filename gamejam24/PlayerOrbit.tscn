@@ -9,3 +9,8 @@ script = ExtResource("1_ffc0k")
 [node name="Player" parent="." instance=ExtResource("1_0hs6p")]
 z_index = 50
 position = Vector2(0, -80)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
