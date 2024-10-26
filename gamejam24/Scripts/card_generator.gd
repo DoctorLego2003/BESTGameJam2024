@@ -12,49 +12,16 @@ func _ready() -> void:
 	load_card_images()
 
 func _on_card_1_pressed() -> void:
-	# Select a random card texture and set it on the TextureButton
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	
-	# Check if card_images is not empty
-	if card_images.size() > 0:
-		var random_index = rng.randi_range(0, card_images.size() - 1)
-		var selected_card_texture = card_images[random_index]
-		
-		$Card1.icon = selected_card_texture
-	else:
-		print("Error: No card images loaded.")
+	get_tree().root.get_node("Level/ModManager").MoneyMod *= 20
 	$Card1.visible = false
 	
 
 func _on_card_2_pressed() -> void:
-	# Select a random card texture and set it on the TextureButton
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	
-	# Check if card_images is not empty
-	if card_images.size() > 0:
-		var random_index = rng.randi_range(0, card_images.size() - 1)
-		var selected_card_texture = card_images[random_index]
-		
-		$Card2.icon = selected_card_texture
-	else:
-		print("Error: No card images loaded.")
+	get_tree().root.get_node("Level/ModManager").DamageMod *= 20
 	$Card2.visible = false
 
 func _on_card_3_pressed() -> void:
-	# Select a random card texture and set it on the TextureButton
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	
-	# Check if card_images is not empty
-	if card_images.size() > 0:
-		var random_index = rng.randi_range(0, card_images.size() - 1)
-		var selected_card_texture = card_images[random_index]
-		
-		$Card3.icon = selected_card_texture
-	else:
-		print("Error: No card images loaded.")
+	get_tree().root.get_node("Level/ModManager").SpeedMod *= 20
 	$Card3.visible = false
 	
 

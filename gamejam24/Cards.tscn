@@ -5,6 +5,7 @@
 [node name="Cards" type="Node2D"]
 
 [node name="CardGenerator" type="Control" parent="."]
+z_index = 100
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
