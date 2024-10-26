@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://coksaw3i2rt0f"
+path="res://.godot/imported/3D63 - Analog Hack - 04 Drone -sweet- Drones.mp3-6ea602aea03adb0bb8443b82f8c569eb.mp3str"
+
+[deps]
+
+source_file="res://music/3D63 - Analog Hack - 04 Drone -sweet- Drones.mp3"
+dest_files=["res://.godot/imported/3D63 - Analog Hack - 04 Drone -sweet- Drones.mp3-6ea602aea03adb0bb8443b82f8c569eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
