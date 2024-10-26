@@ -59,7 +59,6 @@ script = ExtResource("7_4d0dn")
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("3_mmvqh")
 script = ExtResource("5_8knt5")
-Speed = 20
-Sprite = ExtResource("3_mmvqh")
+Speed = 100
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
