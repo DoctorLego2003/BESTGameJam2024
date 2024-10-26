@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://co5o7c4b5cm3k"]
+
+[node name="TurretMissile" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Missile" type="Sprite2D" parent="Area2D"]
