@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_card_1_pressed() -> void:
-	get_tree().root.get_node("Level/ModManager").SpeedMod *= 1.2
+	get_tree().root.get_node("Level/ModManager").SpeedMod *= 1.05
+	self.visible = false
 	
 	
  

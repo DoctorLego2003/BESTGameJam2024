@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://hkcofjo301ij"]
+[gd_scene load_steps=3 format=3 uid="uid://crim5foxkpoi2"]
 
 [ext_resource type="Script" path="res://Scripts/cards.gd" id="1_73t41"]
 [ext_resource type="Texture2D" uid="uid://bylv133i1xyig" path="res://assets/art/sprites/player_shell_01.png" id="1_afpdx"]
