@@ -3,6 +3,13 @@ extends Control
 var cards_directory = "res://cards/"
 # This array will store loaded card textures
 var card_images = []
+var card_properties = []
+var x = RandomNumberGenerator.new()
+var y = RandomNumberGenerator.new()
+var z = RandomNumberGenerator.new()
+var rx = x.randi_range(0, 2)
+var ry = y.randi_range(0, 2)
+var rz = z.randi_range(0, 2)
 
 func _process(delta: float) -> void:
 	pass
@@ -10,17 +17,22 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	# Ensure all images in the directory are loaded at startup
 	load_card_images()
+	
+	
 
 func _on_card_1_pressed() -> void:
-	get_tree().root.get_node("Level/ModManager").CooldownMod -= 0.2
+	print(rx)
+	get_parent().get_node("ActivationFunctions").get_child(rx).activate()
 	$Card1.visible = false
 
 func _on_card_2_pressed() -> void:
-	get_tree().root.get_node("Level/ModManager").PlayerSpeedMod *= 5
+	print(ry)
+	get_parent().get_node("ActivationFunctions").get_child(ry).activate()
 	$Card2.visible = false
 
 func _on_card_3_pressed() -> void:
-	get_tree().root.get_node("Level/ModManager").SpeedMod *= 20
+	print(rz)
+	get_parent().get_node("ActivationFunctions").get_child(rz).activate()
 	$Card3.visible = false
 	
 
