@@ -15,9 +15,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if moveLeft:
-		self.rotate(speed * delta)
+		var current_speed = speed * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
+		self.rotate(current_speed * delta)
 	if moveRight:
-		self.rotate(-speed * delta)
+		var current_speed = speed * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
+		self.rotate(-current_speed * delta)
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("clockwise-move"):
@@ -29,16 +31,23 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("anticlockwise-move"):
 		moveRight = false
 	if event.is_action_pressed("shoot") and hasBullet:
-		var current_projectile = projectile.instantiate()
-		current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").SpeedMod
-		get_parent().add_child(current_projectile)
-		shoot_animation.play(&"shooting1")		
-		var smoke = get_parent().get_node("SmokeAnimation")
-		smoke.global_position = current_projectile.global_position
-		smoke.global_rotation = current_projectile.global_rotation
-		smoke.play(&"smoke")
-		hasBullet = false
+		for i in range(get_tree().root.get_node("Level/ModManager").BurstMod):
+			_burst()
+			await get_tree().create_timer(0.1).timeout
+		
 		$Timer.start()
+		$Timer.wait_time = get_tree().root.get_node("Level/ModManager").CooldownMod
 
 func _on_timer_timeout():
 	hasBullet = true
+
+func _burst():
+	var current_projectile = projectile.instantiate()
+	current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").SpeedMod
+	get_parent().add_child(current_projectile)
+	shoot_animation.play(&"shooting1")
+	var smoke = get_parent().get_node("SmokeAnimation")
+	smoke.global_position = current_projectile.global_position
+	smoke.global_rotation = current_projectile.global_rotation
+	smoke.play(&"smoke")
+	hasBullet = false

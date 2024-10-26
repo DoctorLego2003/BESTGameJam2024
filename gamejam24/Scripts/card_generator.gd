@@ -12,12 +12,11 @@ func _ready() -> void:
 	load_card_images()
 
 func _on_card_1_pressed() -> void:
-	get_tree().root.get_node("Level/ModManager").MoneyMod *= 20
+	get_tree().root.get_node("Level/ModManager").CooldownMod -= 0.2
 	$Card1.visible = false
-	
 
 func _on_card_2_pressed() -> void:
-	get_tree().root.get_node("Level/ModManager").DamageMod *= 20
+	get_tree().root.get_node("Level/ModManager").PlayerSpeedMod *= 5
 	$Card2.visible = false
 
 func _on_card_3_pressed() -> void:
