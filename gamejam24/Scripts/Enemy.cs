@@ -1,6 +1,6 @@
 using Godot;
 
-public abstract partial class Enemy : Node
+public abstract partial class Enemy : Node2D
 {
 	[Export]
 	public int Cost {get;set;}
@@ -13,7 +13,7 @@ public abstract partial class Enemy : Node
 	[Export]
 	public GodotObject Sprite {get;set;}
 
-	public void Behavior()
+	public void Behavior(float Delta)
 	{
 		GD.PrintErr("Unreachable code somehow reached");
 	}
