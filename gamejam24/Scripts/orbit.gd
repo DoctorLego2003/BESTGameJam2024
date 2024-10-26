@@ -9,14 +9,10 @@ func _ready() -> void:
 		new_child.position.x = distance*cos(2*3.14159265*i/spots)
 		new_child.position.y = distance*sin(2*3.14159265*i/spots)
 		new_child.rotation = 2*3.14159265*i/spots
-		new_child.add_child(load("res://Miner.tscn").instantiate())
+		new_child.add_child(load("res://BuildableGround.tscn").instantiate())
 		add_child(new_child)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for child in self.get_children():
 		self.rotate(delta*step*0.1)
-		
-
-func add_building(towertype):
-	pass
