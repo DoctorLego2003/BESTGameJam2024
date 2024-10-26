@@ -18,6 +18,10 @@ public partial class Asteroid : Enemy
 	}
 	public new void Behavior(float Delta)
 	{
+		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 65)
+		{
+			Die();
+		}
 		GlobalPosition -= new Vector2
 		(
 			Speed * MathF.Sin(MathF.Atan2(
@@ -29,6 +33,5 @@ public partial class Asteroid : Enemy
 				GlobalPosition.Y - new Vector2(577, 323).Y
 				)) * Delta
 		);
-		GD.Print("Pos: " + GlobalPosition);
 	}
 }
