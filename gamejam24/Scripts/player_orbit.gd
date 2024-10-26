@@ -26,4 +26,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("anticlockwise-move"):
 		moveRight = false
 	if event.is_action_pressed("shoot"):
-		get_parent().add_child(projectile.instantiate())
+		var current_projectile = projectile.instantiate()
+		get_tree().root.print_tree_pretty()
+		current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").SpeedMod
+		get_parent().add_child(current_projectile)

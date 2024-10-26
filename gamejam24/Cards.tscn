@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://crim5foxkpoi2"]
+[gd_scene load_steps=3 format=3 uid="uid://crim5foxkpoi2"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/cards.gd" id="1_73t41"]
+[ext_resource type="Texture2D" uid="uid://bylv133i1xyig" path="res://assets/art/sprites/player_shell_01.png" id="1_afpdx"]
+
+[node name="Cards" type="Node2D"]
+script = ExtResource("1_73t41")
+
+[node name="Card1" type="Button" parent="."]
+offset_left = 111.0
+offset_top = 77.0
+offset_right = 365.0
+offset_bottom = 495.0
+
+[node name="TextureRect" type="TextureRect" parent="Card1"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 247.0
+offset_bottom = 411.0
+texture = ExtResource("1_afpdx")
+
+[connection signal="pressed" from="Card1" to="." method="_on_card_1_pressed"]
