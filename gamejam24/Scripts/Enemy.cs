@@ -1,15 +1,30 @@
 using Godot;
-using System;
 
-public partial class Enemy : Node
+public abstract partial class Enemy : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	[Export]
+	public int Cost {get;set;}
+	[Export]
+	public int Health {get;set;}
+	[Export]
+	public int Damage {get;set;}
+	[Export]
+	public int Speed {get;set;}
+	[Export]
+	public GodotObject Sprite {get;set;}
+
+	public void Behavior()
 	{
+		GD.PrintErr("Unreachable code somehow reached");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void TakeDamage(int Damage)
 	{
+		Health -= Damage;
+	}
+
+	public void Die()
+	{
+		this.QueueFree();
 	}
 }
