@@ -42,11 +42,17 @@ offset_bottom = 648.0
 [node name="Music" type="CheckButton" parent="Panel"]
 visible = false
 layout_mode = 0
-offset_left = 487.341
-offset_top = 219.712
-offset_right = 586.341
-offset_bottom = 250.712
-text = "MUSIC"
+offset_left = 519.0
+offset_top = 281.0
+offset_right = 551.0
+offset_bottom = 301.0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "easy"
+popup/item_1/text = "medium"
+popup/item_1/id = 1
+popup/item_2/text = "hard"
+popup/item_2/id = 2
 
 [node name="Sound" type="CheckButton" parent="Panel"]
 visible = false

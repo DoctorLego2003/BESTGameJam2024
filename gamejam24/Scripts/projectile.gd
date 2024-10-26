@@ -5,8 +5,8 @@ var planetPos
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#planetPos = get_parent().position
-	#self.position = get_parent().get_node("player").position
+	planetPos = get_parent().position
+	self.position = get_parent().get_node("player").position
 	
 	pass # Replace with function body.
 
