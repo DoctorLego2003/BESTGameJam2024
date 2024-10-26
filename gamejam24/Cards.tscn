@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://crim5foxkpoi2"]
-=======
-[gd_scene load_steps=5 format=3 uid="uid://crim5foxkpoi2"]
->>>>>>> b34d1d86d354fb12b1662c0c4193b3d09a52f7eb
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
 [ext_resource type="Script" path="res://Scripts/continue.gd" id="2_kiegf"]
