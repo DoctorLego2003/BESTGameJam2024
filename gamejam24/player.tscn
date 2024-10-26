@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvtbyxul4762p"]
+[gd_scene load_steps=3 format=3 uid="uid://bvtbyxul4762p"]
 
 [ext_resource type="Texture2D" uid="uid://bbfivaxo7elku" path="res://assets/art/sprites/player_drone.png" id="1_5qf1g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofmrl"]
+radius = 16.0
+height = 34.0
 
 [node name="Player" type="Node2D"]
 
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource("CapsuleShape2D_ofmrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerArea"]
 texture = ExtResource("1_5qf1g")
