@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 using Godot;
 
 public partial class Asteroid : Enemy
@@ -6,7 +7,8 @@ public partial class Asteroid : Enemy
 
 	public override void _Ready()
 	{
-
+		int Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(360);
+		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(200) + 800;
 	}
 
 	public override void _Process(double delta)
