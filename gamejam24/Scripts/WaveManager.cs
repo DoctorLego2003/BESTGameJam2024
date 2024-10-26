@@ -10,7 +10,7 @@ using System.Security.Cryptography;
 public partial class WaveManager : Node
 {
 	[Export]
-	public Godot.GodotObject[] Enemies ;
+	public Godot.GodotObject[] Enemies;
 	[Export]
 	public int[] Tokens;
 
