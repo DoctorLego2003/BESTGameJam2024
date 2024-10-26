@@ -9,6 +9,7 @@ public partial class Asteroid : Enemy
 	{
 		int Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(360);
 		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(200) + 800;
+		GlobalPosition = new Vector2(Distance * MathF.Cos(Angle), Distance * MathF.Sin(Angle));
 	}
 
 	public override void _Process(double delta)
