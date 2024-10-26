@@ -1,8 +1,11 @@
 extends Node2D
 var moveLeft = false
 var moveRight = false
+var hasBullet = true
 @export var speed = 3
 var projectile = load("res://projectile.tscn")
+@onready var shoot_animation = get_node("Player/PlayerArea/AnimatedSprite2D")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,5 +28,13 @@ func _input(event: InputEvent) -> void:
 		moveRight = true
 	elif event.is_action_released("anticlockwise-move"):
 		moveRight = false
-	if event.is_action_pressed("shoot"):
-		get_parent().add_child(projectile.instantiate())
+	if event.is_action_pressed("shoot") and hasBullet:
+		var bullet = projectile.instantiate()
+		get_parent().add_child(bullet)
+		shoot_animation.play(&"shooting1")
+		bullet.get_node("SmokeAnimation").play(&"smoke")
+		hasBullet = false
+		$Timer.start()
+
+func _on_timer_timeout():
+	hasBullet = true
