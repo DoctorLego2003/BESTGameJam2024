@@ -1,6 +1,8 @@
 extends Node
 
 @export var SpeedMod = 1
+@export var DamageMod = 1
+@export var MoneyMod = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

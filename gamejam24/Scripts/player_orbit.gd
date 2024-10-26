@@ -30,7 +30,6 @@ func _input(event: InputEvent) -> void:
 		moveRight = false
 	if event.is_action_pressed("shoot") and hasBullet:
 		var current_projectile = projectile.instantiate()
-		get_tree().root.print_tree_pretty()
 		current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").SpeedMod
 		get_parent().add_child(current_projectile)
 		shoot_animation.play(&"shooting1")		
