@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bvprsfrwto0w6" path="res://assets/art/sprites/asteroid_01.png" id="3_mmvqh"]
 [ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="4_m40se"]
 [ext_resource type="Script" path="res://Scripts/Asteroid.cs" id="5_8knt5"]
-[ext_resource type="PackedScene" path="res://Cards.tscn" id="5_i7mb0"]
+[ext_resource type="PackedScene" uid="uid://crim5foxkpoi2" path="res://Cards.tscn" id="5_i7mb0"]
 [ext_resource type="Script" path="res://Scripts/WaveManager.cs" id="6_hep6x"]
 [ext_resource type="Script" path="res://Scripts/mod_manager.gd" id="7_4d0dn"]
 
