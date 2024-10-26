@@ -30,14 +30,14 @@ func _input(event: InputEvent) -> void:
 		moveRight = false
 	if event.is_action_pressed("shoot") and hasBullet:
 		var current_projectile = projectile.instantiate()
+		var smoke = current_projectile.get_parent().get_node("SmokeAnimation")
+		smoke.global_position = current_projectile.global_position
+		smoke.global_rotation = current_projectile.global_rotation
+		smoke.play(&"smoke")
 		get_tree().root.print_tree_pretty()
 		current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").SpeedMod
 		get_parent().add_child(current_projectile)
-		shoot_animation.play(&"shooting1")
-		var smoke = bullet.get_parent().get_node("SmokeAnimation")
-		smoke.global_position = bullet.global_position
-		smoke.global_rotation = bullet.global_rotation
-		smoke.play(&"smoke")
+		shoot_animation.play(&"shooting1")		
 		
 		hasBullet = false
 		$Timer.start()
