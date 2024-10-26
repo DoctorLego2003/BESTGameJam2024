@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvel6dmvjs1pc"]
+[gd_scene load_steps=4 format=3 uid="uid://bdf05ekffjv8e"]
 
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_s5ixq"]
 [ext_resource type="Texture2D" uid="uid://bylv133i1xyig" path="res://assets/art/sprites/player_shell_01.png" id="2_xbqbe"]
@@ -8,6 +8,7 @@ radius = 8.75
 height = 37.5
 
 [node name="Projectile" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_s5ixq")
 
 [node name="Area2D" type="Area2D" parent="."]

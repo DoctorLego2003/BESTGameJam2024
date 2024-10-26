@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvtbyxul4762p"]
+[gd_scene load_steps=11 format=3 uid="uid://bvtbyxul4762p"]
 
 [ext_resource type="Texture2D" uid="uid://1i3o4bxb3wei" path="res://assets/art/sprites/player_drone.png" id="1_5qf1g"]
+[ext_resource type="Texture2D" uid="uid://clcoefpmb4kr5" path="res://assets/art/sprites/character_shoot.png" id="2_dtfwl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofmrl"]
 radius = 16.0
 height = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm86c"]
+atlas = ExtResource("2_dtfwl")
+region = Rect2(0, 1, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reo88"]
+atlas = ExtResource("2_dtfwl")
+region = Rect2(32, 1, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhvnc"]
+atlas = ExtResource("2_dtfwl")
+region = Rect2(64, 1, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixt6w"]
+atlas = ExtResource("2_dtfwl")
+region = Rect2(96, 1, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_navod"]
+atlas = ExtResource("2_dtfwl")
+region = Rect2(128, 1, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bam0a"]
+atlas = ExtResource("2_dtfwl")
+region = Rect2(160, 1, 32, 31)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dslv1"]
 animations = [{
@@ -13,19 +38,29 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm86c")
+}, {
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_reo88")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_uhvnc")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ixt6w")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_navod")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_bam0a")
+}],
+"loop": false,
 "name": &"shooting1",
-"speed": 5.0
+"speed": 15.0
 }]
-
-[sub_resource type="Animation" id="Animation_g1gra"]
-resource_name = "shooting1"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bk8yl"]
-_data = {
-"shooting1": SubResource("Animation_g1gra")
-}
 
 [node name="Player" type="Node2D"]
 
@@ -37,15 +72,11 @@ visible = false
 shape = SubResource("CapsuleShape2D_ofmrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerArea"]
+visible = false
 texture = ExtResource("1_5qf1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerArea"]
 sprite_frames = SubResource("SpriteFrames_dslv1")
 animation = &"shooting1"
-frame_progress = 0.28249
-
-[node name="PlayerShoot" type="AnimationPlayer" parent="PlayerArea/AnimatedSprite2D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_bk8yl")
-}
+frame = 4
+frame_progress = 0.687082

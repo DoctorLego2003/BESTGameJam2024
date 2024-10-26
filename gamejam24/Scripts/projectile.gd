@@ -1,5 +1,5 @@
 extends Node2D
-@export var speed = 250
+@export var speed = 300
 @export var damage = 1
 var planetPos 
 
