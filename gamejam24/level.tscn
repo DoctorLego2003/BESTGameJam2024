@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy0myxu00505g"]
+[gd_scene load_steps=4 format=3 uid="uid://7a5k3375gp77"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ajou1"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_nkldn"]
-[ext_resource type="PackedScene" uid="uid://c2r3jwpqtj1c" path="res://planet.tscn" id="2_d3gse"]
-[ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="3_rj6o6"]
+[ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ajou1")
@@ -18,6 +17,3 @@ position = Vector2(1, 2)
 offset = Vector2(577, 323)
 
 [node name="Planet" parent="." instance=ExtResource("2_d3gse")]
-
-[node name="Pause" parent="." instance=ExtResource("3_rj6o6")]
-visible = false
