@@ -894,4 +894,3 @@ libraries = {
 [node name="Orbit" parent="Planet" instance=ExtResource("3_p54uk")]
 
 [node name="PlayerOrbit" parent="Planet" instance=ExtResource("4_x3whq")]
-speed = 3
