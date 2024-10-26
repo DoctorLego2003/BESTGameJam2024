@@ -82,5 +82,7 @@ script = ExtResource("1_kyisw")
 rotation = 1.5708
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_5x2jx")
-frame_progress = 0.937804
+frame = 12
+frame_progress = 0.921595
