@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7a5k3375gp77"]
+[gd_scene load_steps=5 format=3 uid="uid://7a5k3375gp77"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ajou1"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_nkldn"]
 [ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
+[ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="4_m40se"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ajou1")
@@ -17,3 +18,15 @@ position = Vector2(1, 2)
 offset = Vector2(577, 323)
 
 [node name="Planet" parent="." instance=ExtResource("2_d3gse")]
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 18.0
+text = "PAUSE"
+
+[node name="PauseScreen" parent="." instance=ExtResource("4_m40se")]
+visible = false
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pausse_button_pressed"]

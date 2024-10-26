@@ -2,6 +2,8 @@ extends Node2D
 func _ready() -> void:
 	pass
 
-func _on_pause_button_pressed() -> void:
+
+func _on_pausse_button_pressed() -> void:
 	get_tree().paused = true
-	show()
+	$PauseScreen.visible = true
+	$PauseButton.visible = false
