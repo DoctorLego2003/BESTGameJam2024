@@ -13,8 +13,8 @@ public partial class Asteroid : Enemy
 	{
 		GD.Print(new Vector2
 		(
-			GlobalPosition.X + (Speed * MathF.Atan2(577, 323) * Delta),
-			GlobalPosition.Y
+			GlobalPosition.X + (Speed * MathF.Cos(MathF.Atan2(577, 323)) * Delta),
+			GlobalPosition.Y + (Speed * MathF.Sin(MathF.Atan2(577, 323)) * Delta)
 		));
 	}
 }
