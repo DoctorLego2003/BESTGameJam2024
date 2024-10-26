@@ -7,9 +7,9 @@ public partial class Asteroid : Enemy
 
 	public override void _Ready()
 	{
-		int Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(360);
+		float Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(2*((int)(MathF.PI*100)))/100;
 		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(200) + 800;
-		GlobalPosition = new Vector2(Distance * MathF.Cos(Angle), Distance * MathF.Sin(Angle));
+		GlobalPosition = new Vector2(577 + Distance * MathF.Cos(Angle), 323 + Distance * MathF.Sin(Angle));
 	}
 
 	public override void _Process(double delta)
@@ -18,10 +18,17 @@ public partial class Asteroid : Enemy
 	}
 	public new void Behavior(float Delta)
 	{
-		GlobalPosition = new Vector2
+		GlobalPosition -= new Vector2
 		(
-			GlobalPosition.X + (Speed * MathF.Cos(MathF.Atan2(323, 577)) * Delta),
-			GlobalPosition.Y + (Speed * MathF.Sin(MathF.Atan2(323, 577)) * Delta)
+			Speed * MathF.Sin(MathF.Atan2(
+				GlobalPosition.X - new Vector2(577, 323).X,
+				GlobalPosition.Y - new Vector2(577, 323).Y 
+				)) * Delta,
+			Speed * MathF.Cos(MathF.Atan2(
+				GlobalPosition.X - new Vector2(577, 323).X,
+				GlobalPosition.Y - new Vector2(577, 323).Y
+				)) * Delta
 		);
+		GD.Print("Pos: " + GlobalPosition);
 	}
 }
