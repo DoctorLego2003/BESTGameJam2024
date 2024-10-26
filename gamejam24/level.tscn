@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_nkldn"]
 [ext_resource type="PackedScene" uid="uid://c2r3jwpqtj1c" path="res://planet.tscn" id="2_d3gse"]
 [ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="4_m40se"]
-[ext_resource type="PackedScene" uid="uid://hkcofjo301ij" path="res://Cards.tscn" id="5_i7mb0"]
-[ext_resource type="Script" path="res://Scripts/Asteroid.cs" id="5_8knt5"]
 [ext_resource type="PackedScene" path="res://Cards.tscn" id="5_i7mb0"]
 [ext_resource type="Script" path="res://Scripts/WaveManager.cs" id="6_hep6x"]
 [ext_resource type="PackedScene" uid="uid://be4y4xgtq7ybv" path="res://Prefabs/asteroid.tscn" id="7_2h5vm"]
@@ -54,7 +52,6 @@ offset_bottom = 42.0
 [node name="WaveManager" type="Node" parent="."]
 script = ExtResource("6_hep6x")
 Enemies = [ExtResource("7_2h5vm")]
-Tokens = PackedInt32Array(5)
 
 [node name="ModManager" type="Node" parent="."]
 script = ExtResource("7_4d0dn")

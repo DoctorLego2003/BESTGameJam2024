@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://co5o7c4b5cm3k"]
 
 [ext_resource type="Script" path="res://Scripts/turret_missile.gd" id="1_qcdfy"]
-[ext_resource type="Texture2D" uid="uid://1kj4gyolb0ya" path="res://assets/art/sprites/bullet.png" id="2_ym83c"]
+[ext_resource type="Texture2D" uid="uid://bjhskgp0ok361" path="res://assets/art/sprites/bullet.png" id="2_ym83c"]
 
 [node name="TurretMissile" type="Node2D"]
 script = ExtResource("1_qcdfy")
