@@ -46,13 +46,6 @@ offset_left = 519.0
 offset_top = 281.0
 offset_right = 551.0
 offset_bottom = 301.0
-allow_reselect = true
-item_count = 3
-popup/item_0/text = "easy"
-popup/item_1/text = "medium"
-popup/item_1/id = 1
-popup/item_2/text = "hard"
-popup/item_2/id = 2
 
 [node name="Sound" type="CheckButton" parent="Panel"]
 visible = false
