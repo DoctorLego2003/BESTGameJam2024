@@ -11,6 +11,7 @@ height = 37.5
 script = ExtResource("1_s5ixq")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -15)
 scale = Vector2(0.8, 0.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
