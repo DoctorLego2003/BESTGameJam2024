@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwslqpwoytc8x"]
+[gd_scene load_steps=9 format=3 uid="uid://dwslqpwoytc8x"]
 
 [ext_resource type="Script" path="res://Scripts/unpause.gd" id="1_6tjei"]
+
+[sub_resource type="Theme" id="Theme_rvcsi"]
+default_font_size = 20
 
 [sub_resource type="Theme" id="Theme_e2ij7"]
 default_font_size = 75
@@ -33,30 +36,53 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6tjei")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="PauseScreen" type="Panel" parent="."]
 z_index = 100
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Music" type="CheckButton" parent="Panel"]
-visible = false
+[node name="Settings" type="MenuBar" parent="PauseScreen"]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 281.0
-offset_right = 551.0
-offset_bottom = 301.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Sound" type="CheckButton" parent="Panel"]
-visible = false
+[node name="Panel2" type="Panel" parent="PauseScreen/Settings"]
+offset_left = 410.0
+offset_top = 376.0
+offset_right = 720.0
+offset_bottom = 458.0
+
+[node name="Panel" type="Panel" parent="PauseScreen/Settings"]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 242.0
-offset_right = 586.0
-offset_bottom = 273.0
+offset_left = 373.0
+offset_top = 198.0
+offset_right = 737.0
+offset_bottom = 311.0
+
+[node name="Music" type="CheckButton" parent="PauseScreen/Settings"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 206.0
+offset_right = 538.0
+offset_bottom = 242.0
+scale = Vector2(2.5, 2.5)
+theme = SubResource("Theme_rvcsi")
+button_pressed = true
+text = "MUSIC"
+
+[node name="Sound" type="CheckButton" parent="PauseScreen/Settings"]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 374.0
+offset_right = 535.0
+offset_bottom = 405.0
+scale = Vector2(2.5, 2.5)
+button_pressed = true
 text = "SOUND"
 
-[node name="MenuBar" type="MenuBar" parent="Panel"]
+[node name="PauseSettings" type="MenuBar" parent="PauseScreen"]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -65,7 +91,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UnPause" type="Button" parent="Panel/MenuBar"]
+[node name="UnPause" type="Button" parent="PauseScreen/PauseSettings"]
 layout_mode = 0
 offset_left = 351.0
 offset_top = 50.0
@@ -77,7 +103,7 @@ shortcut = SubResource("Shortcut_04lhn")
 shortcut_in_tooltip = false
 text = "CONTINUE"
 
-[node name="QuitGame" type="Button" parent="Panel/MenuBar"]
+[node name="QuitGame" type="Button" parent="PauseScreen/PauseSettings"]
 layout_mode = 0
 offset_left = 351.0
 offset_top = 500.0
@@ -87,7 +113,7 @@ pivot_offset = Vector2(225, 0)
 theme = SubResource("Theme_g20eh")
 text = "QUIT GAME"
 
-[node name="Settings" type="Button" parent="Panel/MenuBar"]
+[node name="Settings" type="Button" parent="PauseScreen/PauseSettings"]
 layout_mode = 0
 offset_left = 351.0
 offset_top = 200.0
@@ -97,7 +123,7 @@ pivot_offset = Vector2(225, 0)
 theme = SubResource("Theme_mwty4")
 text = "SETTINGS"
 
-[node name="Credits" type="Button" parent="Panel/MenuBar"]
+[node name="Credits" type="Button" parent="PauseScreen/PauseSettings"]
 layout_mode = 0
 offset_left = 351.0
 offset_top = 350.0
@@ -107,5 +133,6 @@ pivot_offset = Vector2(225, 0)
 theme = SubResource("Theme_cv7wh")
 text = "CREDITS"
 
-[connection signal="pressed" from="Panel/MenuBar/UnPause" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/MenuBar/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="PauseScreen/PauseSettings/UnPause" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PauseScreen/PauseSettings/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="PauseScreen/PauseSettings/Settings" to="." method="_on_settings_pressed"]

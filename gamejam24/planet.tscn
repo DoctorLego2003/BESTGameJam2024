@@ -1,8 +1,8 @@
-[gd_scene load_steps=129 format=3 uid="uid://c2r3jwpqtj1c"]
+[gd_scene load_steps=129 format=3 uid="uid://daapqgmh3lpiv"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_jcad6"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
-[ext_resource type="PackedScene" uid="uid://di31xe5gpdlbe" path="res://orbit.tscn" id="3_p54uk"]
+[ext_resource type="PackedScene" uid="uid://byt4hskm2l4i4" path="res://orbit.tscn" id="3_p54uk"]
 [ext_resource type="PackedScene" uid="uid://b2781laefr8yp" path="res://PlayerOrbit.tscn" id="4_x3whq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agi8i"]
