@@ -1,109 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdf05ekffjv8e"]
+[gd_scene load_steps=4 format=3 uid="uid://bdf05ekffjv8e"]
 
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_s5ixq"]
-[ext_resource type="Texture2D" uid="uid://dgcvd3hxb84sr" path="res://assets/art/sprites/player_shell_01.png" id="2_xbqbe"]
-[ext_resource type="Texture2D" uid="uid://cdku1pe0s16re" path="res://assets/art/effects/Free Smoke Fx  Pixel 06.png" id="3_w4brk"]
+[ext_resource type="Texture2D" uid="uid://bylv133i1xyig" path="res://assets/art/sprites/player_shell_01.png" id="2_xbqbe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ec1xc"]
 radius = 8.75
 height = 37.5
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcwpd"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(0, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1qgv"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(64, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtt3i"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(128, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3774"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(192, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbm2i"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(256, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_502w3"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(320, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4q8kf"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(384, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0aln4"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(448, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7lv8d"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(512, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_04fgf"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(576, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jyrqe"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(640, 1344, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xc7t1"]
-atlas = ExtResource("3_w4brk")
-region = Rect2(704, 1344, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ilqw7"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lcwpd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h1qgv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xtt3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a3774")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbm2i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_502w3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4q8kf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0aln4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7lv8d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_04fgf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jyrqe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xc7t1")
-}],
-"loop": false,
-"name": &"smoke",
-"speed": 15.0
-}]
 
 [node name="Projectile" type="Node2D"]
 scale = Vector2(0.8, 0.8)
@@ -121,9 +23,3 @@ shape = SubResource("CapsuleShape2D_ec1xc")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(1.19209e-07, 1.19209e-06)
 texture = ExtResource("2_xbqbe")
-
-[node name="SmokeAnimation" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ilqw7")
-animation = &"smoke"
-frame = 11
-frame_progress = 1.0

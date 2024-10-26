@@ -64,6 +64,7 @@ offset_right = 972.0
 offset_bottom = 441.0
 
 [node name="BackgroundSound" type="Panel" parent="PauseScreen/Settings"]
+layout_mode = 0
 offset_left = 421.0
 offset_top = 322.0
 offset_right = 700.0

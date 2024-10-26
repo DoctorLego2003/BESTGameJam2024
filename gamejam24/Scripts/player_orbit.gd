@@ -32,7 +32,11 @@ func _input(event: InputEvent) -> void:
 		var bullet = projectile.instantiate()
 		get_parent().add_child(bullet)
 		shoot_animation.play(&"shooting1")
-		bullet.get_node("SmokeAnimation").play(&"smoke")
+		var smoke = bullet.get_parent().get_node("SmokeAnimation")
+		smoke.global_position = bullet.global_position
+		smoke.global_rotation = bullet.global_rotation
+		smoke.play(&"smoke")
+		
 		hasBullet = false
 		$Timer.start()
 
