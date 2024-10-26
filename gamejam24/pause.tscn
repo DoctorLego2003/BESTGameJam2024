@@ -46,25 +46,13 @@ offset_right = 1234.0
 offset_bottom = 152.0
 text = "QUIT GAME"
 
-[node name="OptionButton" type="OptionButton" parent="Panel"]
+[node name="CheckButton" type="CheckButton" parent="Panel"]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 281.0
-offset_right = 551.0
-offset_bottom = 301.0
-allow_reselect = true
-item_count = 3
-popup/item_0/text = "easy"
-popup/item_1/text = "medium"
-popup/item_2/text = "hard"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
-layout_mode = 0
-offset_left = 421.0
-offset_top = 285.0
-offset_right = 521.0
-offset_bottom = 308.0
-text = "DIFFICULTY:"
+offset_left = 487.341
+offset_top = 219.712
+offset_right = 586.341
+offset_bottom = 250.712
+text = "MUSIC"
 
 [connection signal="pressed" from="Panel/UnPause" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/QuitGame" to="." method="_on_quit_game_pressed"]
