@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+[gd_scene load_steps=7 format=3 uid="uid://crim5foxkpoi2"]
+=======
 [gd_scene load_steps=5 format=3 uid="uid://crim5foxkpoi2"]
+>>>>>>> b34d1d86d354fb12b1662c0c4193b3d09a52f7eb
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
+[ext_resource type="Script" path="res://Scripts/continue.gd" id="2_kiegf"]
 [ext_resource type="Script" path="res://Scripts/Card1.gd" id="2_wlnmp"]
 [ext_resource type="Script" path="res://Scripts/Card2.gd" id="3_8txfe"]
 [ext_resource type="Script" path="res://Scripts/Card3.gd" id="4_u28i1"]
+
+[sub_resource type="Theme" id="Theme_3i4ct"]
+default_font_size = 75
 
 [node name="Cards" type="Node2D"]
 
@@ -14,33 +22,71 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_uh4am")
+metadata/_edit_use_anchors_ = true
 
 [node name="Card1" type="Button" parent="CardGenerator"]
-layout_mode = 0
-offset_left = 111.0
-offset_top = 77.0
-offset_right = 365.0
-offset_bottom = 495.0
+process_mode = 2
+layout_mode = 2
+anchor_left = 0.75
+anchor_top = 0.775
+anchor_right = 0.75
+anchor_bottom = 0.775
+offset_left = 88.0
+offset_top = 109.0
+offset_right = 418.0
+offset_bottom = 529.0
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Card2" type="Button" parent="CardGenerator"]
-layout_mode = 0
-offset_left = 405.0
-offset_top = 64.0
-offset_right = 659.0
-offset_bottom = 482.0
+process_mode = 2
+layout_mode = 2
+anchor_left = 0.75
+anchor_top = 0.775
+anchor_right = 0.75
+anchor_bottom = 0.775
+offset_left = 415.0
+offset_top = 109.0
+offset_right = 745.0
+offset_bottom = 529.0
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Card3" type="Button" parent="CardGenerator"]
-layout_mode = 0
-offset_left = 691.0
-offset_top = 60.0
-offset_right = 945.0
-offset_bottom = 478.0
+process_mode = 2
+layout_mode = 2
+anchor_left = 0.75
+anchor_top = 0.775
+anchor_right = 0.75
+anchor_bottom = 0.775
+offset_left = 742.0
+offset_top = 109.0
+offset_right = 1072.0
+offset_bottom = 529.0
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="CardGenerator"]
+process_mode = 2
+visible = false
+offset_left = 366.0
+offset_top = 524.0
+offset_right = 828.0
+offset_bottom = 641.0
+theme = SubResource("Theme_3i4ct")
+text = "CONTINUE"
+script = ExtResource("2_kiegf")
 
 [node name="ActivationFunctions" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Card1" type="Control" parent="ActivationFunctions"]
 layout_mode = 3
@@ -48,19 +94,33 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_wlnmp")
+metadata/_edit_use_anchors_ = true
 
 [node name="Card2" type="Control" parent="ActivationFunctions"]
-anchors_preset = 0
+layout_mode = 1
+anchor_left = -0.575
+anchor_top = -0.525
+anchor_right = -0.575
+anchor_bottom = -0.525
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_8txfe")
+metadata/_edit_use_anchors_ = true
 
 [node name="Card3" type="Control" parent="ActivationFunctions"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchor_left = 0.075
+anchor_top = 0.125
+anchor_right = 0.075
+anchor_bottom = 0.125
+offset_left = -21.0
+offset_top = -28.0
+offset_right = 19.0
+offset_bottom = 12.0
 script = ExtResource("4_u28i1")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CardGenerator/Card1" to="CardGenerator" method="_on_card_1_pressed"]
 [connection signal="pressed" from="CardGenerator/Card2" to="CardGenerator" method="_on_card_2_pressed"]
 [connection signal="pressed" from="CardGenerator/Card3" to="CardGenerator" method="_on_card_3_pressed"]
+[connection signal="pressed" from="CardGenerator/Continue" to="CardGenerator/Continue" method="_on_pressed"]
