@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4i35dacqwour"]
+
+[ext_resource type="Script" path="res://miner.gd" id="1_kyisw"]
+[ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_la0dx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li6mv"]
+atlas = ExtResource("1_la0dx")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mnah"]
+atlas = ExtResource("1_la0dx")
+region = Rect2(46, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykqof"]
+atlas = ExtResource("1_la0dx")
+region = Rect2(92, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy1fp"]
+atlas = ExtResource("1_la0dx")
+region = Rect2(138, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5x2jx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Miner" type="Node2D"]
+script = ExtResource("1_kyisw")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_5x2jx")
+frame_progress = 0.937804

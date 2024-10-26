@@ -1,9 +1,107 @@
-[gd_scene load_steps=129 format=3 uid="uid://daapqgmh3lpiv"]
+[gd_scene load_steps=141 format=3 uid="uid://c2r3jwpqtj1c"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_jcad6"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
-[ext_resource type="PackedScene" uid="uid://byt4hskm2l4i4" path="res://orbit.tscn" id="3_p54uk"]
+[ext_resource type="PackedScene" uid="uid://di31xe5gpdlbe" path="res://orbit.tscn" id="3_p54uk"]
 [ext_resource type="PackedScene" uid="uid://b2781laefr8yp" path="res://PlayerOrbit.tscn" id="4_x3whq"]
+[ext_resource type="Texture2D" uid="uid://cdku1pe0s16re" path="res://assets/art/effects/Free Smoke Fx  Pixel 06.png" id="5_vqcfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcwpd"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(0, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1qgv"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(64, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtt3i"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(128, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3774"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(192, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm2i"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(256, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_502w3"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(320, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q8kf"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(384, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aln4"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(448, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lv8d"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(512, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04fgf"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(576, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyrqe"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(640, 1344, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc7t1"]
+atlas = ExtResource("5_vqcfl")
+region = Rect2(704, 1344, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_imvx1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcwpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1qgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtt3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3774")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbm2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_502w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q8kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aln4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lv8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04fgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyrqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc7t1")
+}],
+"loop": false,
+"name": &"smoke",
+"speed": 15.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agi8i"]
 radius = 65.0692
@@ -861,19 +959,16 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Animation" id="Animation_gdsbq"]
-resource_name = "moon_animation"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdejl"]
-_data = {
-"moon_animation": SubResource("Animation_gdsbq")
-}
-
 [node name="Planet" type="Node2D"]
 
 [node name="Planet" type="Area2D" parent="."]
 position = Vector2(577, 323)
 script = ExtResource("1_jcad6")
+
+[node name="SmokeAnimation" type="AnimatedSprite2D" parent="Planet"]
+z_index = 60
+sprite_frames = SubResource("SpriteFrames_imvx1")
+animation = &"smoke"
 
 [node name="MoonCollision" type="CollisionShape2D" parent="Planet"]
 shape = SubResource("CircleShape2D_agi8i")
@@ -884,12 +979,6 @@ sprite_frames = SubResource("SpriteFrames_qn3kw")
 animation = &"moon_rotation"
 frame_progress = 0.980776
 metadata/_edit_lock_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet/MoonAnimation"]
-root_node = NodePath("../../..")
-libraries = {
-"": SubResource("AnimationLibrary_bdejl")
-}
 
 [node name="Orbit" parent="Planet" instance=ExtResource("3_p54uk")]
 
