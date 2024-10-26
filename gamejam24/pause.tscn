@@ -52,12 +52,19 @@ offset_left = 519.0
 offset_top = 281.0
 offset_right = 551.0
 offset_bottom = 301.0
+allow_reselect = true
 item_count = 3
 popup/item_0/text = "easy"
 popup/item_1/text = "medium"
-popup/item_1/id = 1
 popup/item_2/text = "hard"
-popup/item_2/id = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 285.0
+offset_right = 521.0
+offset_bottom = 308.0
+text = "DIFFICULTY:"
 
 [connection signal="pressed" from="Panel/UnPause" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/QuitGame" to="." method="_on_quit_game_pressed"]
