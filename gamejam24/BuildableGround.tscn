@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://btniuy4a8ovgy"]
+[gd_scene load_steps=4 format=3 uid="uid://btniuy4a8ovgy"]
 
 [ext_resource type="Script" path="res://Scripts/buildable_ground.gd" id="1_lnexb"]
+[ext_resource type="Texture2D" uid="uid://c88f3ywgj01sa" path="res://assets/art/sprites/slot_icon.png" id="2_65w7c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svmci"]
 radius = 24.0
@@ -10,6 +11,7 @@ height = 96.0
 script = ExtResource("1_lnexb")
 
 [node name="Area2D" type="Area2D" parent="."]
+process_mode = 3
 collision_layer = 16
 collision_mask = 16
 
@@ -17,28 +19,9 @@ collision_mask = 16
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_svmci")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 239.0
-offset_top = 356.0
-offset_right = 967.0
-offset_bottom = 651.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Button" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button2" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button3" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_65w7c")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

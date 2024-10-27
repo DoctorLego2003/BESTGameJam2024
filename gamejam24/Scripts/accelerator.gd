@@ -12,8 +12,9 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	area.get_parent().speed *= 2
-	$Area2D/IdleAccAnimation.play('accelerating')
+	if area.is_in_group("Projectiles"):
+		area.get_parent().speed *= 2
+		$Area2D/IdleAccAnimation.play('accelerating')
 
 
 func _on_idle_acc_animation_animation_finished() -> void:

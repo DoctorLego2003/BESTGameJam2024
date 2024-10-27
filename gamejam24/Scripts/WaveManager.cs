@@ -64,11 +64,6 @@ public partial class WaveManager : Node
 		SpawnNextWave(Tokens[CurrentWave], this.ScriptEnemies.ToArray());
 	}
 
-	public override void _Process(double delta)
-	{
-
-	}
-
 	private async void SpawnNextWave(int Credits, Enemy[] Enemies)
 	{
 		int RemainingTokens = Credits;
