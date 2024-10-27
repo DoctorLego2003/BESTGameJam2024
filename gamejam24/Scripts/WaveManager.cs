@@ -78,34 +78,38 @@ public partial class WaveManager : Node
 		// Sort the enemies by cost to prevent the expensive ones from hogging all of the tokens
 		EnabledEnemies.OrderByDescending(s => s.Cost);
 		GD.Print("Sorted Enemies by Cost");
-
-		// Iterate over all of the enemies to decide what to spawn
-		foreach (Enemy _Enemy in Enemies)
-		{
-			// Randomly decide how many credits to spend on this enemy
-			int TokensToSpend = System.Security.Cryptography.RandomNumberGenerator.GetInt32(RemainingTokens);
-			GD.Print("Willing to spend "+TokensToSpend+" Tokens");
-			GD.Print("Fits: " + Fits(_Enemy, TokensToSpend));
-			// Spawn as many of the enemies as we can with how many credits we're willing to spend on them
-			if (Fits(_Enemy, TokensToSpend))
+		//while (RemainingTokens > 0)
+		//{
+			GD.Print("Remaining Tokens: " + RemainingTokens);
+			foreach (Enemy _Enemy in Enemies)
+			// Iterate over all of the enemies to decide what to spawn
 			{
-				int NumberToSpawn = TokensToSpend / _Enemy.Cost;
-				GD.Print("Going to add "+NumberToSpawn+" Enemies");
-				for (int Index = 0; Index < NumberToSpawn; Index++)
+				// Randomly decide how many credits to spend on this enemy
+				int TokensToSpend = System.Security.Cryptography.RandomNumberGenerator.GetInt32(RemainingTokens);
+				GD.Print("Willing to spend "+TokensToSpend+" Tokens");
+				GD.Print("Fits: " + Fits(_Enemy, TokensToSpend));
+				// Spawn as many of the enemies as we can with how many credits we're willing to spend on them
+				if (Fits(_Enemy, TokensToSpend))
 				{
-					Enemy TMPENEMY = (Enemy)_Enemy.Duplicate();
-					AddChild(TMPENEMY);
-					TMPENEMY.Reparent(GetTree().Root.GetNode("Level").GetNode("Enemy"));
-					TMPENEMY.Name = "_Enemy_"+Index;
-					TMPENEMY.RandomizePosition();
-					TMPENEMY.Visible=true;
-					TMPENEMY.ProcessMode=ProcessModeEnum.Inherit;
-					GD.Print("Added Enemy at " + TMPENEMY.GetPath() + " with coords " + TMPENEMY.GlobalPosition);
-					GetParent().GetNode("Enemy").PrintTreePretty();
-					GetParent().GetNode("Enemy").GetTree().Paused = true;
+					int NumberToSpawn = TokensToSpend / _Enemy.Cost;
+					GD.Print("Going to add "+NumberToSpawn+" Enemies");
+					for (int Index = 0; Index < NumberToSpawn; Index++)
+					{
+						Enemy TMPENEMY = (Enemy)_Enemy.Duplicate();
+						AddChild(TMPENEMY);
+						TMPENEMY.Reparent(GetTree().Root.GetNode("Level").GetNode("Enemy"));
+						TMPENEMY.Name = "_Enemy_"+Index;
+						TMPENEMY.RandomizePosition();
+						TMPENEMY.Visible=true;
+						TMPENEMY.ProcessMode=ProcessModeEnum.Inherit;
+						GD.Print("Added Enemy at " + TMPENEMY.GetPath() + " with coords " + TMPENEMY.GlobalPosition);
+						GetParent().GetNode("Enemy").PrintTreePretty();
+						GetParent().GetNode("Enemy").GetTree().Paused = true;
+						RemainingTokens -= _Enemy.Cost;
+					}
 				}
 			}
-		}
+		//}
 	}
 
 	private Boolean Fits(Enemy _Enemy, int RemainingTokens)
