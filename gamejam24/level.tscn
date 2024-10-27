@@ -63,10 +63,6 @@ process_mode = 3
 stream = ExtResource("9_uto2j")
 parameters/looping = false
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-
 [node name="Enemy" type="Node" parent="."]
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
