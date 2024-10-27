@@ -16,6 +16,7 @@ func _ready() -> void:
 	# Ensure all images in the directory are loaded at startup
 	#load_card_images()
 	_new_wave()
+	get_tree().root.print_tree_pretty()
 	#pass
 
 
@@ -45,6 +46,8 @@ func _on_continue_pressed() -> void:
 	$Card3.visible = false
 	$Continue.visible = false
 	get_tree().paused = false
+	get_parent().get_parent().get_node("Enemy").get_tree().paused = false
+	
 
 func _new_wave() -> void:
 	var x = RandomNumberGenerator.new()
@@ -64,6 +67,8 @@ func _new_wave() -> void:
 	$Card3.disabled = false
 	
 	get_tree().paused = true
+	get_parent().get_parent().print_tree_pretty()
+	get_parent().get_parent().get_node("Enemy").get_tree().paused = true
 	
 	$Card1.icon = load("res://cards/normal/card" + str(rx) + ".png")
 	$Card2.icon = load("res://cards/normal/card" + str(ry) + ".png")

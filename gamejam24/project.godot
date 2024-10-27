@@ -35,6 +35,7 @@ project/assembly_name="GameJam24"
 [global_group]
 
 Enemy=""
+Projectiles=""
 
 [input]
 
