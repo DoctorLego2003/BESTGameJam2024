@@ -43,6 +43,7 @@ animations = [{
 }]
 
 [node name="Alien" type="Sprite2D"]
+offset = 0.0
 script = ExtResource("2_nv11j")
 Cost = 1
 Health = 5
