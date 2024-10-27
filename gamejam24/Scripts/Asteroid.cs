@@ -24,6 +24,7 @@ public partial class Asteroid : Enemy
 	{
 		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 65)
 		{
+			DealDamage();
 			Die();
 		}
 		GlobalPosition -= new Vector2
