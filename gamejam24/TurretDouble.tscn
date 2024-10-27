@@ -2,63 +2,63 @@
 
 [ext_resource type="Script" path="res://turret_double.gd" id="1_2gkof"]
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="2_jwn5i"]
-[ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="3_yr6v7"]
+[ext_resource type="Texture2D" uid="uid://dbemq5nd1ilpe" path="res://assets/art/sprites/turret_01_upgraded_01.png" id="3_hmgkx"]
 [ext_resource type="AudioStream" uid="uid://d1h7tdg08jbp2" path="res://assets/sound/shoot_sound.wav" id="4_gdqn7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mia22"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(0, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcf31"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(0, 0, 20, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_csq31"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(84, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r342s"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(21, 0, 20, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_abiid"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(21, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5ph4"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(42, 0, 20, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwd21"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(105, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j65jh"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(63, 0, 20, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwsua"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(42, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfl0g"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(84, 0, 20, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hg6mf"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(126, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_edfo5"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(105, 0, 20, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7i68v"]
-atlas = ExtResource("3_yr6v7")
-region = Rect2(63, 6, 20, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3inv"]
+atlas = ExtResource("3_hmgkx")
+region = Rect2(126, 0, 20, 45)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n1vrc"]
 animations = [{
 "frames": [{
 "duration": 2.0,
-"texture": SubResource("AtlasTexture_mia22")
+"texture": SubResource("AtlasTexture_pcf31")
 }, {
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_csq31")
+"texture": SubResource("AtlasTexture_r342s")
 }, {
 "duration": 2.0,
-"texture": SubResource("AtlasTexture_abiid")
+"texture": SubResource("AtlasTexture_g5ph4")
 }, {
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_fwd21")
+"texture": SubResource("AtlasTexture_j65jh")
 }, {
 "duration": 2.0,
-"texture": SubResource("AtlasTexture_xwsua")
+"texture": SubResource("AtlasTexture_hfl0g")
 }, {
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_hg6mf")
+"texture": SubResource("AtlasTexture_edfo5")
 }, {
 "duration": 14.0,
-"texture": SubResource("AtlasTexture_7i68v")
+"texture": SubResource("AtlasTexture_e3inv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mia22")
+"texture": SubResource("AtlasTexture_pcf31")
 }],
 "loop": false,
 "name": &"default",
@@ -78,7 +78,7 @@ offset = Vector2(0.5, 0)
 
 [node name="TurretCannon" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n1vrc")
-frame = 6
+frame = 7
 frame_progress = 1.0
 offset = Vector2(0, -6)
 
