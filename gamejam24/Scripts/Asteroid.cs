@@ -43,6 +43,6 @@ public partial class Asteroid : Enemy
 
     public override void DealDamage()
     {
-        GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", GetTree().Root.GetNode("Level/ModManager").Get("HealthMod"));
+        GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
     }
 }
