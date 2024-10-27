@@ -80,7 +80,7 @@ public partial class WaveManager : Node
 		GD.Print("Sorted Enemies by Cost");
 
 		// Add Enemies as long as we have tokens
-		for (int Limiter = 10; RemainingTokens > 0 && Limiter > 0; Limiter--)
+		for (int Limiter = 100; RemainingTokens > 0 && Limiter > 0; Limiter--)
 		{
 			GD.Print("Remaining Tokens: " + RemainingTokens);
 			foreach (Enemy _Enemy in Enemies)
