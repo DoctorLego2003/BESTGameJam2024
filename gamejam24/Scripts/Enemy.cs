@@ -1,7 +1,7 @@
 using Godot;
 
 [Tool]
-public abstract partial class Enemy : Node2D
+public abstract partial class Enemy : Sprite2D
 {
 	[Export]
 	public int Cost {get;set;}
@@ -12,7 +12,7 @@ public abstract partial class Enemy : Node2D
 	[Export]
 	public int Speed {get;set;}
 	[Export]
-	public GodotObject[] Sprite {get;set;}
+	public Texture2D[] Sprite {get;set;}
 	[Export]
 	public int MinimalWave {get;set;}
 
