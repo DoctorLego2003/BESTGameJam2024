@@ -15,6 +15,7 @@ public partial class Asteroid : Enemy
 
 	public override void _Process(double delta)
 	{
+		if (Engine.IsEditorHint()){return;}
 		Behavior((float)delta);
 	}
 	public new void Behavior(float Delta)
