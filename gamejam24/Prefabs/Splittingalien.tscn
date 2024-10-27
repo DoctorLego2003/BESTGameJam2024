@@ -52,6 +52,7 @@ Damage = 4
 Speed = 50
 Sprite = []
 MinimalWave = 3
+ScrapReward = 10
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
@@ -61,4 +62,4 @@ shape = SubResource("CapsuleShape2D_6jjxm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tjyd3")
 animation = &"defeat"
-frame_progress = 0.83041
+frame_progress = 0.814968
