@@ -12,10 +12,17 @@ public partial class Alien : Enemy
 		float Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(2*((int)(MathF.PI*100)))/100;
 		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(800) + 800;
 		GlobalPosition = new Vector2(577 + Distance * MathF.Cos(Angle), 323 + Distance * MathF.Sin(Angle));
-		Direction = MathF.Atan2(
-				GlobalPosition.X - new Vector2(577, 323).X,
-				GlobalPosition.Y - new Vector2(577, 323).Y);
+		SetDirection();
 	}
+
+    public override void _Ready()
+    {
+        SetDirection();
+    }
+
+    public void SetDirection(){Direction = MathF.Atan2(
+				GlobalPosition.X - new Vector2(577, 323).X,
+				GlobalPosition.Y - new Vector2(577, 323).Y);}
 
 	public override void _Process(double delta)
 	{
