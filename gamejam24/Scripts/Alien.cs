@@ -29,6 +29,12 @@ public partial class Alien : Enemy
 			DealDamage();
 			Die();
 		}
+
+		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 1700)
+		{
+			Die();
+		}
+
 		GlobalPosition -= new Vector2
 		(
 			Speed * MathF.Sin(this.Direction) * Delta,

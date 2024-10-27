@@ -3,6 +3,7 @@ extends Control
 @onready var miner = load("res://Miner.tscn")
 @onready var turret = load("res://Turret.tscn")
 @onready var acc = load("res://Accelerator.tscn")
+var cost = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HBoxContainer/Miner/Container/AnimatedSprite2D.play()
@@ -12,17 +13,23 @@ func _ready() -> void:
 
 
 func _on_miner_pressed() -> void:
-	ground.add_building(miner)
-	self.visible = false
+	if get_tree().root.get_node("Level/ModManager").Money >= cost:
+		ground.add_building(miner)
+		self.visible = false
+		get_tree().root.get_node("Level/ModManager").Money -= cost
 
 
 func _on_turret_pressed() -> void:
-	ground.add_building(turret)
-	self.visible = false
+	if get_tree().root.get_node("Level/ModManager").Money >= cost:
+		ground.add_building(turret)
+		self.visible = false
+		get_tree().root.get_node("Level/ModManager").Money -= cost
 
 func _on_accelerator_pressed() -> void:
-	ground.add_building(acc)
-	self.visible = false
+	if get_tree().root.get_node("Level/ModManager").Money >= cost:
+		ground.add_building(acc)
+		self.visible = false
+		get_tree().root.get_node("Level/ModManager").Money -= cost
 
 
 func _on_visibility_changed() -> void:
