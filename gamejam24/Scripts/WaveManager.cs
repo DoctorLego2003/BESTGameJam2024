@@ -75,6 +75,7 @@ public partial class WaveManager : Node
 			}
 		}
 
+		// Sort
 		EnabledEnemies.OrderByDescending(s => s.Cost);
 		GD.Print("Sorted Enemies by Cost");
 		foreach (Enemy _Enemy in Enemies)
