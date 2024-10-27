@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="3_dgrwy"]
 [ext_resource type="Texture2D" uid="uid://bnilfpyna8dcr" path="res://assets/art/sprites/turret_01_upgraded_02.png" id="3_ll7pb"]
 
+[sub_resource type="Shortcut" id="Shortcut_apcoi"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcf31"]
 atlas = ExtResource("2_gbjr8")
 region = Rect2(0, 0, 20, 45)
@@ -65,6 +67,8 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="Shortcut" id="Shortcut_nnern"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4cpx"]
 atlas = ExtResource("3_ll7pb")
 region = Rect2(0, 0, 20, 30)
@@ -123,6 +127,7 @@ grow_vertical = 0
 [node name="TurretDouble" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_apcoi")
 
 [node name="Container" type="Container" parent="HBoxContainer/TurretDouble"]
 layout_mode = 1
@@ -160,6 +165,7 @@ Shoots twice the bullets"
 [node name="TurretThunk" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_nnern")
 
 [node name="Container" type="Container" parent="HBoxContainer/TurretThunk"]
 layout_mode = 1

@@ -222,6 +222,7 @@ text = "BACK"
 
 [node name="Controls" type="MenuBar" parent="PauseScreen"]
 visible = false
+layout_mode = 0
 offset_left = 14.0
 offset_right = 972.0
 offset_bottom = 441.0
@@ -232,6 +233,7 @@ scale = Vector2(1.60139, 1.625)
 texture = ExtResource("2_tp3wk")
 
 [node name="BackButton3" type="Button" parent="PauseScreen/Controls"]
+layout_mode = 0
 offset_left = 43.0
 offset_top = 456.0
 offset_right = 326.0

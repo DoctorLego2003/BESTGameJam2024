@@ -99,7 +99,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="TurretMissile" type="Node2D"]
+[node name="TurretMissile2" type="Node2D"]
 script = ExtResource("1_0r0tg")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Projectiles"]]

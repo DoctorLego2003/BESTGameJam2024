@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bv1fe5n5p8hum"]
+[gd_scene load_steps=35 format=3 uid="uid://bv1fe5n5p8hum"]
 
 [ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_fmxgy"]
 [ext_resource type="Script" path="res://Scripts/building_ui.gd" id="1_i332u"]
@@ -251,6 +251,13 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="InputEventKey" id="InputEventKey_41ccc"]
+device = -1
+keycode = 4194320
+
+[sub_resource type="Shortcut" id="Shortcut_r4dcs"]
+events = [SubResource("InputEventKey_41ccc")]
+
 [node name="BuildingUI" type="Control"]
 process_mode = 2
 layout_mode = 3
@@ -414,6 +421,7 @@ offset_right = 74.0
 offset_bottom = -211.0
 grow_horizontal = 2
 grow_vertical = 0
+shortcut = SubResource("Shortcut_r4dcs")
 text = "Exit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
