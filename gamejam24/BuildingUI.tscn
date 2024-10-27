@@ -1,10 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://bv1fe5n5p8hum"]
+[gd_scene load_steps=33 format=3 uid="uid://bv1fe5n5p8hum"]
 
 [ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_fmxgy"]
 [ext_resource type="Script" path="res://Scripts/building_ui.gd" id="1_i332u"]
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="2_4yu7v"]
 [ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="3_w5dnx"]
 [ext_resource type="Texture2D" uid="uid://ck3wky1q21ko" path="res://assets/art/sprites/accelarator.png" id="4_nidyr"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_raaeu"]
+device = -1
+keycode = 71
+unicode = 103
+
+[sub_resource type="Shortcut" id="Shortcut_snso2"]
+events = [SubResource("InputEventKey_raaeu")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_li6mv"]
 atlas = ExtResource("1_fmxgy")
@@ -78,6 +86,14 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="InputEventKey" id="InputEventKey_j5ogf"]
+device = -1
+keycode = 72
+unicode = 104
+
+[sub_resource type="Shortcut" id="Shortcut_xwyoe"]
+events = [SubResource("InputEventKey_j5ogf")]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mia22"]
 atlas = ExtResource("3_w5dnx")
 region = Rect2(0, 6, 20, 30)
@@ -137,6 +153,14 @@ animations = [{
 "name": &"default",
 "speed": 15.0
 }]
+
+[sub_resource type="InputEventKey" id="InputEventKey_0fgyi"]
+device = -1
+keycode = 74
+unicode = 106
+
+[sub_resource type="Shortcut" id="Shortcut_h34ds"]
+events = [SubResource("InputEventKey_0fgyi")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqicb"]
 atlas = ExtResource("4_nidyr")
@@ -253,6 +277,7 @@ grow_vertical = 0
 [node name="Miner" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_snso2")
 
 [node name="Container" type="Container" parent="HBoxContainer/Miner"]
 layout_mode = 1
@@ -284,6 +309,7 @@ Produces scrap"
 [node name="Turret" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_xwyoe")
 
 [node name="Container" type="Container" parent="HBoxContainer/Turret"]
 layout_mode = 1
@@ -333,6 +359,7 @@ Shoots of enemies"
 [node name="Accelerator" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_h34ds")
 
 [node name="Container" type="Container" parent="HBoxContainer/Accelerator"]
 layout_mode = 1
