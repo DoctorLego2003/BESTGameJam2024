@@ -28,6 +28,11 @@ public partial class WaveManager : Node
 
 	public override void _Ready()
 	{
+		this.Tokens = new int[10000];
+		for (int Index =0 ; Index<10000; Index++)
+		{
+			Tokens[Index] = (int)MathF.Pow((Index + 1), 2);
+		}
 		// Unpack all of the Enemies under me and pause them
 		foreach (PackedScene PackedEnemy in Enemies)
 		{

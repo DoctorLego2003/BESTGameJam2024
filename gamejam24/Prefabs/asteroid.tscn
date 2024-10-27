@@ -128,11 +128,11 @@ animations = [{
 texture = ExtResource("1_i8l5j")
 script = ExtResource("2_ykep2")
 Cost = 1
-Health = 5
+Health = 2
 Damage = 2
 Speed = 30
 Sprite = [ExtResource("1_i8l5j"), ExtResource("3_b67os"), ExtResource("4_hv6vt"), ExtResource("5_x00qw"), ExtResource("6_0uocr")]
-ScrapReward = 3
+ScrapReward = 4
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 
