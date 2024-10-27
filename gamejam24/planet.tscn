@@ -1,8 +1,8 @@
-[gd_scene load_steps=141 format=3 uid="uid://c2r3jwpqtj1c"]
+[gd_scene load_steps=149 format=3 uid="uid://daapqgmh3lpiv"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_jcad6"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
-[ext_resource type="PackedScene" uid="uid://di31xe5gpdlbe" path="res://orbit.tscn" id="3_p54uk"]
+[ext_resource type="PackedScene" uid="uid://byt4hskm2l4i4" path="res://orbit.tscn" id="3_p54uk"]
 [ext_resource type="PackedScene" uid="uid://b2781laefr8yp" path="res://PlayerOrbit.tscn" id="4_x3whq"]
 [ext_resource type="Texture2D" uid="uid://cdku1pe0s16re" path="res://assets/art/effects/Free Smoke Fx  Pixel 06.png" id="5_vqcfl"]
 [ext_resource type="Texture2D" uid="uid://utnxv7xxerrn" path="res://assets/art/sprites/main_heart.png" id="6_gmy0n"]
@@ -980,6 +980,11 @@ animations = [{
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -990,11 +995,6 @@ cache/0/66/0/descent = 0.0
 cache/0/66/0/underline_position = 0.0
 cache/0/66/0/underline_thickness = 0.0
 cache/0/66/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
 
 [sub_resource type="Theme" id="Theme_7tx26"]
 default_font = SubResource("FontFile_8laf8")
@@ -1041,6 +1041,7 @@ scale = Vector2(3.25, 3.5625)
 sprite_frames = SubResource("SpriteFrames_r1ctd")
 
 [node name="Health" type="RichTextLabel" parent="Planet/Harts"]
+layout_mode = 0
 offset_left = -49.0
 offset_top = -19.0
 offset_right = -25.0
