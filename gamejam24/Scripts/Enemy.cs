@@ -30,4 +30,6 @@ public abstract partial class Enemy : Node2D
 	{
 		this.QueueFree();
 	}
+
+	public abstract void RandomizePosition();
 }

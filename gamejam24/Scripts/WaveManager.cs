@@ -90,6 +90,9 @@ public partial class WaveManager : Node
 				{
 					_Enemy.Reparent(GetTree().Root.GetNode("Level").GetNode("Enemy"));
 					_Enemy.Name = "_Enemy_"+Index;
+					_Enemy.RandomizePosition();
+					_Enemy.Visible=true;
+					_Enemy.ProcessMode=ProcessModeEnum.Always;
 					GD.Print("Added Enemy at " + _Enemy.GetPath() + " with coords " + _Enemy.GlobalPosition);
 				}
 			}
