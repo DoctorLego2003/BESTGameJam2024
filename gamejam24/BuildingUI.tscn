@@ -401,7 +401,23 @@ grow_vertical = 0
 text = "Accelerator
 Speeds up bullets"
 
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -252.0
+offset_right = 74.0
+offset_bottom = -211.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="HBoxContainer/Miner" to="." method="_on_miner_pressed"]
 [connection signal="pressed" from="HBoxContainer/Turret" to="." method="_on_turret_pressed"]
 [connection signal="pressed" from="HBoxContainer/Accelerator" to="." method="_on_accelerator_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

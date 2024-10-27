@@ -27,3 +27,7 @@ func _on_turret_thunk_pressed() -> void:
 func _on_visibility_changed() -> void:
 	$HBoxContainer/TurretDouble.disabled = not $HBoxContainer/TurretDouble.disabled
 	$HBoxContainer/TurretThunk.disabled = not $HBoxContainer/TurretThunk.disabled
+
+func _on_exit_button_pressed() -> void:
+	get_tree().paused = false
+	self.visible = false
