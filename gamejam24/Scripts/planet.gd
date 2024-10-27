@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 		_animated_sprite.play()
 	else:
 		self.visible = false
-		get_parent().pause = true
+		#get_parent().pause = true
 	
