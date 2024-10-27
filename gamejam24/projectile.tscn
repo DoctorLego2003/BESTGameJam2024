@@ -118,6 +118,7 @@ position = Vector2(1.19209e-07, 1.19209e-06)
 texture = ExtResource("2_xbqbe")
 
 [node name="hitAnimation" type="AnimatedSprite2D" parent="Area2D"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_hsfwo")
 frame = 11
 frame_progress = 1.0
