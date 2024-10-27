@@ -1,5 +1,4 @@
 extends Control
-signal NextWave
 
 var cards_directory = "res://cards/"
 # This array will store loaded card textures
@@ -14,9 +13,10 @@ func _process(delta: float) -> void:
 		pass
 
 func _ready() -> void:
-	$Card1.visible = false
-	$Card2.visible = false
-	$Card3.visible = false
+	#$Card1.visible = false
+	#$Card2.visible = false
+	#$Card3.visible = false
+	
 	get_tree().root.get_node("Level/WaveManager").WaveEnded.connect(self._new_wave)
 	
 func _on_card_1_pressed() -> void:
@@ -40,13 +40,13 @@ func _on_card_3_pressed() -> void:
 		$Card3.disabled = true
 		
 func _on_continue_pressed() -> void:
+	get_tree().root.get_node("Level/WaveManager").ContinuePressedInCardGenerator()
 	$Card1.visible = false
 	$Card2.visible = false
 	$Card3.visible = false
 	$Continue.visible = false
-	get_tree().paused = false
+	get_tree().root.get_tree().paused = false
 	get_parent().get_parent().get_node("Enemy").get_tree().paused = false
-	NextWave.emit()
 	
 
 func _new_wave() -> void:
@@ -69,7 +69,7 @@ func _new_wave() -> void:
 	
 	get_tree().paused = true
 	#get_parent().get_parent().print_tree_pretty()
-	get_parent().get_parent().get_node("Enemy").get_tree().paused = true
+	#get_parent().get_parent().get_node("Enemy").get_tree().paused = true
 	
 	$Card1.icon = load("res://cards/normal/card" + str(rx) + ".png")
 	$Card1/Ability.text = get_parent().get_node("ActivationFunctions").get_child(rx).ability_text

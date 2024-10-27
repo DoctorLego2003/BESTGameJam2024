@@ -60,6 +60,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Card1" type="Button" parent="CardGenerator"]
 process_mode = 2
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.75
@@ -110,6 +111,7 @@ drag_and_drop_selection_enabled = false
 
 [node name="Card2" type="Button" parent="CardGenerator"]
 process_mode = 2
+visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775
@@ -159,6 +161,7 @@ drag_and_drop_selection_enabled = false
 
 [node name="Card3" type="Button" parent="CardGenerator"]
 process_mode = 2
+visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775

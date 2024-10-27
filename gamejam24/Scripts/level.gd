@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready() -> void:
 	$LevelMusic.play()
+	get_tree().paused = false
 	
 
 func _on_pause_button_pressed() -> void:

@@ -34,6 +34,7 @@ offset = Vector2(577, 323)
 [node name="Planet" parent="." instance=ExtResource("2_d3gse")]
 
 [node name="PauseButton" type="Button" parent="."]
+process_mode = 3
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 69.0
