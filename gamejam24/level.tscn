@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dpdw5xpw6ufv0"]
+[gd_scene load_steps=17 format=3 uid="uid://cy0myxu00505g"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ajou1"]
 [ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
@@ -92,5 +92,12 @@ parameters/looping = false
 [node name="Enemy" type="Node" parent="."]
 
 [node name="Money" parent="." instance=ExtResource("10_qorvs")]
+
+[node name="WaveCounter" type="RichTextLabel" parent="."]
+offset_left = 1001.0
+offset_top = 18.0
+offset_right = 1120.0
+offset_bottom = 82.0
+text = "hello"
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

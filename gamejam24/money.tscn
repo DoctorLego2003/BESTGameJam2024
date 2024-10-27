@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dowqo5u3o157j" path="res://assets/art/sprites/gold_icon.png" id="1_7rias"]
 [ext_resource type="Script" path="res://Scripts/money.gd" id="1_aipao"]
 
-[sub_resource type="FontFile" id="FontFile_oemwr"]
+[sub_resource type="FontFile" id="FontFile_5bu07"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -19,7 +19,7 @@ cache/0/66/0/underline_thickness = 0.0
 cache/0/66/0/scale = 1.0
 
 [sub_resource type="Theme" id="Theme_0jxu1"]
-default_font = SubResource("FontFile_oemwr")
+default_font = SubResource("FontFile_5bu07")
 default_font_size = 66
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cfoo"]

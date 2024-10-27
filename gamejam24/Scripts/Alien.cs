@@ -15,12 +15,12 @@ public partial class Alien : Enemy
 		SetDirection();
 	}
 
-    public override void _Ready()
-    {
-        SetDirection();
-    }
+	public override void _Ready()
+	{
+		SetDirection();
+	}
 
-    public void SetDirection(){Direction = MathF.Atan2(
+	public void SetDirection(){Direction = MathF.Atan2(
 				GlobalPosition.X - new Vector2(577, 323).X,
 				GlobalPosition.Y - new Vector2(577, 323).Y);}
 
