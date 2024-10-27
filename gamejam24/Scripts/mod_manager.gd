@@ -6,7 +6,7 @@ extends Node
 @export var PlayerSpeedMod = 1
 @export var CooldownMod = 2
 @export var BurstMod = 1
-@export var HealthMod = 4
+@export var HealthMod = 40
 @export var RegenMod = 0
 @export var Money = 2000
 @export var TurretDamageMod = 1

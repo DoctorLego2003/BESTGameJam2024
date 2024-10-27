@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crim5foxkpoi2"]
+[gd_scene load_steps=15 format=3 uid="uid://crim5foxkpoi2"]
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
 [ext_resource type="Script" path="res://Scripts/card_0.gd" id="2_3y8vh"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/card_3.gd" id="5_5fvts"]
 [ext_resource type="Script" path="res://Scripts/card_4.gd" id="6_rfnuy"]
 [ext_resource type="Script" path="res://Scripts/card_5.gd" id="7_ubse0"]
+[ext_resource type="Script" path="res://Scripts/card_6.gd" id="8_f8pop"]
+[ext_resource type="Script" path="res://Scripts/card_7.gd" id="9_a3tlu"]
 
 [sub_resource type="FontFile" id="FontFile_3cl4p"]
 cache/0/16/0/ascent = 0.0
@@ -278,6 +280,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_ubse0")
+
+[node name="Card6" type="Control" parent="ActivationFunctions"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_f8pop")
+
+[node name="Card7" type="Control" parent="ActivationFunctions"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_a3tlu")
 
 [connection signal="pressed" from="CardGenerator/Card1" to="CardGenerator" method="_on_card_1_pressed"]
 [connection signal="pressed" from="CardGenerator/Card2" to="CardGenerator" method="_on_card_2_pressed"]
