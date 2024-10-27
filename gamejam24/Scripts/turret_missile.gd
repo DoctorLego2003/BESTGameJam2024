@@ -3,7 +3,7 @@ extends Node2D
 @export var damage = 1
 @export var turret = null
 var planetPos 
-@onready var EnemyScript = preload("res://scripts/Enemy.cs")
+@onready var EnemyScript = preload("res://Scripts/Enemy.cs")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
