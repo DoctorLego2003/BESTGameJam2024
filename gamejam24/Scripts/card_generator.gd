@@ -10,11 +10,14 @@ var rz = 0
 
 
 func _process(delta: float) -> void:
-	pass
+		pass
 
 func _ready() -> void:
+	$Card1.visible = false
+	$Card2.visible = false
+	$Card3.visible = false
 	get_tree().root.get_node("Level/WaveManager").WaveEnded.connect(self._new_wave)
-
+	
 func _on_card_1_pressed() -> void:
 	if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rx).cost:
 		get_parent().get_node("ActivationFunctions").get_child(rx).activate()
@@ -45,6 +48,7 @@ func _on_continue_pressed() -> void:
 	
 
 func _new_wave() -> void:
+	print("ok")
 	var x = RandomNumberGenerator.new()
 	var y = RandomNumberGenerator.new()
 	var z = RandomNumberGenerator.new()
