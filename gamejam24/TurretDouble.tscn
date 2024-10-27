@@ -1,36 +1,36 @@
-[gd_scene load_steps=14 format=3 uid="uid://nualcpv7subd"]
+[gd_scene load_steps=14 format=3 uid="uid://c41wdjqgjjt20"]
 
-[ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="1_0hdrm"]
-[ext_resource type="Script" path="res://Scripts/turret.gd" id="1_qr7dg"]
-[ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="2_ssvn1"]
-[ext_resource type="AudioStream" uid="uid://d1h7tdg08jbp2" path="res://assets/sound/shoot_sound.wav" id="4_ig2i3"]
+[ext_resource type="Script" path="res://turret_double.gd" id="1_2gkof"]
+[ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="2_jwn5i"]
+[ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="3_yr6v7"]
+[ext_resource type="AudioStream" uid="uid://d1h7tdg08jbp2" path="res://assets/sound/shoot_sound.wav" id="4_gdqn7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mia22"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(0, 6, 20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csq31"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(84, 6, 20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abiid"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(21, 6, 20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwd21"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(105, 6, 20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwsua"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(42, 6, 20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg6mf"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(126, 6, 20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7i68v"]
-atlas = ExtResource("2_ssvn1")
+atlas = ExtResource("3_yr6v7")
 region = Rect2(63, 6, 20, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n1vrc"]
@@ -69,11 +69,11 @@ animations = [{
 radius = 296.0
 height = 720.0
 
-[node name="Turret" type="Node2D"]
-script = ExtResource("1_qr7dg")
+[node name="TurretDouble" type="Node2D"]
+script = ExtResource("1_2gkof")
 
 [node name="TurretRock" type="Sprite2D" parent="."]
-texture = ExtResource("1_0hdrm")
+texture = ExtResource("2_jwn5i")
 offset = Vector2(0.5, 0)
 
 [node name="TurretCannon" type="AnimatedSprite2D" parent="."]
@@ -97,7 +97,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="TurretShootSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ig2i3")
+stream = ExtResource("4_gdqn7")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
