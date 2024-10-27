@@ -31,7 +31,7 @@ public partial class SplittingAlien : Enemy
 		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 65)
 		{
 			DealDamage();
-			Die();
+			this.QueueFree();
 		}
 
 		GlobalPosition -= new Vector2
@@ -68,6 +68,8 @@ public partial class SplittingAlien : Enemy
 		Child2.Visible = true;
 		Child1.GlobalPosition = GlobalPosition - new Vector2(10, 10);
 		Child2.GlobalPosition = GlobalPosition + new Vector2(10, 10);
+		Child1.GlobalPosition = GlobalPosition - new Vector2(20, 20);
+		Child2.GlobalPosition = GlobalPosition + new Vector2(20, 20);
 		this.QueueFree();
 	}
 }
