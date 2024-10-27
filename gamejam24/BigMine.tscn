@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4lfu22185ldy"]
+
+[ext_resource type="Texture2D" uid="uid://do5h6jbfmheo1" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_q1nn1"]
+[ext_resource type="Script" path="res://Scripts/big_mine.gd" id="1_u1dj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0pwk"]
+atlas = ExtResource("1_q1nn1")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6wbu"]
+atlas = ExtResource("1_q1nn1")
+region = Rect2(46, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcmec"]
+atlas = ExtResource("1_q1nn1")
+region = Rect2(92, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gke1w"]
+atlas = ExtResource("1_q1nn1")
+region = Rect2(138, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_at5nw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="BigMine" type="Node2D"]
+script = ExtResource("1_u1dj5")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_at5nw")
+frame_progress = 0.525893
+offset = Vector2(-0.5, -6)
