@@ -1,10 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://co5o7c4b5cm3k"]
+[gd_scene load_steps=18 format=3 uid="uid://co5o7c4b5cm3k"]
 
 [ext_resource type="Script" path="res://Scripts/turret_missile.gd" id="1_qcdfy"]
 [ext_resource type="Texture2D" uid="uid://bjhskgp0ok361" path="res://assets/art/sprites/bullet.png" id="2_ym83c"]
+[ext_resource type="Texture2D" uid="uid://cdku1pe0s16re" path="res://assets/art/effects/Free Smoke Fx  Pixel 06.png" id="3_3uvjc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0haj"]
 radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at2u1"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(0, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wwa4"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(64, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o46b"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(128, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bacf8"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(192, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxb1m"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(256, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s38i"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(320, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wl47"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(384, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxjsv"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(448, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er54k"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(512, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hka47"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(576, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h1ca"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(640, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hactw"]
+atlas = ExtResource("3_3uvjc")
+region = Rect2(704, 1024, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yeqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at2u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wwa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o46b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bacf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxb1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s38i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wl47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxjsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er54k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hka47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h1ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hactw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="TurretMissile" type="Node2D"]
 script = ExtResource("1_qcdfy")
@@ -17,4 +110,8 @@ shape = SubResource("CircleShape2D_m0haj")
 [node name="Missile" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("2_ym83c")
 
+[node name="hitAnimation" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_7yeqk")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="Area2D/hitAnimation" to="." method="_on_hit_animation_animation_finished"]

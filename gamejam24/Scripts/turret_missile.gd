@@ -31,4 +31,10 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		area.get_parent().TakeDamage(damage)
-		self.queue_free()
+		$Area2D/Missile.visible = false
+		$Area2D/hitAnimation.visible = true
+		$Area2D/hitAnimation.play()
+
+
+func _on_hit_animation_animation_finished() -> void:
+	self.queue_free()
