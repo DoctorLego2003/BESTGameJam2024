@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://bvf2c4vkyproi"]
 
-[ext_resource type="Texture2D" uid="uid://bpkh48q3aoilm" path="res://assets/art/sprites/accelarator.png" id="1_aoqu5"]
+[ext_resource type="Texture2D" uid="uid://c7guanj0a6uq0" path="res://assets/art/sprites/accelarator.png" id="1_aoqu5"]
 [ext_resource type="Script" path="res://Scripts/accelerator.gd" id="1_kfcum"]
-[ext_resource type="AudioStream" uid="uid://dm083vg3mf7ds" path="res://assets/sound/accelerator.wav" id="3_77lew"]
+[ext_resource type="AudioStream" uid="uid://dvn5g8qnp0b7i" path="res://assets/sound/accelerator.wav" id="3_77lew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxf2d"]
 radius = 15.0
