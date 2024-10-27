@@ -1,7 +1,7 @@
 extends Node
 
-@export var ProjectileSpeedMod = 2
-@export var DamageMod = 5
+@export var ProjectileSpeedMod = 1
+@export var DamageMod = 1
 @export var MoneyMod = 1
 @export var PlayerSpeedMod = 1
 @export var CooldownMod = 2
