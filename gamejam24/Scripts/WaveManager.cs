@@ -24,8 +24,6 @@ public partial class WaveManager : Node
 
 	public override void _Ready()
 	{
-		//  Register the WaveEnded signal
-		AddUserSignal("WaveEnded");
 		// Unpack all of the Enemies under me and pause them
 		foreach (PackedScene PackedEnemy in Enemies)
 		{
@@ -59,6 +57,7 @@ public partial class WaveManager : Node
 		if (_Tokens.Length < CurrentWave){GD.Print("No Waves Left!");GetTree().Quit();}
 		GD.Print("Available tokens: " + _Tokens[CurrentWave]);
 		SpawnNextWave(_Tokens[CurrentWave], this.ScriptEnemies.ToArray());
+
 	}
 
 	public override void _Process(double delta)
@@ -123,6 +122,7 @@ public partial class WaveManager : Node
 			await ToSignal(GetTree().CreateTimer(0.1), "timeout");
 		}
 		// Emit the WaveEnded signal
+		GD.Print("Emitting Signal");
 		EmitSignal(SignalName.WaveEnded);
 		this.CurrentWave++;
 	}
