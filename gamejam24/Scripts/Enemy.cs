@@ -15,6 +15,8 @@ public abstract partial class Enemy : Sprite2D
 	public Texture2D[] Sprite {get;set;}
 	[Export]
 	public int MinimalWave {get;set;}
+	[Export]
+	public int ScrapReward {get;set;}
 
 	public void Behavior(float Delta)
 	{
