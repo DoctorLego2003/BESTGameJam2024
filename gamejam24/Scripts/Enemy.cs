@@ -27,6 +27,8 @@ public abstract partial class Enemy : Node2D
 		if (Health <= 0){Die();}
 	}
 
+	public abstract void DealDamage();
+
 	public void Die()
 	{
 		this.QueueFree();

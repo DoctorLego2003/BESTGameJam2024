@@ -36,4 +36,9 @@ public partial class Alien : Enemy
 				)) * Delta
 		);
 	}
+
+    public override void DealDamage()
+    {
+        throw new NotImplementedException();
+    }
 }
