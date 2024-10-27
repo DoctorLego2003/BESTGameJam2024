@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd0neffjn15d7"]
+[gd_scene load_steps=13 format=3 uid="uid://cy0myxu00505g"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ajou1"]
 [ext_resource type="Texture2D" uid="uid://blxm4xiyfb5bm" path="res://assets/art/main_menu/title_screen.png" id="1_nkldn"]
 [ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
 [ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="4_m40se"]
-[ext_resource type="PackedScene" uid="uid://hkcofjo301ij" path="res://Cards.tscn" id="5_i7mb0"]
+[ext_resource type="PackedScene" uid="uid://crim5foxkpoi2" path="res://Cards.tscn" id="5_i7mb0"]
 [ext_resource type="Script" path="res://Scripts/WaveManager.cs" id="6_hep6x"]
 [ext_resource type="PackedScene" uid="uid://be4y4xgtq7ybv" path="res://Prefabs/asteroid.tscn" id="7_2h5vm"]
 [ext_resource type="Script" path="res://Scripts/mod_manager.gd" id="7_4d0dn"]
