@@ -30,7 +30,7 @@ public partial class Alien : Enemy
 			Die();
 		}
 
-		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 1700)
+		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) >= 1700)
 		{
 			Die();
 		}
@@ -51,4 +51,9 @@ public partial class Alien : Enemy
 	{
 		GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
 	}
+
+    public override void Die()
+    {
+        this.QueueFree();
+    }
 }

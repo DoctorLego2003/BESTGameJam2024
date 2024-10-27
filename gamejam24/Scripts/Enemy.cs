@@ -34,10 +34,7 @@ public abstract partial class Enemy : Sprite2D
 
 	public abstract void DealDamage();
 
-	public void Die()
-	{
-		this.QueueFree();
-	}
+	public abstract void Die();
 
 	public abstract void RandomizePosition();
 }
