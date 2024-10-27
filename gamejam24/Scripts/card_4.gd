@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func activate() -> void:
-		get_tree().root.get_node("Level/ModManager").PlayerSpeedMod *= 2
+		get_tree().root.get_node("Level/ModManager").CooldownMod += 1

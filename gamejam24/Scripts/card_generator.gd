@@ -22,17 +22,20 @@ func _ready() -> void:
 func _on_card_1_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(rx).activate()
 	#$Card1.visible = false
+	$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
 	$Card1.disabled = true
 	
 
 func _on_card_2_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(ry).activate()
 	#$Card2.visible = false
+	$Card2.icon = load("res://cards/hidden/card" + str(ry) + ".png")
 	$Card2.disabled = true
 
 func _on_card_3_pressed() -> void:
 	get_parent().get_node("ActivationFunctions").get_child(rz).activate()
 	#$Card3.visible = false
+	$Card3.icon = load("res://cards/hidden/card" + str(rz) + ".png")
 	$Card3.disabled = true
 
 
@@ -47,9 +50,9 @@ func _new_wave() -> void:
 	var x = RandomNumberGenerator.new()
 	var y = RandomNumberGenerator.new()
 	var z = RandomNumberGenerator.new()
-	var rx = x.randi_range(0, 2)
-	var ry = y.randi_range(0, 2)
-	var rz = z.randi_range(0, 2)
+	rx = x.randi_range(0, 5)
+	ry = y.randi_range(0, 5)
+	rz = z.randi_range(0, 5)
 	
 	$Card1.visible = true
 	$Card2.visible = true
@@ -62,38 +65,11 @@ func _new_wave() -> void:
 	
 	get_tree().paused = true
 	
-	$Card1.icon = load("res://cards/Card" + str(rx) + ".png")
-	$Card2.icon = load("res://cards/Card" + str(ry) + ".png")
-	$Card3.icon = load("res://cards/Card" + str(rz) + ".png")
+	$Card1.icon = load("res://cards/normal/card" + str(rx) + ".png")
+	$Card2.icon = load("res://cards/normal/card" + str(ry) + ".png")
+	$Card3.icon = load("res://cards/normal/card" + str(rz) + ".png")
 	
 	
-	
-	
-
-## Load all PNG images from the specified directory
-#func load_card_images() -> void:
-	#var dir = DirAccess.open(cards_directory)
-	#if dir:
-		#for file_name in dir.get_files():
-			#if file_name.ends_with(".png"):
-				## Load the texture and add it to the card_images array
-				#var texture = load(cards_directory + "/" + file_name)
-				#card_images.append(texture)
-	#else:
-		#print("Error: Unable to open directory.")
-	#
-	#for i in range(1,4):
-		#var rng = RandomNumberGenerator.new()
-		#rng.randomize()
-		#
-		## Check if card_images is not empty
-		#if card_images.size() > 0:
-			#var random_index = rng.randi_range(0, card_images.size() - 1)
-			#var selected_card_texture = card_images[random_index]
-			#
-			## Construct the dynamic node path and set the icon
-			#var card_node = get_node("Card" + str(i))
-			#if card_node:
-				#card_node.icon = selected_card_texture
-			#else:
-				#print("Error: Node 'Card" + str(i) + "' not found in the scene tree.")
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Cards"):
+		_new_wave()

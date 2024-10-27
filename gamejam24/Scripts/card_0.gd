@@ -1,11 +1,5 @@
-extends Node
+extends Control
 
-@export var ProjectileSpeedMod = 1
-@export var DamageMod = 1
-@export var MoneyMod = 1
-@export var PlayerSpeedMod = 1
-@export var CooldownMod = 2
-@export var BurstMod = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,3 +9,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func activate() -> void:
+		get_tree().root.get_node("Level/ModManager").BurstMod += 1
