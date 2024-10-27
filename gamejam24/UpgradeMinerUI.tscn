@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp0mspwu7jrqq"]
+
+[ext_resource type="Script" path="res://Scripts/upgrade_mine_ui.gd" id="1_goaj0"]
+[ext_resource type="Texture2D" uid="uid://do5h6jbfmheo1" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_wmjk7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0pwk"]
+atlas = ExtResource("1_wmjk7")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6wbu"]
+atlas = ExtResource("1_wmjk7")
+region = Rect2(46, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcmec"]
+atlas = ExtResource("1_wmjk7")
+region = Rect2(92, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gke1w"]
+atlas = ExtResource("1_wmjk7")
+region = Rect2(138, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8btyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0pwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gke1w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="UpgradeMinerUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_goaj0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -133.5
+offset_top = -200.0
+offset_right = 133.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BigMine" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Container" type="Container" parent="HBoxContainer/BigMine"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TurretCannon" type="AnimatedSprite2D" parent="HBoxContainer/BigMine/Container"]
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_8btyo")
+frame_progress = 0.763218
+offset = Vector2(-0.5, -6)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/BigMine"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Big Mine
+Better efficiency, more money"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="HBoxContainer/BigMine" to="." method="_on_big_mine_pressed"]

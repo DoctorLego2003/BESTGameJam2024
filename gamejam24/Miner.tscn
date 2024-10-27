@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4i35dacqwour"]
+[gd_scene load_steps=9 format=3 uid="uid://c4i35dacqwour"]
 
 [ext_resource type="Script" path="res://Scripts/miner.gd" id="1_kyisw"]
 [ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_la0dx"]
@@ -75,6 +75,10 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xcdf"]
+radius = 24.0
+height = 96.0
+
 [node name="Miner" type="Node2D"]
 script = ExtResource("1_kyisw")
 
@@ -84,5 +88,16 @@ rotation = 1.5708
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_5x2jx")
-frame = 12
-frame_progress = 0.921595
+frame_progress = 0.403651
+
+[node name="UpgradeGround" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeGround"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1xcdf")
+
+[connection signal="area_entered" from="UpgradeGround" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="area_exited" from="UpgradeGround" to="." method="_on_area_2d_2_area_exited"]

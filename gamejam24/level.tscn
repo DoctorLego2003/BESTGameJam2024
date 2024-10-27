@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cy0myxu00505g"]
+[gd_scene load_steps=17 format=3 uid="uid://dpdw5xpw6ufv0"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ajou1"]
 [ext_resource type="PackedScene" uid="uid://daapqgmh3lpiv" path="res://planet.tscn" id="2_d3gse"]
@@ -61,6 +61,13 @@ offset_right = 577.0
 offset_bottom = 648.0
 
 [node name="UpgradeTurretUI" parent="." instance=ExtResource("6_5qmy6")]
+visible = false
+offset_left = 577.0
+offset_top = 648.0
+offset_right = 577.0
+offset_bottom = 648.0
+
+[node name="UpgradeMinerUI" parent="." instance=ExtResource("6_5qmy6")]
 visible = false
 offset_left = 577.0
 offset_top = 648.0

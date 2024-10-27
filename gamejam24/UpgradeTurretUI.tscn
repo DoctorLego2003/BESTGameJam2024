@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://pgfss70w8a6k"]
+[gd_scene load_steps=17 format=3 uid="uid://bo4s6d110h2a3"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_turret_ui.gd" id="1_kqy0p"]
-[ext_resource type="Texture2D" uid="uid://ct2ehwic8ppek" path="res://assets/art/sprites/turret_01_upgraded_01.png" id="2_gbjr8"]
+[ext_resource type="Texture2D" uid="uid://dbemq5nd1ilpe" path="res://assets/art/sprites/turret_01_upgraded_01.png" id="2_gbjr8"]
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="3_dgrwy"]
-[ext_resource type="Texture2D" uid="uid://bnilfpyna8dcr" path="res://assets/art/sprites/turret_01_upgraded_02.png" id="3_ll7pb"]
+[ext_resource type="Texture2D" uid="uid://ch26pmh1631k" path="res://assets/art/sprites/turret_01_upgraded_02.png" id="3_ll7pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcf31"]
 atlas = ExtResource("2_gbjr8")
@@ -154,8 +154,8 @@ offset_left = 16.0
 offset_top = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Miner
-Produces scrap"
+text = "Double turret
+Shoots twice the bullets"
 
 [node name="TurretThunk" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -184,22 +184,12 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -48.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/TurretThunk/RichTextLabel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = 14.0
 offset_top = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Turret
-Shoots of enemies"
+text = "Thunk
+Shoots one big blast"
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 1
