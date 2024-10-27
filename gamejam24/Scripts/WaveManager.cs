@@ -19,7 +19,12 @@ public partial class WaveManager : Node
 	[Signal]
 	public delegate void WaveEndedEventHandler();
 
-	private int CurrentWave = 0;
+	public int CurrentWave = 0;
+
+	public int GetCurrentWave()
+	{
+		return CurrentWave +1;
+	}
 
 	public override void _Ready()
 	{
@@ -70,13 +75,13 @@ public partial class WaveManager : Node
 		Enemy[] EnabledEnemies = Array.Empty<Enemy>();
 		for (int Index = 0; Index < Enemies.Length; Index++)
 		{
-			GD.Print(Enemies[Index]);
-			if (Enemies[Index].MinimalWave >= CurrentWave)
+			if (Enemies[Index].MinimalWave <= CurrentWave)
 			{
 				GD.Print("Enabled " + Enemies[Index]);
-				EnabledEnemies.Append(Enemies[Index]);
+				EnabledEnemies = EnabledEnemies.Append(Enemies[Index]).ToArray();
 			}
 		}
+		GD.Print("Enabled "+ EnabledEnemies.Length +" enemies");
 
 		// Sort the enemies by cost to prevent the expensive ones from hogging all of the tokens
 		EnabledEnemies.OrderByDescending(s => s.Cost);
@@ -86,21 +91,23 @@ public partial class WaveManager : Node
 		for (int Limiter = 100; RemainingTokens > 0 && Limiter > 0; Limiter--)
 		{
 			GD.Print("Remaining Tokens: " + RemainingTokens);
-			foreach (Enemy _Enemy in Enemies)
+			foreach (Enemy _Enemy in EnabledEnemies)
 			// Iterate over all of the enemies to decide what to spawn
 			{
+				GD.Print(_Enemy.Name);
 				// Randomly decide how many credits to spend on this enemy
-				int TokensToSpend = System.Security.Cryptography.RandomNumberGenerator.GetInt32(RemainingTokens+1);
-				GD.Print("Willing to spend "+TokensToSpend+" Tokens");
-				GD.Print("Fits: " + Fits(_Enemy, TokensToSpend));
+				int TokensToSpend = new Godot.RandomNumberGenerator().RandiRange(0, RemainingTokens);
+				GD.Print("	Willing to spend "+TokensToSpend+" Tokens");
+				GD.Print("	Fits: " + Fits(_Enemy, TokensToSpend));
 				// Spawn as many of the enemies as we can with how many credits we're willing to spend on them
 				if (Fits(_Enemy, TokensToSpend))
 				{
 					int NumberToSpawn = TokensToSpend / _Enemy.Cost;
-					GD.Print("Going to add "+NumberToSpawn+" Enemies");
+					GD.Print("	Going to add "+NumberToSpawn+" Enemies");
 					for (int Index = 0; Index < NumberToSpawn; Index++)
 					{
 						Enemy TMPENEMY = (Enemy)_Enemy.Duplicate();
+						GD.Print("	"+  TMPENEMY.Name);
 						AddChild(TMPENEMY);
 						TMPENEMY.Reparent(GetTree().Root.GetNode("Level").GetNode("Enemy"));
 						// Prevent Overlap
@@ -108,7 +115,7 @@ public partial class WaveManager : Node
 						TMPENEMY.RandomizePosition();
 						TMPENEMY.Visible=true;
 						TMPENEMY.ProcessMode=ProcessModeEnum.Inherit;
-						GD.Print("Added Enemy at " + TMPENEMY.GetPath() + " with coords " + TMPENEMY.GlobalPosition);
+						GD.Print("	Added Enemy at " + TMPENEMY.GetPath() + " with coords " + TMPENEMY.GlobalPosition);
 						GetParent().GetNode("Enemy").GetTree().Paused = true;
 						RemainingTokens -= _Enemy.Cost;
 					}

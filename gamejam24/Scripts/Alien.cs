@@ -30,7 +30,7 @@ public partial class Alien : Enemy
 			Die();
 		}
 
-		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 1700)
+		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) >= 1700)
 		{
 			Die();
 		}

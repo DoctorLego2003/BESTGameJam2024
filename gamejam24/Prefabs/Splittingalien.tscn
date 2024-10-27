@@ -46,7 +46,7 @@ animations = [{
 [node name="SplittingAlien" type="Sprite2D"]
 script = ExtResource("1_saldb")
 Children = ExtResource("2_3bug2")
-Cost = 4
+Cost = 1
 Health = 1
 Damage = 4
 Speed = 50
@@ -61,4 +61,4 @@ shape = SubResource("CapsuleShape2D_6jjxm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tjyd3")
 animation = &"defeat"
-frame_progress = 0.247871
+frame_progress = 0.499126

@@ -34,21 +34,17 @@ public partial class SplittingAlien : Enemy
 			Die();
 		}
 
-		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 1700)
-		{
-			this.QueueFree();
-		}
-
 		GlobalPosition -= new Vector2
 		(
-			Speed * MathF.Sin(this.Direction) * Delta,
-			Speed * MathF.Cos(this.Direction) * Delta
+			Speed * MathF.Sin(MathF.Atan2(
+				GlobalPosition.X - new Vector2(577, 323).X,
+				GlobalPosition.Y - new Vector2(577, 323).Y 
+				)) * Delta,
+			Speed * MathF.Cos(MathF.Atan2(
+				GlobalPosition.X - new Vector2(577, 323).X,
+				GlobalPosition.Y - new Vector2(577, 323).Y
+				)) * Delta
 		);
-		GlobalPosition -= new Vector2
-		(
-			Speed * MathF.Cos(this.Direction) * Delta,
-			-Speed * MathF.Sin(this.Direction) * Delta
-		) * MathF.Sin(Time.GetTicksMsec()/200);
 	}
 
 	public override void DealDamage()
