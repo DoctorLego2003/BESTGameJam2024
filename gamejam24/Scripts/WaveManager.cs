@@ -97,6 +97,7 @@ public partial class WaveManager : Node
 					TMPENEMY.ProcessMode=ProcessModeEnum.Always;
 					GD.Print("Added Enemy at " + TMPENEMY.GetPath() + " with coords " + TMPENEMY.GlobalPosition);
 					GetParent().GetNode("Enemy").PrintTreePretty();
+					GetParent().GetNode("Enemy").GetTree().Paused = true;
 				}
 			}
 		}
