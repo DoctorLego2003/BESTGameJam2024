@@ -2,13 +2,14 @@ using System;
 using System.Security.Cryptography;
 using Godot;
 
+[Tool]
 public partial class Asteroid : Enemy
 {
 
 	public override void _Ready()
 	{
 		float Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(2*((int)(MathF.PI*100)))/100;
-		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(200) + 800;
+		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(1) + 300;
 		GlobalPosition = new Vector2(577 + Distance * MathF.Cos(Angle), 323 + Distance * MathF.Sin(Angle));
 	}
 

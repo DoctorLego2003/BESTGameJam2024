@@ -14,4 +14,4 @@ Cost = 1
 Health = 5
 Damage = 2
 Speed = 100
-Sprite = Array[Object]([ExtResource("1_i8l5j"), ExtResource("3_b67os"), ExtResource("4_hv6vt"), ExtResource("5_x00qw"), ExtResource("6_0uocr")])
+Sprite = [ExtResource("1_i8l5j"), ExtResource("3_b67os"), ExtResource("4_hv6vt"), ExtResource("5_x00qw"), ExtResource("6_0uocr")]

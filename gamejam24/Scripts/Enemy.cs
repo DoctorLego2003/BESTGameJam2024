@@ -1,5 +1,6 @@
 using Godot;
 
+[Tool]
 public abstract partial class Enemy : Node2D
 {
 	[Export]
