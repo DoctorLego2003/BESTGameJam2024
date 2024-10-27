@@ -26,7 +26,10 @@ public abstract partial class Enemy : Sprite2D
 	public void TakeDamage(int Damage)
 	{
 		Health -= Damage;
-		if (Health <= 0){Die();}
+		if (Health <= 0){
+			GetTree().Root.GetNode("Level/ModManager").Set("Money", (int)GetTree().Root.GetNode("Level/ModManager").Get("Money") + 10);
+			Die();
+			}
 	}
 
 	public abstract void DealDamage();

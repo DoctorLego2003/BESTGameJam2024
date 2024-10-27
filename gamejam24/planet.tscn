@@ -1,10 +1,12 @@
-[gd_scene load_steps=141 format=3 uid="uid://daapqgmh3lpiv"]
+[gd_scene load_steps=149 format=3 uid="uid://daapqgmh3lpiv"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_jcad6"]
 [ext_resource type="Texture2D" uid="uid://ciffy5pxmhjcf" path="res://assets/art/sprites/planet_main.png" id="3_hkxh5"]
 [ext_resource type="PackedScene" uid="uid://byt4hskm2l4i4" path="res://orbit.tscn" id="3_p54uk"]
 [ext_resource type="PackedScene" uid="uid://b2781laefr8yp" path="res://PlayerOrbit.tscn" id="4_x3whq"]
 [ext_resource type="Texture2D" uid="uid://cdku1pe0s16re" path="res://assets/art/effects/Free Smoke Fx  Pixel 06.png" id="5_vqcfl"]
+[ext_resource type="Texture2D" uid="uid://utnxv7xxerrn" path="res://assets/art/sprites/main_heart.png" id="6_gmy0n"]
+[ext_resource type="Script" path="res://Scripts/harts.gd" id="6_t5e7r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcwpd"]
 atlas = ExtResource("5_vqcfl")
@@ -959,6 +961,49 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5wwg"]
+atlas = ExtResource("6_gmy0n")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1ctd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5wwg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontFile" id="FontFile_8laf8"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_7tx26"]
+default_font = SubResource("FontFile_8laf8")
+default_font_size = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luf54"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40b6n"]
+
 [node name="Planet" type="Node2D"]
 
 [node name="Planet" type="Area2D" parent="."]
@@ -982,3 +1027,31 @@ metadata/_edit_lock_ = true
 [node name="Orbit" parent="Planet" instance=ExtResource("3_p54uk")]
 
 [node name="PlayerOrbit" parent="Planet" instance=ExtResource("4_x3whq")]
+
+[node name="Harts" type="TextureRect" parent="Planet"]
+offset_left = 39.0
+offset_top = 2.0
+offset_right = 39.0
+offset_bottom = 2.0
+script = ExtResource("6_t5e7r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planet/Harts"]
+position = Vector2(-38, -1.00001)
+scale = Vector2(3.25, 3.5625)
+sprite_frames = SubResource("SpriteFrames_r1ctd")
+
+[node name="Health" type="RichTextLabel" parent="Planet/Harts"]
+offset_left = -49.0
+offset_top = -19.0
+offset_right = -25.0
+offset_bottom = 37.0
+theme = SubResource("Theme_7tx26")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.273873, 0.273873, 0.273873, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_luf54")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40b6n")
+text = "100"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false

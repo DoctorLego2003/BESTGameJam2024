@@ -38,8 +38,8 @@ public partial class Alien : Enemy
 		);
 	}
 
-    public override void DealDamage()
-    {
-        GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
-    }
+	public override void DealDamage()
+	{
+		GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
+	}
 }

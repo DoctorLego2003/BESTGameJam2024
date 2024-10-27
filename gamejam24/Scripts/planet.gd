@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var lives = get_tree().root.get_node("Level/ModManager").HealthMod
-	print(lives)
+	#print(lives)
 	if lives > 0:
 		_animated_sprite.play()
 	else:
