@@ -14,7 +14,6 @@ public partial class WaveManager : Node
 	[Export]
 	public int[] Tokens;
 
-	private int[] _Tokens;
 	private List<Enemy> ScriptEnemies = new List<Enemy>();
 
 	[Signal]
@@ -53,11 +52,16 @@ public partial class WaveManager : Node
 		}
 		GD.Print("Length: " + ScriptEnemies.Count);
 
-		_Tokens = Tokens;
-		if (_Tokens.Length < CurrentWave){GD.Print("No Waves Left!");GetTree().Quit();}
-		GD.Print("Available tokens: " + _Tokens[CurrentWave]);
-		SpawnNextWave(_Tokens[CurrentWave], this.ScriptEnemies.ToArray());
+		if (Tokens.Length < CurrentWave){GD.Print("No Waves Left!");GetTree().Quit();}
+		GD.Print("Available tokens: " + Tokens[CurrentWave]);
+		SpawnNextWave(Tokens[CurrentWave], this.ScriptEnemies.ToArray());
 
+	}
+
+	public void ContinuePressedInCardGenerator()
+	{
+		GD.Print("Starting Next Wave");
+		SpawnNextWave(Tokens[CurrentWave], this.ScriptEnemies.ToArray());
 	}
 
 	public override void _Process(double delta)
@@ -122,7 +126,7 @@ public partial class WaveManager : Node
 			await ToSignal(GetTree().CreateTimer(0.1), "timeout");
 		}
 		// Emit the WaveEnded signal
-		GD.Print("Emitting WaveEnded Signal");
+		GD.Print("Emitting WaveEndedSignal");
 		EmitSignal(SignalName.WaveEnded);
 		this.CurrentWave++;
 	}
