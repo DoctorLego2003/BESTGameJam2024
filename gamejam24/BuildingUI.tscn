@@ -1,12 +1,241 @@
-[gd_scene format=3 uid="uid://bv1fe5n5p8hum"]
+[gd_scene load_steps=27 format=3 uid="uid://bv1fe5n5p8hum"]
 
-[node name="BuildingUi" type="Control"]
+[ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_fmxgy"]
+[ext_resource type="Script" path="res://building_ui.gd" id="1_i332u"]
+[ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="2_4yu7v"]
+[ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="3_w5dnx"]
+[ext_resource type="Texture2D" uid="uid://c7guanj0a6uq0" path="res://assets/art/sprites/accelarator.png" id="4_nidyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li6mv"]
+atlas = ExtResource("1_fmxgy")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mnah"]
+atlas = ExtResource("1_fmxgy")
+region = Rect2(46, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykqof"]
+atlas = ExtResource("1_fmxgy")
+region = Rect2(92, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy1fp"]
+atlas = ExtResource("1_fmxgy")
+region = Rect2(138, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_484ho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mnah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1fp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mia22"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(0, 6, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csq31"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(84, 6, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abiid"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(21, 6, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwd21"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(105, 6, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwsua"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(42, 6, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6mf"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(126, 6, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i68v"]
+atlas = ExtResource("3_w5dnx")
+region = Rect2(63, 6, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6laq6"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_mia22")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_csq31")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_abiid")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_fwd21")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xwsua")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_hg6mf")
+}, {
+"duration": 14.0,
+"texture": SubResource("AtlasTexture_7i68v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mia22")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqicb"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crugw"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyvih"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b87l"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqsec"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibedh"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6lfi"]
+atlas = ExtResource("4_nidyr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2q3vs"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_qqicb")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_crugw")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_yyvih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqicb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crugw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyvih")
+}, {
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_1b87l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqicb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crugw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyvih")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_qqicb")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_crugw")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_yyvih")
+}],
+"loop": true,
+"name": &"accelerating",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqsec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibedh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6lfi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="BuildingUI" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i332u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -21,14 +250,131 @@ offset_right = 250.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Miner" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="Container" type="Container" parent="HBoxContainer/Miner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/Miner/Container"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_484ho")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Miner"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Miner
+Produces scrap"
+
+[node name="Turret" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button3" type="Button" parent="HBoxContainer"]
+[node name="Container" type="Container" parent="HBoxContainer/Turret"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TurretRock" type="Sprite2D" parent="HBoxContainer/Turret/Container"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_4yu7v")
+offset = Vector2(0.5, 0)
+
+[node name="TurretCannon" type="AnimatedSprite2D" parent="HBoxContainer/Turret/Container"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_6laq6")
+frame = 7
+frame_progress = 1.0
+offset = Vector2(0, -6)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Turret"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Turret/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Turret
+Shoots of enemies"
+
+[node name="Accelerator" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Container" type="Container" parent="HBoxContainer/Accelerator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IdleAccAnimation" type="AnimatedSprite2D" parent="HBoxContainer/Accelerator/Container"]
+z_index = 50
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_2q3vs")
+animation = &"accelerating"
+offset = Vector2(0.10712, -1.96938)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Accelerator"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Accelerator/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Accelerator
+Speeds up bullets"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="HBoxContainer/Miner" to="." method="_on_miner_pressed"]
+[connection signal="pressed" from="HBoxContainer/Turret" to="." method="_on_turret_pressed"]
+[connection signal="pressed" from="HBoxContainer/Accelerator" to="." method="_on_accelerator_pressed"]
