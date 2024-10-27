@@ -14,17 +14,18 @@ func _process(delta: float) -> void:
 		var enemy = enemies[0]
 		var diffpos = enemy.global_position - global_position
 		$TurretCannon.global_rotation = atan2(diffpos.x, -diffpos.y)
+		$Timer.start()
 		turret_shoot(delta)
 		hasBullets = false
-		$Timer.start()
-		
+
 
 func turret_shoot(delta):
+	$TurretCannon.play()
 	for i in range(3):
 		var current_projectile = projectile.instantiate()
 		current_projectile.turret = $TurretCannon
 		get_parent().get_parent().get_parent().add_child(current_projectile)
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.3).timeout
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

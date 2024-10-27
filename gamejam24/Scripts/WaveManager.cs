@@ -10,21 +10,49 @@ using System.Security.Cryptography;
 public partial class WaveManager : Node
 {
 	[Export]
-	public Godot.GodotObject[] Enemies;
+	public PackedScene[] Enemies;
 	[Export]
 	public int[] Tokens;
 
 	private int[] _Tokens;
+	private List<Enemy> ScriptEnemies = new List<Enemy>();
 
 	private int CurrentWave = 0;
 
 	public override void _Ready()
 	{
-		Enemy[] MappedEnemies = this.Enemies.ToList().Select(_Object => _Object.GetScript().As<Enemy>()).ToArray();
-		GD.Print(MappedEnemies.Length, MappedEnemies[0]);
+		// Unpack all of the Enemies under me and pause them
+		foreach (PackedScene PackedEnemy in Enemies)
+		{
+			PackedScene _Packed = GD.Load<PackedScene>(PackedEnemy.ResourcePath);
+			GD.Print("Found Packed Enemy: " + PackedEnemy.ResourcePath);
+			Node2D ExtractedEnemy = _Packed.Instantiate<Node2D>();
+			AddChild(ExtractedEnemy);
+			GD.Print("	-> Instantiated to " + ExtractedEnemy.GetPath());
+			ExtractedEnemy.Reparent(this);
+			GD.Print("	-> Moved to me");
+			ExtractedEnemy.Name+="_Unpack";
+			GD.Print("	-> Renamed to "+ExtractedEnemy.Name);
+			ExtractedEnemy.Visible = false;
+			GD.Print("	-> Made Invisible");
+			ExtractedEnemy.ProcessMode = ProcessModeEnum.Disabled;
+			GD.Print("	-> Stopped Enemy");
+		}
+		GD.Print("Done Extracting");
+		GetTree().Root.PrintTreePretty();
+
+		// Remap the Extracted Enemies to Enemies
+		foreach (Node2D ExtractedEnemy in this.GetChildren())
+		{
+			GD.Print("Scripts on " + ExtractedEnemy.GetPath()+ ": " + (Enemy)ExtractedEnemy);
+			ScriptEnemies.Add((Enemy)ExtractedEnemy);
+			GD.Print("Added to ScriptEnemiesArray: " + this.ScriptEnemies.ToString());
+		}
+		GD.Print("Length: " + ScriptEnemies.Count);
+
 		_Tokens = Tokens;
 		GD.Print("Available tokens: " + _Tokens[0]);
-		SpawnNextWave(_Tokens[0], MappedEnemies);
+		SpawnNextWave(_Tokens[0], this.ScriptEnemies.ToArray());
 	}
 
 	public override void _Process(double delta)
@@ -42,23 +70,30 @@ public partial class WaveManager : Node
 			GD.Print(Enemies[Index]);
 			if (Enemies[Index].MinimalWave >= CurrentWave)
 			{
-				GD.Print("Enabled " + Enemies[Index].GetScript().AsStringName());
+				GD.Print("Enabled " + Enemies[Index]);
 				EnabledEnemies.Append(Enemies[Index]);
 			}
 		}
 
 		EnabledEnemies.OrderByDescending(s => s.Cost);
+		GD.Print("Sorted Enemies by Cost");
 		foreach (Enemy _Enemy in Enemies)
 		{
 			int TokensToSpend = System.Security.Cryptography.RandomNumberGenerator.GetInt32(RemainingTokens);
+			GD.Print("Willing to spend "+TokensToSpend+" Tokens");
+			GD.Print("Fits: " + Fits(_Enemy, TokensToSpend));
 			if (Fits(_Enemy, TokensToSpend))
 			{
-				int NumberToSpawn = TokensToSpend % _Enemy.Cost;
+				int NumberToSpawn = TokensToSpend / _Enemy.Cost;
+				GD.Print("Going to add "+NumberToSpawn+" Enemies");
 				for (int Index = 0; Index < NumberToSpawn; Index++)
 				{
-					AddChild(_Enemy);
+					_Enemy.Reparent(GetTree().Root.GetNode("Level").GetNode("Enemy"));
 					_Enemy.Name = "_Enemy_"+Index;
-					_Enemy.Reparent(GetTree().Root.GetNode("Enemy"));
+					_Enemy.RandomizePosition();
+					_Enemy.Visible=true;
+					_Enemy.ProcessMode=ProcessModeEnum.Always;
+					GD.Print("Added Enemy at " + _Enemy.GetPath() + " with coords " + _Enemy.GlobalPosition);
 				}
 			}
 		}
@@ -69,3 +104,68 @@ public partial class WaveManager : Node
 		return _Enemy.Cost <= RemainingTokens;
 	}
 }
+
+/***
+[
+	{
+		"name": "RefCounted",
+		"class_name": &"",
+		"type": 0, "hint": 0,
+		"hint_string": "RefCounted",
+		"usage": 128
+	},
+	{
+		"name": "Resource",
+		"class_name": &"",
+		"type": 0,
+		"hint": 0,
+		"hint_string": "Resource",
+		"usage": 128
+	},
+	{
+		"name": "Resource",
+		"class_name": &"",
+		"type": 0,
+		"hint": 0,
+		"hint_string": "resource_",
+		"usage": 64
+		},
+		{
+			"name": "resource_local_to_scene",
+			"class_name": &"",
+			"type": 1,
+			"hint": 0,
+			"hint_string": "",
+			"usage": 6\
+		},
+		{
+			"name": "resource_path",
+			"class_name": &"",
+			"type": 4,
+			"hint": 0,
+			"hint_string": "",
+			"usage": 4
+		},
+		{
+			"name": "resource_name",
+			"class_name": &"",
+			"type": 4,
+			"hint": 0,
+			"hint_string": "",
+			"usage": 6
+		},
+		{
+			"name": "resource_scene_unique_id",
+			"class_name": &"",
+			"type": 4,
+			"hint": 0,
+			"hint_string": "",
+			"usage": 0
+		},
+		{
+			"name": "PackedScene",
+			"class_name": &"",
+			"type": 0,
+			"hint": 0,
+			"hint_string": "PackedScene", "usage": 128 }, { "name": "_bundled", "class_name": &"", "type": 27, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "script", "class_name": &"Script", "type": 24, "hint": 17, "hint_string": "Script", "usage": 1048582 }]
+***/
