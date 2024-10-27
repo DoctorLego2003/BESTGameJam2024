@@ -1,6 +1,8 @@
 extends Node2D
 @export var speed = 1
 @export var damage = 5
+@export var explosive = false
+
 var planetPos 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,11 +35,15 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		area.get_parent().TakeDamage(damage)
+		speed = 0
 		$Area2D/hitAnimation.visible = true
 		$Area2D/hitAnimation.play()
 		$Area2D/Sprite2D.visible = false
-		
-
+		if explosive:
+			$Area2D/CollisionShape2D.shape = CircleShape2D
+			$Area2D/CollisionShape2D.scale * 4
+			$Area2D/explosionAnimation.play()
+		$Area2D/CollisionShape2D.disabled = true
 
 func _on_hit_animation_animation_finished() -> void:
 	self.queue_free()
