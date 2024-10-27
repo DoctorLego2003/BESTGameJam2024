@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://co5o7c4b5cm3k"]
+[gd_scene load_steps=4 format=3 uid="uid://co5o7c4b5cm3k"]
 
 [ext_resource type="Script" path="res://Scripts/turret_missile.gd" id="1_qcdfy"]
 [ext_resource type="Texture2D" uid="uid://bjhskgp0ok361" path="res://assets/art/sprites/bullet.png" id="2_ym83c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0haj"]
+radius = 5.0
 
 [node name="TurretMissile" type="Node2D"]
 script = ExtResource("1_qcdfy")
@@ -9,8 +12,9 @@ script = ExtResource("1_qcdfy")
 [node name="Area2D" type="Area2D" parent="." groups=["Projectiles"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m0haj")
 
 [node name="Missile" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("2_ym83c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Area2D/Missile"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
