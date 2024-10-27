@@ -13,19 +13,14 @@ func _process(delta: float) -> void:
 	pass
 
 func _ready() -> void:
-	# Ensure all images in the directory are loaded at startup
-	#load_card_images()
-	_new_wave()
-	get_tree().root.print_tree_pretty()
-	#pass
-
+	get_tree().root.get_node("Level/WaveManager").WaveEnded.connect(self._new_wave)
 
 func _on_card_1_pressed() -> void:
-	#if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rx).cost:
-		#get_parent().get_node("ActivationFunctions").get_child(rx).activate()
-		#$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
-		#$Card1.disabled = true
-	get_tree().root.get_node("Level/ModManager").HealthMod -= 1
+	if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rx).cost:
+		get_parent().get_node("ActivationFunctions").get_child(rx).activate()
+		$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
+		$Card1.disabled = true
+	#get_tree().root.get_node("Level/ModManager").HealthMod -= 1
 	
 
 func _on_card_2_pressed() -> void:
