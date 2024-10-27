@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvf2c4vkyproi"]
+[gd_scene load_steps=13 format=3 uid="uid://bvf2c4vkyproi"]
 
-[ext_resource type="Texture2D" uid="uid://c7guanj0a6uq0" path="res://assets/art/sprites/accelarator.png" id="1_aoqu5"]
+[ext_resource type="Texture2D" uid="uid://bpkh48q3aoilm" path="res://assets/art/sprites/accelarator.png" id="1_aoqu5"]
 [ext_resource type="Script" path="res://Scripts/accelerator.gd" id="1_kfcum"]
+[ext_resource type="AudioStream" uid="uid://dm083vg3mf7ds" path="res://assets/sound/accelerator.wav" id="3_77lew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxf2d"]
 radius = 15.0
@@ -114,6 +115,10 @@ position = Vector2(-0.107121, -0.0306244)
 sprite_frames = SubResource("SpriteFrames_c8t8y")
 animation = &"accelerating"
 offset = Vector2(0.10712, -1.96938)
+
+[node name="acceleration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_77lew")
+volume_db = 10.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="Area2D/IdleAccAnimation" to="." method="_on_idle_acc_animation_animation_finished"]
