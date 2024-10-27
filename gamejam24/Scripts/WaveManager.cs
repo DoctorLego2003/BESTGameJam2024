@@ -75,14 +75,18 @@ public partial class WaveManager : Node
 			}
 		}
 
-		// Sort
+		// Sort the enemies by cost to prevent the expensive ones from hogging all of the tokens
 		EnabledEnemies.OrderByDescending(s => s.Cost);
 		GD.Print("Sorted Enemies by Cost");
+
+		// Iterate over all of the enemies to decide what to spawn
 		foreach (Enemy _Enemy in Enemies)
 		{
+			// Randomly decide how many credits to spend on this enemy
 			int TokensToSpend = System.Security.Cryptography.RandomNumberGenerator.GetInt32(RemainingTokens);
 			GD.Print("Willing to spend "+TokensToSpend+" Tokens");
 			GD.Print("Fits: " + Fits(_Enemy, TokensToSpend));
+			// Spawn as many of the enemies as we can with how many credits we're willing to spend on them
 			if (Fits(_Enemy, TokensToSpend))
 			{
 				int NumberToSpawn = TokensToSpend / _Enemy.Cost;
