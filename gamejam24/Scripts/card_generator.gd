@@ -54,9 +54,9 @@ func _new_wave() -> void:
 	var x = RandomNumberGenerator.new()
 	var y = RandomNumberGenerator.new()
 	var z = RandomNumberGenerator.new()
-	rx = x.randi_range(0, 5)
-	ry = y.randi_range(0, 5)
-	rz = z.randi_range(0, 5)
+	rx = x.randi_range(0, 7)
+	ry = y.randi_range(0, 7)
+	rz = z.randi_range(0, 7)
 	
 	$Card1.visible = true
 	$Card2.visible = true

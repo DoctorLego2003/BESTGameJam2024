@@ -104,6 +104,7 @@ public partial class WaveManager : Node
 						Enemy TMPENEMY = (Enemy)_Enemy.Duplicate();
 						AddChild(TMPENEMY);
 						TMPENEMY.Reparent(GetTree().Root.GetNode("Level").GetNode("Enemy"));
+						// Prevent Overlap
 						TMPENEMY.Name = "_Enemy_"+Index + "_" + System.Security.Cryptography.RandomNumberGenerator.GetInt32(99999999);
 						TMPENEMY.RandomizePosition();
 						TMPENEMY.Visible=true;
