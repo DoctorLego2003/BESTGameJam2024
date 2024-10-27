@@ -62,7 +62,7 @@ offset_bottom = 648.0
 [node name="WaveManager" type="Node" parent="."]
 script = ExtResource("6_hep6x")
 Enemies = [ExtResource("7_2h5vm")]
-Tokens = PackedInt32Array(5)
+Tokens = PackedInt32Array(5, 10, 15, 20)
 
 [node name="ModManager" type="Node" parent="."]
 script = ExtResource("7_4d0dn")

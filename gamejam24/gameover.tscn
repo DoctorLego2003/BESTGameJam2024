@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6oldrv4ifbsi"]
+
+[ext_resource type="Script" path="res://Scripts/gameover.gd" id="1_8n4hy"]
+[ext_resource type="Texture2D" uid="uid://bhaktfnmqg2wy" path="res://assets/art/main_menu/end_screen.png" id="1_sugjg"]
+
+[sub_resource type="Theme" id="Theme_qxbg3"]
+default_font_size = 50
+
+[node name="GAMEOVER" type="Node2D"]
+script = ExtResource("1_8n4hy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 651.0
+texture = ExtResource("1_sugjg")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 403.0
+offset_top = 510.0
+offset_right = 776.0
+offset_bottom = 587.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 25)
+theme = SubResource("Theme_qxbg3")
+text = "RESTART GAME"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

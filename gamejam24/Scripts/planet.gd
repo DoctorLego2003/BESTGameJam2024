@@ -13,9 +13,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var lives = get_tree().root.get_node("Level/ModManager").HealthMod
+	print(lives)
 	if lives > 0:
 		_animated_sprite.play()
 	else:
-		self.visible = false
-		#get_parent().pause = true
+		get_tree().change_scene_to_file("res://gameover.tscn")
 	
