@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b60fwg5xvjam"]
+[gd_scene load_steps=18 format=3 uid="uid://4nadl6ujgqr7"]
 
 [ext_resource type="Script" path="res://Scripts/turret_thunk_missile.gd" id="1_0r0tg"]
-[ext_resource type="Texture2D" uid="uid://gt67ngpfxhck" path="res://assets/art/sprites/shell_explosive.png" id="2_mrppr"]
+[ext_resource type="Texture2D" uid="uid://dsnxy6vllnvgu" path="res://assets/art/sprites/shell_explosive.png" id="2_mrppr"]
 [ext_resource type="Texture2D" uid="uid://cdku1pe0s16re" path="res://assets/art/effects/Free Smoke Fx  Pixel 06.png" id="3_0b2rw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0haj"]
