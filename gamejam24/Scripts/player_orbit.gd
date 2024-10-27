@@ -43,7 +43,7 @@ func _on_timer_timeout():
 
 func _burst():
 	var current_projectile = projectile.instantiate()
-	current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").SpeedMod
+	current_projectile.speed = 250 * get_tree().root.get_node("Level/ModManager").ProjectileSpeedMod
 	get_parent().add_child(current_projectile)
 	shoot_animation.play(&"shooting1")
 	var smoke = get_parent().get_node("SmokeAnimation")
