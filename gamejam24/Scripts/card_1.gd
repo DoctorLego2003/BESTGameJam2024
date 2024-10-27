@@ -1,6 +1,7 @@
 extends Control
 @export var cost = 10
-
+@export var cost_text = "10"
+@export var ability_text = "DAMAGE 10%"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

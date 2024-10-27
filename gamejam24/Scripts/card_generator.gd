@@ -66,18 +66,23 @@ func _new_wave() -> void:
 	$Card3.disabled = false
 	
 	get_tree().paused = true
-	get_parent().get_parent().print_tree_pretty()
+	#get_parent().get_parent().print_tree_pretty()
 	get_parent().get_parent().get_node("Enemy").get_tree().paused = true
 	
 	$Card1.icon = load("res://cards/normal/card" + str(rx) + ".png")
-	get_parent().get_node("ActivationFunctions").get_child(rx).get_node("Ability").visible = true
-	get_parent().get_node("ActivationFunctions").get_child(rx).get_node("Cost").visible = true
+	$Card1/Ability.text = get_parent().get_node("ActivationFunctions").get_child(rx).ability_text
+	$Card1/Cost.text = get_parent().get_node("ActivationFunctions").get_child(rx).cost_text
+	$Card1/Ability.visible = true
+	
 	$Card2.icon = load("res://cards/normal/card" + str(ry) + ".png")
-	get_parent().get_node("ActivationFunctions").get_child(ry).get_node("Ability").visible = true
-	get_parent().get_node("ActivationFunctions").get_child(ry).get_node("Cost").visible = true
+	$Card2/Ability.text = get_parent().get_node("ActivationFunctions").get_child(ry).ability_text
+	$Card2/Cost.text = get_parent().get_node("ActivationFunctions").get_child(ry).cost_text
+	$Card2/Ability.visible = true
+	
 	$Card3.icon = load("res://cards/normal/card" + str(rz) + ".png")
-	get_parent().get_node("ActivationFunctions").get_child(rz).get_node("Ability").visible = true
-	get_parent().get_node("ActivationFunctions").get_child(rz).get_node("Cost").visible = true
+	$Card3/Ability.text = get_parent().get_node("ActivationFunctions").get_child(rz).ability_text
+	$Card3/Cost.text = get_parent().get_node("ActivationFunctions").get_child(rz).cost_text
+	$Card3/Ability.visible = true
 	
 	
 func _input(event: InputEvent) -> void:
