@@ -3,6 +3,8 @@ extends Node2D
 var enemies = []
 var hasBullets = true
 var bulletAmount = 3
+var currentBuild = false
+@onready var upgradeUI = get_tree().root.get_node('Level/UpgradeTurretUI')
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,3 +55,29 @@ func _on_fire_timer_timeout() -> void:
 	if bulletAmount > 0:
 		turret_shoot()
 		$fireTimer.start()
+		
+
+func add_building(towerpoint):
+	print('upgrading')
+	get_parent().add_child(towerpoint.instantiate())
+	get_tree().paused = false
+	self.queue_free()
+
+
+
+func _on_area_2d_2_area_entered(area: Area2D) -> void:
+	if area.name == "PlayerArea":
+		currentBuild = true
+
+
+func _on_area_2d_2_area_exited(area: Area2D) -> void:
+	if area.name == "PlayerArea":
+		currentBuild = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Build"):
+		if currentBuild:
+			enemies = []
+			upgradeUI.visible = true
+			upgradeUI.ground = self
+			get_tree().paused = true

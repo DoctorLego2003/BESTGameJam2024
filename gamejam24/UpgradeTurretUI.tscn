@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cp0mspwu7jrqq"]
+[gd_scene load_steps=17 format=3 uid="uid://cp0mspwu7jrqq"]
 
-[ext_resource type="Script" path="res://upgrade_turret_ui.gd" id="1_kqy0p"]
+[ext_resource type="Script" path="res://Scripts/upgrade_turret_ui.gd" id="1_kqy0p"]
 [ext_resource type="Texture2D" uid="uid://dbemq5nd1ilpe" path="res://assets/art/sprites/turret_01_upgraded_01.png" id="2_gbjr8"]
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="3_dgrwy"]
+[ext_resource type="Texture2D" uid="uid://ch26pmh1631k" path="res://assets/art/sprites/turret_01_upgraded_02.png" id="3_ll7pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcf31"]
 atlas = ExtResource("2_gbjr8")
@@ -59,13 +60,45 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pcf31")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 15.0
 }]
 
-[node name="BuildingUI" type="Control"]
-process_mode = 2
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4cpx"]
+atlas = ExtResource("3_ll7pb")
+region = Rect2(0, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ebv"]
+atlas = ExtResource("3_ll7pb")
+region = Rect2(21, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmhcr"]
+atlas = ExtResource("3_ll7pb")
+region = Rect2(42, 0, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4dsa"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_u4cpx")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_d5ebv")
+}, {
+"duration": 9.0,
+"texture": SubResource("AtlasTexture_nmhcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4cpx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="UpgradeTurretUI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,6 +170,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/TurretThunk/Container"]
+texture = ExtResource("3_dgrwy")
+
+[node name="TurretCannon" type="AnimatedSprite2D" parent="HBoxContainer/TurretThunk/Container"]
+sprite_frames = SubResource("SpriteFrames_o4dsa")
+offset = Vector2(-0.5, -6)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/TurretThunk"]
 layout_mode = 1
