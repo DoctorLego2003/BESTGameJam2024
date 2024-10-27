@@ -31,7 +31,7 @@ public partial class SplittingAlien : Enemy
 		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 65)
 		{
 			DealDamage();
-			Die();
+			this.QueueFree();
 		}
 
 		GlobalPosition -= new Vector2
@@ -52,12 +52,12 @@ public partial class SplittingAlien : Enemy
 		GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
 	}
 	
-	public override void Die()
+	public override async void Die()
 	{
 		// Spawn 2 enemies
 		PackedScene _Packed = GD.Load<PackedScene>(Children.ResourcePath);
-		Node2D Child1 = _Packed.Instantiate<Node2D>();
-		Node2D Child2 = _Packed.Instantiate<Node2D>();
+		Alien Child1 = (Alien)_Packed.Instantiate<Node2D>();
+		Alien Child2 = (Alien)_Packed.Instantiate<Node2D>();
 		Child1.Name = "Enemy"+System.Security.Cryptography.RandomNumberGenerator.GetInt32(9999999);
 		Child2.Name = "Enemy"+System.Security.Cryptography.RandomNumberGenerator.GetInt32(9999999);
 		AddChild(Child1);
@@ -66,8 +66,21 @@ public partial class SplittingAlien : Enemy
 		Child2.Reparent(GetTree().Root.GetNode("Level/Enemy"));
 		Child1.Visible = true;
 		Child2.Visible = true;
-		Child1.GlobalPosition = GlobalPosition - new Vector2(50, 50);
-		Child2.GlobalPosition = GlobalPosition + new Vector2(50, 50);
+		CollisionShape2D child1area = (CollisionShape2D)Child1.GetNode("Area2D/CollisionShape2D");
+		CollisionShape2D child2area = (CollisionShape2D)Child2.GetNode("Area2D/CollisionShape2D");
+		Child1.Reparent(this.GetParent());
+		Child2.Reparent(this.GetParent());
+		AnimatedSprite2D anim = (AnimatedSprite2D)this.GetNode("AnimatedSprite2D");
+		anim.Visible = false;
+		Child1.Visible = true;
+		Child2.Visible = true;
+		child1area.Disabled = true;
+		child2area.Disabled = true;
+    	await ToSignal(GetTree().CreateTimer(0.5), "timeout");
+		child1area.Disabled = false;
+		child2area.Disabled = false;
+		Child1.GlobalPosition = GlobalPosition - new Vector2(20, 20);
+		Child2.GlobalPosition = GlobalPosition + new Vector2(20, 20);
 		this.QueueFree();
 	}
 }

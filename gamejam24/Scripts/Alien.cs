@@ -65,5 +65,6 @@ public partial class Alien : Enemy
 	public override void Die()
 	{
 		this.QueueFree();
+		this.Damage = 0;
 	}
 }
