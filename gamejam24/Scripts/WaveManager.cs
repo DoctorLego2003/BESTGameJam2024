@@ -117,8 +117,9 @@ public partial class WaveManager : Node
 			}
 		}
 		// Wait for all of the enemies to die :)
-		while (GetTree().Root.GetNode("Enemy").GetChildren().Count != 0)
+		while (GetTree().Root.GetNode("Level").GetNode("Enemy").GetChildren().Count != 0)
 		{
+			GD.Print("Remaining Enemies: " + GetTree().Root.GetNode("Level").GetNode("Enemy").GetChildren().Count);
 			await ToSignal(GetTree().CreateTimer(0.1), "timeout");
 		}
 		// Emit the WaveEnded signal
