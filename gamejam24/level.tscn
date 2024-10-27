@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwslqpwoytc8x" path="res://pause.tscn" id="4_m40se"]
 [ext_resource type="PackedScene" uid="uid://bv1fe5n5p8hum" path="res://BuildingUI.tscn" id="5_5y6di"]
 [ext_resource type="PackedScene" uid="uid://crim5foxkpoi2" path="res://Cards.tscn" id="5_i7mb0"]
+[ext_resource type="PackedScene" uid="uid://cp0mspwu7jrqq" path="res://UpgradeTurretUI.tscn" id="6_5qmy6"]
 [ext_resource type="Script" path="res://Scripts/WaveManager.cs" id="6_hep6x"]
 [ext_resource type="PackedScene" uid="uid://be4y4xgtq7ybv" path="res://Prefabs/asteroid.tscn" id="7_2h5vm"]
 [ext_resource type="Script" path="res://Scripts/mod_manager.gd" id="7_4d0dn"]
@@ -52,6 +53,13 @@ offset_right = 113.0
 offset_bottom = 42.0
 
 [node name="BuildingUI" parent="." instance=ExtResource("5_5y6di")]
+visible = false
+offset_left = 577.0
+offset_top = 648.0
+offset_right = 577.0
+offset_bottom = 648.0
+
+[node name="UpgradeTurretUI" parent="." instance=ExtResource("6_5qmy6")]
 visible = false
 offset_left = 577.0
 offset_top = 648.0
