@@ -21,10 +21,11 @@ func _ready() -> void:
 
 
 func _on_card_1_pressed() -> void:
-	if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rx).cost:
-		get_parent().get_node("ActivationFunctions").get_child(rx).activate()
-		$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
-		$Card1.disabled = true
+	#if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rx).cost:
+		#get_parent().get_node("ActivationFunctions").get_child(rx).activate()
+		#$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
+		#$Card1.disabled = true
+	get_tree().root.get_node("Level/ModManager").HealthMod -= 1
 	
 
 func _on_card_2_pressed() -> void:

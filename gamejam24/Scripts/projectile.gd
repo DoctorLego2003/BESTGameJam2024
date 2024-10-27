@@ -1,5 +1,5 @@
 extends Node2D
-@export var speed = 2
+@export var speed = 1
 @export var damage = 5
 var planetPos 
 
@@ -7,6 +7,7 @@ var planetPos
 func _ready() -> void:
 	var speed = get_tree().root.get_node('Level/ModManager').ProjectileSpeedMod
 	var damage = get_tree().root.get_node('Level/ModManager').DamageMod
+	print(damage)
 	var player = get_parent().get_node("PlayerOrbit/Player")
 	self.global_position = player.global_position
 	self.global_rotation = player.global_rotation

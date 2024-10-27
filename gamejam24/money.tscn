@@ -33,9 +33,11 @@ scale = Vector2(0.725525, 0.763572)
 script = ExtResource("1_aipao")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_top = -1.0
-offset_right = 149.0
-offset_bottom = 127.0
+offset_left = -45.4843
+offset_top = 90.3647
+offset_right = 103.516
+offset_bottom = 218.365
+rotation = -0.958186
 texture = ExtResource("1_7rias")
 metadata/_edit_use_anchors_ = true
 
