@@ -25,6 +25,7 @@ func turret_shoot(delta):
 		var current_projectile = projectile.instantiate()
 		current_projectile.turret = $TurretCannon
 		get_parent().get_parent().get_parent().add_child(current_projectile)
+		$TurretShootSound.play()
 		await get_tree().create_timer(0.3).timeout
 
 
