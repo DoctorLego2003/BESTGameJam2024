@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://demgep6nqgjry"]
+
+[ext_resource type="Script" path="res://Scripts/SplittingAlien.cs" id="1_saldb"]
+[ext_resource type="PackedScene" uid="uid://c0k8a0lunga5n" path="res://Prefabs/alien.tscn" id="2_3bug2"]
+[ext_resource type="Texture2D" uid="uid://cjx0ioj3lglm4" path="res://assets/art/sprites/swarm_bug_01.png" id="3_f2sdg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jjxm"]
+height = 38.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub18i"]
+atlas = ExtResource("3_f2sdg")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv5er"]
+atlas = ExtResource("3_f2sdg")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcqkj"]
+atlas = ExtResource("3_f2sdg")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c75vu"]
+atlas = ExtResource("3_f2sdg")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjyd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub18i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv5er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcqkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c75vu")
+}],
+"loop": true,
+"name": &"defeat",
+"speed": 5.0
+}]
+
+[node name="SplittingAlien" type="Sprite2D"]
+script = ExtResource("1_saldb")
+Children = ExtResource("2_3bug2")
+Cost = 1
+Health = 1
+Damage = 4
+Speed = 50
+Sprite = []
+ScrapReward = 10
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_6jjxm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tjyd3")
+animation = &"defeat"
+frame_progress = 0.499126

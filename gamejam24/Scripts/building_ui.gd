@@ -30,9 +30,13 @@ func _on_accelerator_pressed() -> void:
 		ground.add_building(acc)
 		self.visible = false
 		get_tree().root.get_node("Level/ModManager").Money -= cost
-
+		
+func _on_exit_button_pressed() -> void:
+	get_tree().paused = false
+	self.visible = false
 
 func _on_visibility_changed() -> void:
 	$HBoxContainer/Miner.disabled = not $HBoxContainer/Miner.disabled
 	$HBoxContainer/Turret.disabled = not $HBoxContainer/Turret.disabled
 	$HBoxContainer/Accelerator.disabled = not $HBoxContainer/Accelerator.disabled
+	
