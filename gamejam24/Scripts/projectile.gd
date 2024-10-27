@@ -1,10 +1,12 @@
 extends Node2D
-@export var speed = 300
+@export var speed = 2
 @export var damage = 5
 var planetPos 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var speed = get_tree().root.get_node('Level/ModManager').ProjectileSpeedMod
+	var damage = get_tree().root.get_node('Level/ModManager').DamageMod
 	var player = get_parent().get_node("PlayerOrbit/Player")
 	self.global_position = player.global_position
 	self.global_rotation = player.global_rotation

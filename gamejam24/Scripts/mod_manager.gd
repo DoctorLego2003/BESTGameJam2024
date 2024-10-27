@@ -1,7 +1,7 @@
 extends Node
 
-@export var ProjectileSpeedMod = 1
-@export var DamageMod = 1
+@export var ProjectileSpeedMod = 2
+@export var DamageMod = 5
 @export var MoneyMod = 1
 @export var PlayerSpeedMod = 1
 @export var CooldownMod = 2
@@ -9,6 +9,7 @@ extends Node
 @export var HealthMod = 4
 @export var RegenMod = 0
 @export var Money = 2000
+@export var TurretDamageMod = 1
 
 
 # Called when the node enters the scene tree for the first time.
