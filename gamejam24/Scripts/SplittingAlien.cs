@@ -66,8 +66,8 @@ public partial class SplittingAlien : Enemy
 		Child2.Reparent(GetTree().Root.GetNode("Level/Enemy"));
 		Child1.Visible = true;
 		Child2.Visible = true;
-		Child1.GlobalPosition = GlobalPosition - new Vector2(10, 10);
-		Child2.GlobalPosition = GlobalPosition + new Vector2(10, 10);
+		Child1.GlobalPosition = GlobalPosition - new Vector2(20, 20);
+		Child2.GlobalPosition = GlobalPosition + new Vector2(20, 20);
 		this.QueueFree();
 	}
 }
