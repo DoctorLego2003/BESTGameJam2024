@@ -9,7 +9,7 @@ public partial class Asteroid : Enemy
 	public override void RandomizePosition()
 	{
 		float Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(2*((int)(MathF.PI*100)))/100;
-		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(200) + 800;
+		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(800) + 800;
 		GlobalPosition = new Vector2(577 + Distance * MathF.Cos(Angle), 323 + Distance * MathF.Sin(Angle));
 	}
 

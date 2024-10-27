@@ -24,6 +24,7 @@ public abstract partial class Enemy : Node2D
 	public void TakeDamage(int Damage)
 	{
 		Health -= Damage;
+		if (Health <= 0){Die();}
 	}
 
 	public void Die()

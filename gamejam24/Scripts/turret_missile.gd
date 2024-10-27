@@ -3,6 +3,7 @@ extends Node2D
 @export var damage = 1
 @export var turret = null
 var planetPos 
+@onready var EnemyScript = preload("res://scripts/Enemy.cs")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,3 +26,9 @@ func _process(delta: float) -> void:
 # Function to handle timer timeout
 func _on_timer_timeout() -> void:
 	queue_free()  # Remove this projectile from the scene
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		area.get_parent().TakeDamage(damage)
+		self.queue_free()

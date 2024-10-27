@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://be4y4xgtq7ybv"]
+[gd_scene load_steps=8 format=3 uid="uid://be4y4xgtq7ybv"]
 
 [ext_resource type="Texture2D" uid="uid://bvprsfrwto0w6" path="res://assets/art/sprites/asteroid_01.png" id="1_i8l5j"]
 [ext_resource type="Script" path="res://Scripts/Asteroid.cs" id="2_ykep2"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dgcf7xm204aj2" path="res://assets/art/sprites/asteroid_03.png" id="4_hv6vt"]
 [ext_resource type="Texture2D" uid="uid://bhjo61qabhouq" path="res://assets/art/sprites/asteroid_04.png" id="5_x00qw"]
 [ext_resource type="Texture2D" uid="uid://bljbydr4aeh" path="res://assets/art/sprites/asteroid_05.png" id="6_0uocr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jjxm"]
+height = 38.0
 
 [node name="Asteroid" type="Sprite2D"]
 texture = ExtResource("1_i8l5j")
@@ -15,3 +18,8 @@ Health = 5
 Damage = 2
 Speed = 100
 Sprite = [ExtResource("1_i8l5j"), ExtResource("3_b67os"), ExtResource("4_hv6vt"), ExtResource("5_x00qw"), ExtResource("6_0uocr")]
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_6jjxm")
