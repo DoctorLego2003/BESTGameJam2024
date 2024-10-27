@@ -21,7 +21,7 @@ func randomize_values() -> void:
 	cost = cost_options[randi() % cost_options.size()]
 	
 	# Set ability based on cost (1 for 10, 2 for 20, 3 for 30)
-	ability = cost / 10
+	ability = float(cost / 10)
 	
 	# Update cost_text to match the new cost
 	cost_text = str(cost)

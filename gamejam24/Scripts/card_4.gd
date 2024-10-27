@@ -20,7 +20,7 @@ func randomize_values() -> void:
 	var selected_value = cost_options[randi() % cost_options.size()]
 	
 	# Set cost, cost_text, and ability_text to reflect the selected value
-	cost = selected_value
+	cost = float(selected_value)
 	cost_text = str(cost)
 	ability_text = "RELOAD +" + str(cost_text) + "%"
 
@@ -31,5 +31,6 @@ func _process(delta: float) -> void:
 func activate() -> void:
 	# Access the ModManager node to modify BurstMod and Money
 	var mod_manager = get_tree().root.get_node("Level/ModManager")
+	print(cost/100)
 	mod_manager.CooldownMod *= 1 - cost/100
 	mod_manager.Money -= cost

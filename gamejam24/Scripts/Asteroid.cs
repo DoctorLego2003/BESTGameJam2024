@@ -47,8 +47,8 @@ public partial class Asteroid : Enemy
 		GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
 	}
 
-    public override void Die()
-    {
-        this.QueueFree();
-    }
+	public override void Die()
+	{
+		this.QueueFree();
+	}
 }
