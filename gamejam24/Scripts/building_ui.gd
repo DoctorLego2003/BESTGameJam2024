@@ -1,6 +1,6 @@
 extends Control
 @export var ground = null
-@onready var miner = load("res://TurretDouble.tscn")
+@onready var turretDouble = load("res://TurretDouble.tscn")
 @onready var turret = load("res://Turret.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_turret_double_pressed() -> void:
-	ground.add_building(miner)
+	ground.add_building(turretDouble)
 	self.visible = false
 
 
@@ -22,4 +22,4 @@ func _on_turret_thunk_pressed() -> void:
 
 func _on_visibility_changed() -> void:
 	$HBoxContainer/TurretDouble.disabled = not $HBoxContainer/TurretDouble.disabled
-	$HBoxContainer/TurretThunk.disabled = not $HBoxContainer/TurretThunk.disabled
+	#$HBoxContainer/TurretThunk.disabled = not $HBoxContainer/TurretThunk.disabled
