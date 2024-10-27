@@ -22,6 +22,7 @@ public partial class Alien : Enemy
 	{
 		if (GlobalPosition.DistanceTo(new Vector2(577, 323)) <= 65)
 		{
+			DealDamage();
 			Die();
 		}
 		GlobalPosition -= new Vector2
@@ -39,6 +40,6 @@ public partial class Alien : Enemy
 
     public override void DealDamage()
     {
-        throw new NotImplementedException();
+        GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", (int)GetTree().Root.GetNode("Level/ModManager").Get("HealthMod") - 1);
     }
 }
