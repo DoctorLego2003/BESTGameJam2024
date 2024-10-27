@@ -1,4 +1,5 @@
 extends Control
+@export var cost = 10
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,5 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func activate() -> void:
-		get_tree().root.get_node("Level/ModManager").MoneyMod *= 1.2
+		get_tree().root.get_node("Level/ModManager").MoneyMod *= 1.1
+		get_tree().root.get_node("Level/ModManager").Money -= 10
+
 		

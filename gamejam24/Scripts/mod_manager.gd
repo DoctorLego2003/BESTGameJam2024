@@ -8,6 +8,8 @@ extends Node
 @export var BurstMod = 1
 @export var HealthMod = 4
 @export var RegenMod = 0
+@export var Money = 2000
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

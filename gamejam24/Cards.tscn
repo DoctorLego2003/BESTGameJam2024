@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://crim5foxkpoi2"]
+[gd_scene load_steps=14 format=3 uid="uid://crim5foxkpoi2"]
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
 [ext_resource type="Script" path="res://Scripts/card_0.gd" id="2_3y8vh"]
+[ext_resource type="Texture2D" uid="uid://bmyfxxh3af8t4" path="res://cards/normal/card0.png" id="2_ieqkr"]
 [ext_resource type="Script" path="res://Scripts/card_1.gd" id="3_pdedv"]
 [ext_resource type="Script" path="res://Scripts/card_2.gd" id="4_sb6pg"]
 [ext_resource type="Script" path="res://Scripts/card_3.gd" id="5_5fvts"]
@@ -10,6 +11,41 @@
 
 [sub_resource type="Theme" id="Theme_3i4ct"]
 default_font_size = 75
+
+[sub_resource type="FontFile" id="FontFile_3cl4p"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_q2kdw"]
+default_font = SubResource("FontFile_3cl4p")
+default_font_size = 35
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anm23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_domk2"]
 
 [node name="Cards" type="Node2D"]
 
@@ -25,7 +61,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Card1" type="Button" parent="CardGenerator"]
 process_mode = 2
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.75
@@ -38,13 +73,13 @@ offset_right = 418.0
 offset_bottom = 529.0
 scale = Vector2(0.9, 0.9)
 size_flags_horizontal = 3
+icon = ExtResource("2_ieqkr")
 icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Card2" type="Button" parent="CardGenerator"]
 process_mode = 2
-visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775
@@ -62,7 +97,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Card3" type="Button" parent="CardGenerator"]
 process_mode = 2
-visible = false
 layout_mode = 2
 anchor_left = 0.75
 anchor_top = 0.775
@@ -90,7 +124,6 @@ theme = SubResource("Theme_3i4ct")
 text = "CONTINUE"
 
 [node name="ActivationFunctions" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -98,45 +131,237 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Card0" type="Control" parent="ActivationFunctions"]
+process_mode = 3
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_3y8vh")
 
+[node name="Cost" type="RichTextLabel" parent="ActivationFunctions/Card0"]
+z_index = 100
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 188.0
+offset_bottom = 191.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "10"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Ability" type="RichTextLabel" parent="ActivationFunctions/Card0"]
+z_index = 150
+offset_left = 187.0
+offset_top = 388.0
+offset_right = 349.0
+offset_bottom = 443.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "BURST +1"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Card1" type="Control" parent="ActivationFunctions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_pdedv")
 
+[node name="Cost" type="RichTextLabel" parent="ActivationFunctions/Card1"]
+z_index = 100
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 188.0
+offset_bottom = 191.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "10"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Ability" type="RichTextLabel" parent="ActivationFunctions/Card1"]
+z_index = 100
+offset_left = 187.0
+offset_top = 388.0
+offset_right = 349.0
+offset_bottom = 443.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "DAMAGE
++10%"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Card2" type="Control" parent="ActivationFunctions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_sb6pg")
 
+[node name="Cost" type="RichTextLabel" parent="ActivationFunctions/Card2"]
+z_index = 100
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 188.0
+offset_bottom = 191.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "10"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Ability" type="RichTextLabel" parent="ActivationFunctions/Card2"]
+z_index = 100
+offset_left = 187.0
+offset_top = 388.0
+offset_right = 349.0
+offset_bottom = 443.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "EARNINGS
++ 10%"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Card3" type="Control" parent="ActivationFunctions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_5fvts")
 
+[node name="Cost" type="RichTextLabel" parent="ActivationFunctions/Card3"]
+z_index = 100
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 188.0
+offset_bottom = 191.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "10"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Ability" type="RichTextLabel" parent="ActivationFunctions/Card3"]
+z_index = 100
+offset_left = 187.0
+offset_top = 388.0
+offset_right = 349.0
+offset_bottom = 443.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "MISSILE SPEED
++ 10%"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Card4" type="Control" parent="ActivationFunctions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_rfnuy")
 
+[node name="Cost" type="RichTextLabel" parent="ActivationFunctions/Card4"]
+z_index = 100
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 188.0
+offset_bottom = 191.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "10"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Ability" type="RichTextLabel" parent="ActivationFunctions/Card4"]
+z_index = 100
+offset_left = 187.0
+offset_top = 388.0
+offset_right = 349.0
+offset_bottom = 443.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "RELOAD
++ 10%"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Card5" type="Control" parent="ActivationFunctions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_ubse0")
+
+[node name="Cost" type="RichTextLabel" parent="ActivationFunctions/Card5"]
+z_index = 100
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 188.0
+offset_bottom = 191.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "10"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Ability" type="RichTextLabel" parent="ActivationFunctions/Card5"]
+z_index = 100
+offset_left = 187.0
+offset_top = 388.0
+offset_right = 349.0
+offset_bottom = 443.0
+theme = SubResource("Theme_q2kdw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_anm23")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_domk2")
+text = "SPEED
++ 10%"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
 [connection signal="pressed" from="CardGenerator/Card1" to="CardGenerator" method="_on_card_1_pressed"]
 [connection signal="pressed" from="CardGenerator/Card2" to="CardGenerator" method="_on_card_2_pressed"]

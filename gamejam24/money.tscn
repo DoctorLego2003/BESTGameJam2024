@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://nyf3epqe6oyb"]
+
+[ext_resource type="Texture2D" uid="uid://dowqo5u3o157j" path="res://assets/art/sprites/gold_icon.png" id="1_7rias"]
+[ext_resource type="Script" path="res://Scripts/money.gd" id="1_aipao"]
+
+[sub_resource type="FontFile" id="FontFile_8laf8"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_0jxu1"]
+default_font = SubResource("FontFile_8laf8")
+default_font_size = 66
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cfoo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6lji"]
+
+[node name="Money" type="Node2D"]
+process_mode = 3
+position = Vector2(25, 519)
+scale = Vector2(0.725525, 0.763572)
+script = ExtResource("1_aipao")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = -1.0
+offset_right = 149.0
+offset_bottom = 127.0
+texture = ExtResource("1_7rias")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 85.0
+offset_top = 54.0
+offset_right = 307.0
+offset_bottom = 143.0
+theme = SubResource("Theme_0jxu1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6cfoo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k6lji")
+text = "money"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
