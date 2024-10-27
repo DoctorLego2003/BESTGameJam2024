@@ -21,6 +21,8 @@ public partial class WaveManager : Node
 
 	public override void _Ready()
 	{
+		//  Register the WaveEnded signal
+		AddUserSignal("WaveEnded");
 		// Unpack all of the Enemies under me and pause them
 		foreach (PackedScene PackedEnemy in Enemies)
 		{
@@ -60,7 +62,7 @@ public partial class WaveManager : Node
 
 	}
 
-	private void SpawnNextWave(int Credits, Enemy[] Enemies)
+	private async void SpawnNextWave(int Credits, Enemy[] Enemies)
 	{
 		int RemainingTokens = Credits;
 		// Filter out Enemies we can't use
@@ -111,6 +113,13 @@ public partial class WaveManager : Node
 				}
 			}
 		}
+		// Wait for all of the enemies to die :)
+		while (GetTree().Root.GetNode("Enemy").GetChildren().Count != 0)
+		{
+			await ToSignal(GetTree().CreateTimer(0.1), "timeout");
+		}
+		// Emit the WaveEnded signal
+		EmitSignal("WaveEnded");
 	}
 
 	private Boolean Fits(Enemy _Enemy, int RemainingTokens)
