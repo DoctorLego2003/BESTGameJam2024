@@ -175,7 +175,6 @@ grow_vertical = 2
 texture = ExtResource("3_dgrwy")
 
 [node name="TurretCannon" type="AnimatedSprite2D" parent="HBoxContainer/TurretThunk/Container"]
-position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_o4dsa")
 offset = Vector2(-0.5, -6)
 
