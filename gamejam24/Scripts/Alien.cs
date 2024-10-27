@@ -7,6 +7,8 @@ public partial class Alien : Enemy
 {
 	float Direction;
 	float Amplitude;
+
+	float offset;
 	public override void RandomizePosition()
 	{
 		float Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(2*((int)(MathF.PI*100)))/100;
@@ -22,7 +24,8 @@ public partial class Alien : Enemy
 
     public void SetDirection(){Direction = MathF.Atan2(
 				GlobalPosition.X - new Vector2(577, 323).X,
-				GlobalPosition.Y - new Vector2(577, 323).Y);}
+				GlobalPosition.Y - new Vector2(577, 323).Y);
+				this.offset = new Godot.RandomNumberGenerator().RandiRange(0,500);}
 
 	public override void _Process(double delta)
 	{
@@ -51,7 +54,7 @@ public partial class Alien : Enemy
 		(
 			Speed * MathF.Cos(this.Direction) * Delta,
 			-Speed * MathF.Sin(this.Direction) * Delta
-		) * MathF.Sin(Time.GetTicksMsec()/200);
+		) * MathF.Sin((Time.GetTicksMsec() + offset)/200);
 	}
 
 	public override void DealDamage()
