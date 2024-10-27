@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://bv1fe5n5p8hum"]
 
 [ext_resource type="Texture2D" uid="uid://dmwy4e0wumsgt" path="res://assets/art/sprites/mining_station_01.png" id="1_fmxgy"]
-[ext_resource type="Script" path="res://building_ui.gd" id="1_i332u"]
+[ext_resource type="Script" path="res://Scripts/building_ui.gd" id="1_i332u"]
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="2_4yu7v"]
 [ext_resource type="Texture2D" uid="uid://fclab8rb3hdy" path="res://assets/art/sprites/turret_01.png" id="3_w5dnx"]
 [ext_resource type="Texture2D" uid="uid://c7guanj0a6uq0" path="res://assets/art/sprites/accelarator.png" id="4_nidyr"]
