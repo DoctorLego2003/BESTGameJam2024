@@ -50,7 +50,7 @@ func _on_continue_pressed() -> void:
 	
 
 func _new_wave() -> void:
-	print("ok")
+	#print("ok")
 	var x = RandomNumberGenerator.new()
 	var y = RandomNumberGenerator.new()
 	var z = RandomNumberGenerator.new()

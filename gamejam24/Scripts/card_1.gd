@@ -20,7 +20,7 @@ func randomize_values() -> void:
 	var selected_value = cost_options[randi() % cost_options.size()]
 	
 	# Set cost, cost_text, and ability_text to reflect the selected value
-	cost = selected_value
+	cost = float(selected_value)
 	cost_text = str(cost)
 	ability_text = "DAMAGE +" + str(cost_text) + "%"
 
