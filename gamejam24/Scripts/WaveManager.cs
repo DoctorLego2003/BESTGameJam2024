@@ -41,7 +41,6 @@ public partial class WaveManager : Node
 			GD.Print("	-> Stopped Enemy");
 		}
 		GD.Print("Done Extracting");
-		GetTree().Root.PrintTreePretty();
 
 		// Remap the Extracted Enemies to Enemies
 		foreach (Node2D ExtractedEnemy in this.GetChildren())
