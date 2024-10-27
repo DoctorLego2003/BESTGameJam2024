@@ -17,6 +17,9 @@ public partial class WaveManager : Node
 	private int[] _Tokens;
 	private List<Enemy> ScriptEnemies = new List<Enemy>();
 
+	[Signal]
+	public delegate void WaveEndedEventHandler();
+
 	private int CurrentWave = 0;
 
 	public override void _Ready()
@@ -53,8 +56,9 @@ public partial class WaveManager : Node
 		GD.Print("Length: " + ScriptEnemies.Count);
 
 		_Tokens = Tokens;
-		GD.Print("Available tokens: " + _Tokens[0]);
-		SpawnNextWave(_Tokens[0], this.ScriptEnemies.ToArray());
+		if (_Tokens.Length < CurrentWave){GD.Print("No Waves Left!");GetTree().Quit();}
+		GD.Print("Available tokens: " + _Tokens[CurrentWave]);
+		SpawnNextWave(_Tokens[CurrentWave], this.ScriptEnemies.ToArray());
 	}
 
 	public override void _Process(double delta)
@@ -119,7 +123,8 @@ public partial class WaveManager : Node
 			await ToSignal(GetTree().CreateTimer(0.1), "timeout");
 		}
 		// Emit the WaveEnded signal
-		EmitSignal("WaveEnded");
+		EmitSignal(SignalName.WaveEnded);
+		this.CurrentWave++;
 	}
 
 	private Boolean Fits(Enemy _Enemy, int RemainingTokens)
