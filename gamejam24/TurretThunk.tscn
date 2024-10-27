@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://ianmmxmg70yl"]
+
+[ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="1_3l0b6"]
+[ext_resource type="Script" path="res://Scripts/turret_thunk.gd" id="1_877mm"]
+[ext_resource type="Texture2D" uid="uid://ch26pmh1631k" path="res://assets/art/sprites/turret_01_upgraded_02.png" id="2_e06ty"]
+[ext_resource type="AudioStream" uid="uid://d2emks74ku360" path="res://assets/sound/explosion sound.wav" id="3_klih7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4cpx"]
+atlas = ExtResource("2_e06ty")
+region = Rect2(0, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ebv"]
+atlas = ExtResource("2_e06ty")
+region = Rect2(21, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmhcr"]
+atlas = ExtResource("2_e06ty")
+region = Rect2(42, 0, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t4yf"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_u4cpx")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_d5ebv")
+}, {
+"duration": 9.0,
+"texture": SubResource("AtlasTexture_nmhcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4cpx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1yx5k"]
+radius = 296.0
+height = 720.0
+
+[node name="TurretThunk" type="Node2D"]
+script = ExtResource("1_877mm")
+
+[node name="TurretRock" type="Sprite2D" parent="."]
+texture = ExtResource("1_3l0b6")
+offset = Vector2(0.5, 0)
+
+[node name="TurretCannon" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5t4yf")
+offset = Vector2(-0.5, -6)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(156, 0)
+shape = SubResource("CapsuleShape2D_1yx5k")
+
+[node name="reloadTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="TurretShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_klih7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="reloadTimer" to="." method="_on_reload_timer_timeout"]
