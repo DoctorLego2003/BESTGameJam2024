@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://crim5foxkpoi2"]
+[gd_scene load_steps=13 format=3 uid="uid://crim5foxkpoi2"]
 
 [ext_resource type="Script" path="res://Scripts/card_generator.gd" id="1_uh4am"]
 [ext_resource type="Script" path="res://Scripts/card_0.gd" id="2_3y8vh"]
-[ext_resource type="Texture2D" uid="uid://bmyfxxh3af8t4" path="res://cards/normal/card0.png" id="2_ieqkr"]
 [ext_resource type="Script" path="res://Scripts/card_1.gd" id="3_pdedv"]
 [ext_resource type="Script" path="res://Scripts/card_2.gd" id="4_sb6pg"]
 [ext_resource type="Script" path="res://Scripts/card_3.gd" id="5_5fvts"]
@@ -73,13 +72,11 @@ offset_right = 418.0
 offset_bottom = 529.0
 scale = Vector2(0.9, 0.9)
 size_flags_horizontal = 3
-icon = ExtResource("2_ieqkr")
 icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Cost" type="RichTextLabel" parent="CardGenerator/Card1"]
-visible = false
 z_index = 100
 layout_mode = 0
 offset_left = 35.5555
@@ -96,7 +93,6 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Ability" type="RichTextLabel" parent="CardGenerator/Card1"]
-visible = false
 z_index = 150
 layout_mode = 0
 offset_left = 76.6667
@@ -130,7 +126,6 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Cost" type="RichTextLabel" parent="CardGenerator/Card2"]
-visible = false
 z_index = 100
 layout_mode = 0
 offset_left = 35.5555
@@ -147,7 +142,6 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Ability" type="RichTextLabel" parent="CardGenerator/Card2"]
-visible = false
 z_index = 150
 layout_mode = 0
 offset_left = 76.6667
@@ -181,7 +175,6 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Cost" type="RichTextLabel" parent="CardGenerator/Card3"]
-visible = false
 z_index = 100
 layout_mode = 0
 offset_left = 35.5555
@@ -198,7 +191,6 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Ability" type="RichTextLabel" parent="CardGenerator/Card3"]
-visible = false
 z_index = 150
 layout_mode = 0
 offset_left = 76.6667
