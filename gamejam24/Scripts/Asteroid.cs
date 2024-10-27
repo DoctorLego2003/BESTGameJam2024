@@ -37,6 +37,11 @@ public partial class Asteroid : Enemy
 				GlobalPosition.Y - new Vector2(577, 323).Y
 				)) * Delta
 		);
-		GlobalRotation += SpinSpeed;
+		GlobalRotation += SpinSpeed/30;
 	}
+
+    public override void DealDamage()
+    {
+        GetTree().Root.GetNode("Level/ModManager").Set("HealthMod", GetTree().Root.GetNode("Level/ModManager").Get("HealthMod"));
+    }
 }
