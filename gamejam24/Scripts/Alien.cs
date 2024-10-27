@@ -5,12 +5,16 @@ using Godot;
 [Tool]
 public partial class Alien : Enemy
 {
-
+	float Direction;
+	float Amplitude;
 	public override void RandomizePosition()
 	{
 		float Angle = System.Security.Cryptography.RandomNumberGenerator.GetInt32(2*((int)(MathF.PI*100)))/100;
 		int Distance = System.Security.Cryptography.RandomNumberGenerator.GetInt32(800) + 800;
 		GlobalPosition = new Vector2(577 + Distance * MathF.Cos(Angle), 323 + Distance * MathF.Sin(Angle));
+		Direction = MathF.Atan2(
+				GlobalPosition.X - new Vector2(577, 323).X,
+				GlobalPosition.Y - new Vector2(577, 323).Y);
 	}
 
 	public override void _Process(double delta)
@@ -27,15 +31,14 @@ public partial class Alien : Enemy
 		}
 		GlobalPosition -= new Vector2
 		(
-			Speed * MathF.Sin(MathF.Atan2(
-				GlobalPosition.X - new Vector2(577, 323).X,
-				GlobalPosition.Y - new Vector2(577, 323).Y 
-				)) * Delta,
-			Speed * MathF.Cos(MathF.Atan2(
-				GlobalPosition.X - new Vector2(577, 323).X,
-				GlobalPosition.Y - new Vector2(577, 323).Y
-				)) * Delta
+			Speed * MathF.Sin(this.Direction) * Delta,
+			Speed * MathF.Cos(this.Direction) * Delta
 		);
+		GlobalPosition -= new Vector2
+		(
+			Speed * MathF.Cos(this.Direction) * Delta,
+			-Speed * MathF.Sin(this.Direction) * Delta
+		) * MathF.Sin(Time.GetTicksMsec()/200);
 	}
 
 	public override void DealDamage()

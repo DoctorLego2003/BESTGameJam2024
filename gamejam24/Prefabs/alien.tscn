@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0k8a0lunga5n"]
+
+[ext_resource type="Texture2D" uid="uid://dxic22g0b3htj" path="res://assets/art/sprites/alien_01.png" id="1_kb3xa"]
+[ext_resource type="Script" path="res://Scripts/Alien.cs" id="2_nv11j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jjxm"]
+height = 38.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af3i2"]
+atlas = ExtResource("1_kb3xa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e72m8"]
+atlas = ExtResource("1_kb3xa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rw7t"]
+atlas = ExtResource("1_kb3xa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6o8j"]
+atlas = ExtResource("1_kb3xa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjyd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af3i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e72m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rw7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6o8j")
+}],
+"loop": true,
+"name": &"defeat",
+"speed": 5.0
+}]
+
+[node name="Alien" type="Sprite2D"]
+script = ExtResource("2_nv11j")
+Cost = 1
+Health = 5
+Damage = 1
+Speed = 250
+Sprite = []
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_6jjxm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tjyd3")
+animation = &"defeat"
+frame_progress = 0.731064
