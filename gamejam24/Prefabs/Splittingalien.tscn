@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://demgep6nqgjry"]
+[gd_scene load_steps=10 format=3 uid="uid://w864utymn7he"]
 
 [ext_resource type="Script" path="res://Scripts/SplittingAlien.cs" id="1_saldb"]
-[ext_resource type="PackedScene" uid="uid://c0k8a0lunga5n" path="res://Prefabs/alien.tscn" id="2_3bug2"]
-[ext_resource type="Texture2D" uid="uid://cjx0ioj3lglm4" path="res://assets/art/sprites/swarm_bug_01.png" id="3_f2sdg"]
+[ext_resource type="PackedScene" uid="uid://blt7fhlaoal2y" path="res://Prefabs/alien.tscn" id="2_3bug2"]
+[ext_resource type="Texture2D" uid="uid://yaq8pa6qdwip" path="res://assets/art/sprites/swarm_bug_01.png" id="3_f2sdg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jjxm"]
 height = 38.0
@@ -51,7 +51,8 @@ Health = 1
 Damage = 4
 Speed = 50
 Sprite = []
-ScrapReward = 10
+MinimalWave = 5
+ScrapReward = 8
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 

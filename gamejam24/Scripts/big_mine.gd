@@ -10,4 +10,4 @@ func _process(delta: float) -> void:
 	get_tree().root.get_node("Level/WaveManager").WaveEnded.connect(self.give_money)
 
 func give_money() -> void:
-	get_tree().root.get_node("Level/ModManager").Money += 20
+	get_tree().root.get_node("Level/ModManager").Money += 20 * get_tree().root.get_node("Level/ModManager").MoneyMod

@@ -27,7 +27,7 @@ public abstract partial class Enemy : Sprite2D
 	{
 		Health -= Damage;
 		if (Health <= 0){
-			GetTree().Root.GetNode("Level/ModManager").Set("Money", (int)GetTree().Root.GetNode("Level/ModManager").Get("Money") + 10);
+			GetTree().Root.GetNode("Level/ModManager").Set("Money", (int)GetTree().Root.GetNode("Level/ModManager").Get("Money") + ScrapReward);
 			Die();
 			}
 	}

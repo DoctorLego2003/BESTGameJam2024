@@ -128,6 +128,8 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 shortcut = SubResource("Shortcut_apcoi")
+text = "200"
+alignment = 0
 
 [node name="Container" type="Container" parent="HBoxContainer/TurretDouble"]
 layout_mode = 1
@@ -166,6 +168,8 @@ Shoots twice the bullets"
 layout_mode = 2
 size_flags_horizontal = 3
 shortcut = SubResource("Shortcut_nnern")
+text = "150"
+alignment = 0
 
 [node name="Container" type="Container" parent="HBoxContainer/TurretThunk"]
 layout_mode = 1

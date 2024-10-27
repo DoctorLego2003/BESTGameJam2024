@@ -1,7 +1,7 @@
 extends Control
 @export var ground = null
 @onready var bigMine = load("res://BigMine.tscn")
-var cost = 10
+var cost = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HBoxContainer/BigMine/Container/TurretCannon.play()
@@ -15,3 +15,7 @@ func _on_big_mine_pressed() -> void:
 
 func _on_visibility_changed() -> void:
 	$HBoxContainer/BigMine.disabled = not $HBoxContainer/BigMine.disabled
+
+func _on_exit_button_pressed() -> void:
+	get_tree().paused = false
+	self.visible = false

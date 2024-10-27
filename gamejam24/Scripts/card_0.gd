@@ -6,7 +6,7 @@ extends Control
 var ability = 1
 
 # Array of options for randomization
-var cost_options = [10, 20, 30]
+var cost_options = [30, 60, 90]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

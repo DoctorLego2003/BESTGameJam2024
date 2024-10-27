@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp0mspwu7jrqq"]
+[gd_scene load_steps=8 format=3 uid="uid://ct5ekmc860qw3"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_mine_ui.gd" id="1_goaj0"]
-[ext_resource type="Texture2D" uid="uid://do5h6jbfmheo1" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_wmjk7"]
+[ext_resource type="Texture2D" uid="uid://cx7rps6156er8" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_wmjk7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0pwk"]
 atlas = ExtResource("1_wmjk7")
@@ -101,6 +101,8 @@ grow_vertical = 0
 [node name="BigMine" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "100"
+alignment = 0
 
 [node name="Container" type="Container" parent="HBoxContainer/BigMine"]
 layout_mode = 1
@@ -131,5 +133,21 @@ grow_vertical = 0
 text = "Big Mine
 Better efficiency, more money"
 
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -252.0
+offset_right = 74.0
+offset_bottom = -211.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="HBoxContainer/BigMine" to="." method="_on_big_mine_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
