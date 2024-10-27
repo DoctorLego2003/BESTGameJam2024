@@ -1,4 +1,5 @@
 extends Control
+signal NextWave
 
 var cards_directory = "res://cards/"
 # This array will store loaded card textures
@@ -45,6 +46,7 @@ func _on_continue_pressed() -> void:
 	$Continue.visible = false
 	get_tree().paused = false
 	get_parent().get_parent().get_node("Enemy").get_tree().paused = false
+	NextWave.emit()
 	
 
 func _new_wave() -> void:
