@@ -8,9 +8,9 @@ extends Node
 @export var BurstMod = 1
 
 @export var HealthMod = 400
-@export var RegenMod = 0
+@export var RegenMod = 200
 @export var Money = 2000
-@export var TurretDamageMod = 1
+@export var TurretDamageMod = 10
 
 
 # Called when the node enters the scene tree for the first time.

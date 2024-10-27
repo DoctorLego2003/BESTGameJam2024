@@ -1,6 +1,5 @@
 extends Node2D
 @export var speed = 300
-@export var damage = 1
 @export var turret = null
 var planetPos 
 @onready var EnemyScript = preload("res://Scripts/Enemy.cs")
@@ -30,7 +29,7 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
-		area.get_parent().TakeDamage(damage)
+		area.get_parent().TakeDamage(get_tree().root.get_node("Level/ModManager").TurretDamageMod)
 		$Area2D/Missile.visible = false
 		$Area2D/hitAnimation.visible = true
 		$Area2D/hitAnimation.play()

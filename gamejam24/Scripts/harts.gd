@@ -11,4 +11,10 @@ func _process(delta: float) -> void:
 	
 
 func hearts() -> void:
-	get_node("Health").text = str(get_tree().root.get_node("Level/ModManager").HealthMod)
+	get_tree().root.get_node("Level/WaveManager").WaveEnded.connect(self.add_hearths)
+	get_node("Health").text = str(get_tree().root.get_node("Level/ModManager").RegenMod)
+	get_node("Health").text += "/"
+	get_node("Health").text += str(get_tree().root.get_node("Level/ModManager").HealthMod)
+
+func add_hearths() -> void:
+	get_tree().root.get_node("Level/ModManager").HealthMod += get_tree().root.get_node("Level/ModManager").RegenMod

@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c41wdjqgjjt20"]
+[gd_scene load_steps=14 format=3 uid="uid://hrivl7bg3jqh"]
 
 [ext_resource type="Script" path="res://turret_double.gd" id="1_2gkof"]
 [ext_resource type="Texture2D" uid="uid://blatmducs31wl" path="res://assets/art/sprites/turret_base_01.png" id="2_jwn5i"]
-[ext_resource type="Texture2D" uid="uid://dbemq5nd1ilpe" path="res://assets/art/sprites/turret_01_upgraded_01.png" id="3_hmgkx"]
+[ext_resource type="Texture2D" uid="uid://ct2ehwic8ppek" path="res://assets/art/sprites/turret_01_upgraded_01.png" id="3_hmgkx"]
 [ext_resource type="AudioStream" uid="uid://d1h7tdg08jbp2" path="res://assets/sound/shoot_sound.wav" id="4_gdqn7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcf31"]
