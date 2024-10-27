@@ -21,25 +21,24 @@ func _ready() -> void:
 
 
 func _on_card_1_pressed() -> void:
-	get_parent().get_node("ActivationFunctions").get_child(rx).activate()
-	#$Card1.visible = false
-	$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
-	$Card1.disabled = true
+	if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rx).cost:
+		get_parent().get_node("ActivationFunctions").get_child(rx).activate()
+		$Card1.icon = load("res://cards/hidden/card" + str(rx) + ".png")
+		$Card1.disabled = true
 	
 
 func _on_card_2_pressed() -> void:
-	get_parent().get_node("ActivationFunctions").get_child(ry).activate()
-	#$Card2.visible = false
-	$Card2.icon = load("res://cards/hidden/card" + str(ry) + ".png")
-	$Card2.disabled = true
+	if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(ry).cost:
+		get_parent().get_node("ActivationFunctions").get_child(ry).activate()
+		$Card2.icon = load("res://cards/hidden/card" + str(ry) + ".png")
+		$Card2.disabled = true
 
 func _on_card_3_pressed() -> void:
-	get_parent().get_node("ActivationFunctions").get_child(rz).activate()
-	#$Card3.visible = false
-	$Card3.icon = load("res://cards/hidden/card" + str(rz) + ".png")
-	$Card3.disabled = true
-
-
+	if get_tree().root.get_node("Level/ModManager").Money >= get_parent().get_node("ActivationFunctions").get_child(rz).cost:
+		get_parent().get_node("ActivationFunctions").get_child(rz).activate()
+		$Card3.icon = load("res://cards/hidden/card" + str(rz) + ".png")
+		$Card3.disabled = true
+		
 func _on_continue_pressed() -> void:
 	$Card1.visible = false
 	$Card2.visible = false
@@ -71,8 +70,14 @@ func _new_wave() -> void:
 	get_parent().get_parent().get_node("Enemy").get_tree().paused = true
 	
 	$Card1.icon = load("res://cards/normal/card" + str(rx) + ".png")
+	get_parent().get_node("ActivationFunctions").get_child(rx).get_node("Ability").visible = true
+	get_parent().get_node("ActivationFunctions").get_child(rx).get_node("Cost").visible = true
 	$Card2.icon = load("res://cards/normal/card" + str(ry) + ".png")
+	get_parent().get_node("ActivationFunctions").get_child(ry).get_node("Ability").visible = true
+	get_parent().get_node("ActivationFunctions").get_child(ry).get_node("Cost").visible = true
 	$Card3.icon = load("res://cards/normal/card" + str(rz) + ".png")
+	get_parent().get_node("ActivationFunctions").get_child(rz).get_node("Ability").visible = true
+	get_parent().get_node("ActivationFunctions").get_child(rz).get_node("Cost").visible = true
 	
 	
 func _input(event: InputEvent) -> void:

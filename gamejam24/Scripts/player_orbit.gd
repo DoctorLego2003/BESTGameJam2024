@@ -39,6 +39,8 @@ func _input(event: InputEvent) -> void:
 		$Timer.wait_time = get_tree().root.get_node("Level/ModManager").CooldownMod
 
 func _on_timer_timeout():
+	$Player.get_node("ReloadSound").play()
+	OS.delay_msec(10)
 	hasBullet = true
 
 func _burst():
@@ -50,4 +52,5 @@ func _burst():
 	smoke.global_position = current_projectile.get_node("Area2D").global_position
 	smoke.global_rotation = current_projectile.get_node("Area2D").global_rotation
 	smoke.play(&"smoke")
+	$Player.get_node("PlayerShootSound").play()
 	hasBullet = false

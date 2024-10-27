@@ -11,5 +11,6 @@ z_index = 50
 position = Vector2(0, -80)
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
