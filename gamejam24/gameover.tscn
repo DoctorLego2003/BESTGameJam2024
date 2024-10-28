@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6oldrv4ifbsi"]
+[gd_scene load_steps=4 format=3 uid="uid://d7b5kki74ugb"]
 
 [ext_resource type="Script" path="res://Scripts/gameover.gd" id="1_8n4hy"]
-[ext_resource type="Texture2D" uid="uid://bhaktfnmqg2wy" path="res://assets/art/main_menu/end_screen.png" id="1_sugjg"]
+[ext_resource type="Texture2D" uid="uid://q6vmwjscupbg" path="res://assets/art/main_menu/end_screen.png" id="1_sugjg"]
 
 [sub_resource type="Theme" id="Theme_qxbg3"]
 default_font_size = 50

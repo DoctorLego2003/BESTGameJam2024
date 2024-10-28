@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dwslqpwoytc8x"]
 
 [ext_resource type="Script" path="res://Scripts/unpause.gd" id="1_6tjei"]
-[ext_resource type="Texture2D" uid="uid://bedg5bwtcok1j" path="res://assets/art/main_menu/info_screen.png" id="2_tp3wk"]
+[ext_resource type="Texture2D" uid="uid://bgq46od4sn6rw" path="res://assets/art/main_menu/info_screen.png" id="2_tp3wk"]
 
 [sub_resource type="Theme" id="Theme_xxm63"]
 default_font_size = 17

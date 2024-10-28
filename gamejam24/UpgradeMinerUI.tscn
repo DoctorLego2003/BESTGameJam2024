@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct5ekmc860qw3"]
+[gd_scene load_steps=11 format=3 uid="uid://cp0mspwu7jrqq"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_mine_ui.gd" id="1_goaj0"]
-[ext_resource type="Texture2D" uid="uid://cx7rps6156er8" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_wmjk7"]
+[ext_resource type="Texture2D" uid="uid://do5h6jbfmheo1" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_wmjk7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0pwk"]
 atlas = ExtResource("1_wmjk7")
@@ -75,6 +75,18 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="InputEventKey" id="InputEventKey_e087k"]
+device = -1
+keycode = 4194320
+
+[sub_resource type="InputEventKey" id="InputEventKey_qety0"]
+device = -1
+keycode = 90
+unicode = 122
+
+[sub_resource type="Shortcut" id="Shortcut_o7ced"]
+events = [SubResource("InputEventKey_e087k"), SubResource("InputEventKey_qety0")]
+
 [node name="UpgradeMinerUI" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -146,6 +158,7 @@ offset_right = 74.0
 offset_bottom = -211.0
 grow_horizontal = 2
 grow_vertical = 0
+shortcut = SubResource("Shortcut_o7ced")
 text = "Exit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

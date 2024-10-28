@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://3d2g6qciybxn"]
+[gd_scene load_steps=8 format=3 uid="uid://c4lfu22185ldy"]
 
-[ext_resource type="Texture2D" uid="uid://cx7rps6156er8" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_q1nn1"]
+[ext_resource type="Texture2D" uid="uid://do5h6jbfmheo1" path="res://assets/art/sprites/mining_station_01_upgraded.png" id="1_q1nn1"]
 [ext_resource type="Script" path="res://Scripts/big_mine.gd" id="1_u1dj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0pwk"]

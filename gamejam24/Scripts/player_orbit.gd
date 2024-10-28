@@ -9,27 +9,17 @@ var projectile = load("res://projectile.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	speed = 3 * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if moveLeft:
-		var current_speed = speed * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
-		self.rotate(current_speed * delta)
+		self.rotate(speed * delta)
 	if moveRight:
-		var current_speed = speed * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
-		self.rotate(-current_speed * delta)
+		self.rotate(-speed * delta)
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("clockwise-move"):
-		moveLeft = true
-	elif event.is_action_released("clockwise-move"):
-		moveLeft = false
-	if event.is_action_pressed("anticlockwise-move"):
-		moveRight = true
-	elif event.is_action_released("anticlockwise-move"):
-		moveRight = false
 	if event.is_action_pressed("shoot") and hasBullet:
 		for i in range(get_tree().root.get_node("Level/ModManager").BurstMod):
 			_burst()
@@ -54,3 +44,7 @@ func _burst():
 	smoke.play(&"smoke")
 	$Player.get_node("PlayerShootSound").play()
 	hasBullet = false
+
+
+func _on_property_list_changed() -> void:
+	speed = 3 * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod

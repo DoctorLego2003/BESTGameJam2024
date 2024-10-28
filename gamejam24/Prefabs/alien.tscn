@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blt7fhlaoal2y"]
+[gd_scene load_steps=9 format=3 uid="uid://c5a55asnx5lrf"]
 
 [ext_resource type="Texture2D" uid="uid://dxic22g0b3htj" path="res://assets/art/sprites/alien_01.png" id="1_kb3xa"]
 [ext_resource type="Script" path="res://Scripts/Alien.cs" id="2_nv11j"]
@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [node name="Alien" type="Sprite2D"]
-offset = 294.0
+offset = 437.0
 script = ExtResource("2_nv11j")
 Cost = 1
 Health = 10
