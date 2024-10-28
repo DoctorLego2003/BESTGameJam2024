@@ -7,17 +7,14 @@ var projectile = load("res://projectile.tscn")
 @onready var shoot_animation = get_node("Player/PlayerArea/AnimatedSprite2D")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	speed = 3 * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if moveLeft:
-		self.rotate(speed * delta)
+		var current_speed = speed * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
+		self.rotate(current_speed * delta)
 	if moveRight:
-		self.rotate(-speed * delta)
+		var current_speed = speed * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod
+		self.rotate(-current_speed * delta)
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot") and hasBullet:
@@ -44,7 +41,3 @@ func _burst():
 	smoke.play(&"smoke")
 	$Player.get_node("PlayerShootSound").play()
 	hasBullet = false
-
-
-func _on_property_list_changed() -> void:
-	speed = 3 * get_tree().root.get_node("Level/ModManager").PlayerSpeedMod

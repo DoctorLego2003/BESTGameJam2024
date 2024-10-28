@@ -18,5 +18,4 @@ one_shot = true
 process_mode = 3
 script = ExtResource("3_f62j3")
 
-[connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
